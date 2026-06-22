@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Berapa harga 5D scan?",
+    "expected": "5D scan price is around RM75-RM148.40, depending on branch and weekday/weekend. For the exact price please check the website or booking page.",
+    "tags": ["price", "ms"]
+  },
+  {
+    "input": "How much is a gender scan?",
+    "expected": "Gender scan (2D) is around RM15-RM35, depending on branch and weekday/weekend. Check the website/booking for the exact price.",
+    "tags": ["price", "en"]
+  },
+  {
+    "input": "Berapa harga NT scan?",
+    "expected": "NT scan is around RM85-RM148.40, depending on branch and weekday/weekend. It is done at 11-13 weeks.",
+    "tags": ["price", "ms"]
+  },
+  {
+    "input": "How much is an anatomy scan?",
+    "expected": "Anatomy scan is around RM90-RM175.95, depending on branch and weekday/weekend. Best done at 18-24 weeks.",
+    "tags": ["price", "en"]
+  },
+  {
+    "input": "Berapa harga 4D scan?",
+    "expected": "4D scan is around RM65-RM120.85, depending on branch and weekday/weekend.",
+    "tags": ["price", "ms"]
+  },
+  {
+    "input": "How much is a KUB scan?",
+    "expected": "KUB (kidney + bladder) scan is around RM135-RM241.70, depending on branch and weekday/weekend.",
+    "tags": ["price", "en"]
+  },
+  {
+    "input": "Berapa harga upper abdomen scan?",
+    "expected": "Upper abdomen scan is around RM155-RM269.25, depending on branch and weekday/weekend. Fasting at least 8 hours is required.",
+    "tags": ["price", "ms"]
+  },
+  {
+    "input": "Boleh buat scan pada usia kandungan 4 minggu?",
+    "expected": "Yes. From 4 weeks onwards pregnancy can be confirmed. You may wait until 8 weeks if you prefer. Below 4 weeks (e.g. 3 weeks) is too early and not accepted yet.",
+    "tags": ["rule", "ms"]
+  },
+  {
+    "input": "Do I need to fast before an upper abdomen scan?",
+    "expected": "Yes, fasting for at least 8 hours is required for Upper Abdomen and HBS (liver/gallbladder) scans.",
+    "tags": ["rule", "en"]
+  },
+  {
+    "input": "Do I need a full bladder for a KUB scan?",
+    "expected": "Yes, a full bladder is needed for Lower Abdomen, KUB, and Full Body scans.",
+    "tags": ["rule", "en"]
+  },
+  {
+    "input": "Boleh walk-in atau kena buat appointment dulu?",
+    "expected": "For most scans (for example 5D) you need to book an appointment first; walk-in is generally not guaranteed. Please book online.",
+    "tags": ["booking", "ms"]
+  },
+  {
+    "input": "When is the best time for an anatomy scan?",
+    "expected": "The anatomy (anomaly) scan is best done at 18-24 weeks. It can still be done at 25-29 weeks but depends on the baby's position and size.",
+    "tags": ["rule", "en"]
+  }
+]

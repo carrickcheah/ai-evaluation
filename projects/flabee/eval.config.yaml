@@ -1,0 +1,33 @@
+name: flabee-bot
+
+# The bot under test — any HTTP endpoint. {{input}} = the question,
+# {{uid}} = a stable per-question id (fresh session/phone, so the bot never
+# thinks it "already answered").
+target:
+  url: https://api.nexgpt.nexerp.io/api/chat/sync
+  method: POST
+  headers:
+    X-API-Key: "${BOT_KEY}"
+  body:
+    message: "{{input}}"
+    phone_number: "{{uid}}"
+    source: api
+    account_id: 14
+    session_id: "{{uid}}"
+  answerPath: output
+
+judge:
+  provider: claude-subscription   # local `claude` CLI on the Max subscription (no API key)
+  model: sonnet                   # maps to current Claude Sonnet (4.6)
+
+rubric: |
+  You grade a customer-service bot's answer against the correct reference answer.
+  PASS only if the bot's answer is factually consistent with the reference.
+  - Prices/numbers must match. A correct PRICE RANGE counts as a pass even if the
+    reference gives a range (prices vary by branch and weekday/weekend).
+  - Do NOT pass an answer that states a single exact price as if it were the only price,
+    or that quotes an expired promo price.
+  - The reply must be in the SAME language as the question (Malay, English, or Manglish).
+  FAIL if a required number is missing, changed, invented, or stale.
+
+dataset: ./dataset.json
