@@ -5,7 +5,7 @@ import { cors } from "hono/cors";
 import { streamSSE } from "hono/streaming";
 import { listProjects, loadProject } from "./config";
 import { runEval } from "./run-eval";
-import { saveRun, listRuns, getRun } from "./history";
+import { saveRun, listRuns, getRun, updateCase } from "./history";
 import * as sub from "./subscription";
 import type { ProjectConfig } from "./types";
 
@@ -31,6 +31,18 @@ app.get("/api/eval/runs", (c) => c.json({ runs: listRuns() }));
 app.get("/api/eval/runs/:id", (c) => {
   const r = getRun(c.req.param("id"));
   return r ? c.json(r) : c.json({ error: "run not found" }, 404);
+});
+
+// Human review: persist a rating (👍/👎) / comment onto one case of a run.
+app.patch("/api/eval/runs/:id/case/:index", async (c) => {
+  const body = (await c.req.json().catch(() => ({}))) as {
+    rating?: "up" | "down" | null;
+    comment?: string;
+  };
+  const index = Number(c.req.param("index"));
+  if (!Number.isInteger(index) || index < 0) return c.json({ error: "bad index" }, 400);
+  const updated = updateCase(c.req.param("id"), index, body);
+  return updated ? c.json({ case: updated }) : c.json({ error: "run/case not found" }, 404);
 });
 
 app.post("/api/eval/run", async (c) => {

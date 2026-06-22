@@ -1,7 +1,7 @@
 /** Run history persisted as JSON files under data/runs/. */
 import { mkdirSync, readdirSync, readFileSync, existsSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
-import type { RunResult } from "./types";
+import type { RunResult, CaseResult } from "./types";
 
 const RUNS_DIR = process.env.RUNS_DIR || resolve(import.meta.dir, "../data/runs");
 
@@ -30,6 +30,21 @@ export function listRuns(): RunSummary[] {
   }
   summaries.sort((a, b) => b.startedAt.localeCompare(a.startedAt));
   return summaries;
+}
+
+/** Persist a human review rating/comment onto one case of a saved run. */
+export function updateCase(
+  runId: string,
+  index: number,
+  patch: { rating?: "up" | "down" | null; comment?: string },
+): CaseResult | null {
+  const run = getRun(runId);
+  if (!run || index < 0 || index >= run.results.length) return null;
+  const c = run.results[index]!;
+  if ("rating" in patch) c.rating = patch.rating ?? null;
+  if (typeof patch.comment === "string") c.comment = patch.comment;
+  saveRun(run);
+  return c;
 }
 
 /** Full run by id, or null if missing/corrupt. */

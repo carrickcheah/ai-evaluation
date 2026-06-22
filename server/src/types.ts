@@ -54,6 +54,8 @@ export interface CaseResult {
   latencyMs: number; // bot call + grading time for this case
   verdict: Verdict;
   error?: string; // set when the bot call or grading failed
+  rating?: "up" | "down" | null; // human review rating (👍/👎)
+  comment?: string; // human review comment
 }
 
 /** Aggregated result of one eval run. */

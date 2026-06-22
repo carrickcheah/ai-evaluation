@@ -152,7 +152,41 @@ tr.clickable:hover { background: var(--panel-2); cursor: pointer; }
 .pf-badge { font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 5px; white-space: nowrap; }
 .pf-badge.pass { background: #1f7a4d; color: #eafff4; }
 .pf-badge.fail { background: #5b1f1f; color: #ffe0e0; }
-.pf-icons { color: var(--muted); font-size: 12px; letter-spacing: 3px; opacity: 0.55; white-space: nowrap; user-select: none; }
+.pf-icons { display: flex; gap: 1px; white-space: nowrap; }
+.icn {
+  background: transparent; border: none; color: var(--muted);
+  font-size: 13px; line-height: 1; padding: 4px 5px; border-radius: 5px; cursor: pointer;
+}
+.icn:hover { background: rgba(127, 127, 127, 0.2); color: var(--text); }
+.icn.on-up { color: var(--pass); }
+.icn.on-down { color: var(--fail); }
+.icn.on { color: var(--accent); }
+.pf-comment {
+  margin-top: 8px; font-size: 13px; color: var(--text);
+  background: var(--panel-2); border-left: 3px solid var(--accent);
+  border-radius: 6px; padding: 6px 9px;
+}
+
+/* detail modal */
+.modal-backdrop {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.55);
+  display: flex; align-items: center; justify-content: center; z-index: 50; padding: 24px;
+}
+.modal {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+  max-width: 760px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 18px 20px;
+}
+.modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; font-size: 15px; }
+.modal-body .kv { margin: 12px 0; line-height: 1.5; }
+.modal-body .kv b { display: block; color: var(--muted); font-size: 12px; margin-bottom: 3px; font-weight: 600; }
+
+.pf-comment-edit { margin-top: 8px; }
+.pf-comment-edit textarea {
+  width: 100%; background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 7px 9px; font: inherit; resize: vertical; min-width: 0;
+}
+.pf-comment-actions { display: flex; gap: 8px; margin-top: 6px; }
+.pf-comment-actions button { padding: 5px 12px; font-size: 13px; }
 .pf-reason { color: var(--fail); font-weight: 600; margin-bottom: 8px; line-height: 1.5; }
 .pf-answer { line-height: 1.55; white-space: pre-wrap; }
 .pf-answer.pass { color: var(--desc-text); }

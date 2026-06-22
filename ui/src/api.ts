@@ -4,6 +4,7 @@ import type {
   ProjectInfo,
   SubscriptionStatus,
   ProgressEvent,
+  CaseResult,
 } from "./types";
 
 async function jget<T>(url: string): Promise<T> {
@@ -21,6 +22,27 @@ async function jpost<T>(url: string, body?: unknown): Promise<T> {
   if (!r.ok) throw new Error(data.error || `POST ${url} → ${r.status}`);
   return data;
 }
+
+async function jpatch<T>(url: string, body: unknown): Promise<T> {
+  const r = await fetch(url, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const data = (await r.json().catch(() => ({}))) as T & { error?: string };
+  if (!r.ok) throw new Error(data.error || `PATCH ${url} → ${r.status}`);
+  return data;
+}
+
+export const rateCase = (
+  runId: string,
+  index: number,
+  patch: { rating?: "up" | "down" | null; comment?: string },
+) =>
+  jpatch<{ case: CaseResult }>(
+    `/api/eval/runs/${encodeURIComponent(runId)}/case/${index}`,
+    patch,
+  ).then((r) => r.case);
 
 export const getProjects = () =>
   jget<{ projects: ProjectInfo[] }>("/api/projects").then((r) => r.projects);

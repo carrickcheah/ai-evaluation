@@ -12,6 +12,8 @@ export interface CaseResult {
   latencyMs?: number;
   verdict: Verdict;
   error?: string;
+  rating?: "up" | "down" | null;
+  comment?: string;
 }
 export interface RunResult {
   id: string;
