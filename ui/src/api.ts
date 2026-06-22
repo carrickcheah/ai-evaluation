@@ -5,6 +5,7 @@ import type {
   SubscriptionStatus,
   ProgressEvent,
   CaseResult,
+  ProjectDetail,
 } from "./types";
 
 async function jget<T>(url: string): Promise<T> {
@@ -46,11 +47,12 @@ export const rateCase = (
 
 export const getProjects = () =>
   jget<{ projects: ProjectInfo[] }>("/api/projects").then((r) => r.projects);
+export const getProjectDataset = (name: string) =>
+  jget<ProjectDetail>(`/api/projects/${encodeURIComponent(name)}`);
 export const getRuns = () => jget<{ runs: RunSummary[] }>("/api/eval/runs").then((r) => r.runs);
 export const getRun = (id: string) => jget<RunResult>(`/api/eval/runs/${encodeURIComponent(id)}`);
 export const getSubscription = () => jget<SubscriptionStatus>("/api/subscription/status");
 export const connectSubscription = () => jpost<SubscriptionStatus>("/api/subscription/connect");
-export const disconnectSubscription = () => jpost<SubscriptionStatus>("/api/subscription/disconnect");
 
 export interface RunHandlers {
   onProgress: (p: ProgressEvent) => void;
@@ -85,6 +87,7 @@ export async function runEvalStream(
   const reader = res.body.getReader();
   const dec = new TextDecoder();
   let buf = "";
+  let terminal = false; // saw a done/error event
   for (;;) {
     let chunk: ReadableStreamReadResult<Uint8Array>;
     try {
@@ -119,8 +122,18 @@ export async function runEvalStream(
         continue;
       }
       if (event === "progress") h.onProgress(parsed as ProgressEvent);
-      else if (event === "done") h.onDone(parsed as RunResult);
-      else if (event === "error") h.onError((parsed as { message?: string }).message ?? "error");
+      else if (event === "done") {
+        terminal = true;
+        h.onDone(parsed as RunResult);
+      } else if (event === "error") {
+        terminal = true;
+        h.onError((parsed as { message?: string }).message ?? "error");
+      }
     }
+  }
+  // Stream ended (clean EOF) without a done/error event — e.g. the server restarted
+  // or a proxy timed out mid-run. Surface it so the UI doesn't spin "running" forever.
+  if (!terminal && !signal?.aborted) {
+    h.onError("connection closed before the run finished");
   }
 }

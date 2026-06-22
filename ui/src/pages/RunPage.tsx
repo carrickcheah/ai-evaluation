@@ -1,13 +1,55 @@
 import { useEffect, useRef, useState } from "react";
-import { getProjects, runEvalStream } from "../api";
-import type { ProjectInfo, RunResult } from "../types";
+import { getProjects, getProjectDataset, runEvalStream } from "../api";
+import type { ProjectInfo, RunResult, CaseResult } from "../types";
 import ResultView from "../components/ResultView";
 
-export default function RunPage() {
+/** Build a partial RunResult from the live (filling-in) rows, so ResultView can
+ * render it exactly like a finished run while the eval streams. */
+function liveRun(results: CaseResult[], projectName: string, judge: string): RunResult {
+  const done = results.filter((r) => !r.pending);
+  const passed = done.filter((r) => !r.error && r.verdict.pass).length;
+  const errored = done.filter((r) => r.error).length;
+  const failed = done.length - passed - errored;
+  const total = results.length;
+  return {
+    id: "",
+    project: projectName,
+    judgeModel: judge,
+    startedAt: "",
+    finishedAt: "",
+    total,
+    passed,
+    failed,
+    errored,
+    // Live pass-rate is over GRADED cases, not the full dataset, so the header
+    // doesn't read artificially low (e.g. "2%") while rows are still streaming.
+    score: done.length ? Math.round((passed / done.length) * 100) : 0,
+    results,
+  };
+}
+
+const placeholder = (input = "", expected = "", tags: string[] = [], description?: string): CaseResult => ({
+  input,
+  expected,
+  tags,
+  description,
+  answer: "",
+  verdict: { pass: false, score: 0, reason: "" },
+  pending: true,
+});
+
+export default function RunPage({
+  initialProject,
+  onProjectChange,
+}: {
+  initialProject?: string;
+  onProjectChange?: (name: string) => void;
+} = {}) {
   const [projects, setProjects] = useState<ProjectInfo[]>([]);
   const [selected, setSelected] = useState("");
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState<{ done: number; total: number } | null>(null);
+  const [live, setLive] = useState<CaseResult[] | null>(null);
   const [run, setRun] = useState<RunResult | null>(null);
   const [error, setError] = useState("");
   const abortRef = useRef<AbortController | null>(null);
@@ -16,29 +58,65 @@ export default function RunPage() {
     getProjects()
       .then((p) => {
         setProjects(p);
-        if (p[0]) setSelected(p[0].name);
+        // Restore this tab's saved project if it still exists, else default to the first.
+        const pick = initialProject && p.some((x) => x.name === initialProject) ? initialProject : p[0]?.name;
+        if (pick) {
+          setSelected(pick);
+          // Only re-sync when a *saved* project went missing (stale label). Don't
+          // auto-rename brand-new tabs (initialProject undefined) — they keep "Eval N".
+          if (initialProject && pick !== initialProject) onProjectChange?.(pick);
+        }
       })
       .catch((e) => setError(String(e)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Abort any in-flight run if the user navigates away mid-run.
+  function pickProject(name: string) {
+    setSelected(name);
+    onProjectChange?.(name); // sync the tab label + persistence
+  }
+
   useEffect(() => () => abortRef.current?.abort(), []);
 
   const project = projects.find((p) => p.name === selected);
+  const judge = project?.judge ?? "sonnet";
 
   async function start() {
     setRunning(true);
     setRun(null);
     setError("");
     setProgress({ done: 0, total: project?.cases ?? 0 });
+
+    // Seed correctly-sized blank rows immediately (so the row count + header total
+    // are right even if the dataset prefetch fails), then enrich with the questions.
+    const n = project?.cases ?? 0;
+    setLive(n > 0 ? Array.from({ length: n }, () => placeholder()) : null);
+    try {
+      const detail = await getProjectDataset(selected);
+      setLive(detail.dataset.map((d) => placeholder(d.input, d.expected, d.tags ?? [], d.description ?? undefined)));
+    } catch {
+      /* keep the correctly-sized blank placeholders; they fill in as cases complete */
+    }
+
     const ac = new AbortController();
     abortRef.current = ac;
     await runEvalStream(
       { project: selected },
       {
-        onProgress: (p) => setProgress({ done: p.done, total: p.total }),
+        onProgress: (p) => {
+          setProgress({ done: p.done, total: p.total });
+          setLive((cur) => {
+            const arr = cur ? cur.slice() : [];
+            if (typeof p.index === "number") {
+              while (arr.length <= p.index) arr.push(placeholder());
+              arr[p.index] = { ...p.last, pending: false };
+            }
+            return arr;
+          });
+        },
         onDone: (r) => {
           setRun(r);
+          setLive(null);
           setRunning(false);
         },
         onError: (m) => {
@@ -52,6 +130,12 @@ export default function RunPage() {
 
   function cancel() {
     abortRef.current?.abort();
+    // Keep the already-graded rows on screen as a partial (read-only) result
+    // instead of letting them vanish when the live view stops rendering.
+    if (live && live.some((r) => !r.pending)) {
+      setRun(liveRun(live, project?.displayName ?? selected, judge));
+    }
+    setLive(null);
     setRunning(false);
   }
 
@@ -64,7 +148,7 @@ export default function RunPage() {
       <div className="card">
         <div className="row">
           <label>Project</label>
-          <select value={selected} onChange={(e) => setSelected(e.target.value)} disabled={running}>
+          <select value={selected} onChange={(e) => pickProject(e.target.value)} disabled={running}>
             {projects.map((p) => (
               <option key={p.name} value={p.name}>
                 {p.displayName} ({p.cases} cases)
@@ -74,7 +158,7 @@ export default function RunPage() {
         </div>
         <div className="row">
           <label>Judge</label>
-          <span className="muted">Claude {project?.judge ?? "sonnet"} · subscription</span>
+          <span className="muted">Claude {judge} · subscription</span>
         </div>
         <div className="row">
           {!running ? (
@@ -100,6 +184,15 @@ export default function RunPage() {
           </div>
         )}
       </div>
+
+      {/* Live results — rows fill in as each case completes */}
+      {running && live && live.length > 0 && (
+        <div style={{ marginTop: 24 }}>
+          <ResultView run={liveRun(live, project?.displayName ?? selected, judge)} />
+        </div>
+      )}
+
+      {/* Final results */}
       {run && (
         <div style={{ marginTop: 24 }}>
           <ResultView run={run} />

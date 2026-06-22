@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import RunPage from "./pages/RunPage";
+import TabbedRun from "./components/TabbedRun";
 import HistoryPage, { HistoryDetail } from "./pages/HistoryPage";
 import SubscriptionPage from "./pages/SubscriptionPage";
 
@@ -34,7 +34,7 @@ export default function App() {
         </div>
         <main className="main">
           <Routes>
-            <Route path="/" element={<RunPage />} />
+            <Route path="/" element={<TabbedRun />} />
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/history/:id" element={<HistoryDetail />} />
             <Route path="/subscription" element={<SubscriptionPage />} />

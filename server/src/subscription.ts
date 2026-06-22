@@ -92,9 +92,13 @@ export interface SubscriptionStatus {
 export async function getStatus(): Promise<SubscriptionStatus> {
   const pref = readPref();
   const cli = detectClaudeCli();
+  // The grader shells out to the `claude` CLI directly (API key stripped), so the
+  // REAL gate is "is the CLI present", not the manual toggle. Reflect that truthfully
+  // — otherwise Status reads "not connected" while grading actually works fine.
+  const enabled = cli.detected;
   return {
-    mode: pref.enabled ? "subscription" : "not-connected",
-    subscriptionEnabled: pref.enabled,
+    mode: enabled ? "subscription" : "not-connected",
+    subscriptionEnabled: enabled,
     connectedAt: pref.connectedAt,
     hasApiKey: Boolean(process.env.ANTHROPIC_API_KEY?.trim()),
     claudeCli: cli,
@@ -112,11 +116,5 @@ export async function connect(): Promise<SubscriptionStatus> {
     throw new Error("`claude` CLI found but did not respond — run `claude` once to log into your subscription.");
   }
   writePref({ enabled: true, connectedAt: new Date().toISOString() });
-  return getStatus();
-}
-
-export async function disconnect(): Promise<SubscriptionStatus> {
-  const prev = readPref();
-  writePref({ enabled: false, connectedAt: prev.connectedAt });
   return getStatus();
 }

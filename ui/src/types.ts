@@ -14,6 +14,7 @@ export interface CaseResult {
   error?: string;
   rating?: "up" | "down" | null;
   comment?: string;
+  pending?: boolean; // UI-only: row laid out but not yet run/graded
 }
 export interface RunResult {
   id: string;
@@ -53,4 +54,12 @@ export interface ProgressEvent {
   done: number;
   total: number;
   last: CaseResult;
+  index: number;
+}
+
+export interface ProjectDetail {
+  name: string;
+  displayName: string;
+  judge: string;
+  dataset: { input: string; expected: string; tags?: string[]; description?: string | null }[];
 }

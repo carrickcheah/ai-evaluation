@@ -3,6 +3,10 @@ import type { CaseResult, RunResult } from "../types";
 import { rateCase } from "../api";
 
 export default function ResultView({ run }: { run: RunResult }) {
+  // A live/partial run has no id yet (RunPage builds it). Rating/commenting/copying
+  // would PATCH "/api/eval/runs//case/…" (404) and get wiped on the next stream tick,
+  // so those controls are read-only until the run is saved and has an id.
+  const live = !run.id;
   const [results, setResults] = useState<CaseResult[]>(run.results);
   const [failedOnly, setFailedOnly] = useState(false);
   const [q, setQ] = useState("");
@@ -18,7 +22,7 @@ export default function ResultView({ run }: { run: RunResult }) {
     return results
       .map((c, idx) => ({ c, n: idx + 1, idx }))
       .filter(({ c }) => {
-        const failed = !c.verdict.pass || !!c.error;
+        const failed = !c.pending && (!c.verdict.pass || !!c.error);
         if (failedOnly && !failed) return false;
         if (
           needle &&
@@ -136,45 +140,54 @@ export default function ResultView({ run }: { run: RunResult }) {
         </thead>
         <tbody>
           {rows.map(({ c, n, idx }) => {
-            const failed = !c.verdict.pass || !!c.error;
+            const pending = !!c.pending;
+            const failed = !pending && (!c.verdict.pass || !!c.error);
             return (
-              <tr key={idx}>
+              <tr key={idx} className={pending ? "pf-pending" : ""}>
                 <td className="pf-num">{n}</td>
                 <td className="pf-desc">{c.description ?? c.input}</td>
                 <td className="pf-msg">{c.input}</td>
                 <td className="pf-out">
+                  {pending ? (
+                    <span className="pf-badge pending">⏳ running…</span>
+                  ) : (
+                    <>
                   <div className="pf-out-head">
                     <span className={"pf-badge " + (failed ? "fail" : "pass")}>
                       {failed ? `1 FAIL (${(c.verdict.score / 10).toFixed(2)})` : "1 PASS"}
                     </span>
                     <span className="pf-icons">
-                      <button
-                        className={"icn" + (c.rating === "up" ? " on-up" : "")}
-                        title="Good"
-                        onClick={() => patchCase(idx, { rating: c.rating === "up" ? null : "up" })}
-                      >
-                        👍
-                      </button>
-                      <button
-                        className={"icn" + (c.rating === "down" ? " on-down" : "")}
-                        title="Bad"
-                        onClick={() => patchCase(idx, { rating: c.rating === "down" ? null : "down" })}
-                      >
-                        👎
-                      </button>
-                      <button
-                        className={"icn" + (c.comment ? " on" : "")}
-                        title="Comment"
-                        onClick={() => {
-                          setDraft(c.comment || "");
-                          setEditingIdx((e) => (e === idx ? null : idx));
-                        }}
-                      >
-                        💬
-                      </button>
-                      <button className="icn" title="Copy link" onClick={() => copyLink(idx)}>
-                        {copied === idx ? "✓" : "🔗"}
-                      </button>
+                      {!live && (
+                        <>
+                          <button
+                            className={"icn" + (c.rating === "up" ? " on-up" : "")}
+                            title="Good"
+                            onClick={() => patchCase(idx, { rating: c.rating === "up" ? null : "up" })}
+                          >
+                            👍
+                          </button>
+                          <button
+                            className={"icn" + (c.rating === "down" ? " on-down" : "")}
+                            title="Bad"
+                            onClick={() => patchCase(idx, { rating: c.rating === "down" ? null : "down" })}
+                          >
+                            👎
+                          </button>
+                          <button
+                            className={"icn" + (c.comment ? " on" : "")}
+                            title="Comment"
+                            onClick={() => {
+                              setDraft(c.comment || "");
+                              setEditingIdx((e) => (e === idx ? null : idx));
+                            }}
+                          >
+                            💬
+                          </button>
+                          <button className="icn" title="Copy link" onClick={() => copyLink(idx)}>
+                            {copied === idx ? "✓" : "🔗"}
+                          </button>
+                        </>
+                      )}
                       <button className="icn" title="Details" onClick={() => setDetail({ c, n })}>
                         🔍
                       </button>
@@ -215,6 +228,8 @@ export default function ResultView({ run }: { run: RunResult }) {
                   )}
                   {typeof c.latencyMs === "number" && (
                     <div className="pf-latency">Latency: {(c.latencyMs / 1000).toFixed(1)}s</div>
+                  )}
+                    </>
                   )}
                 </td>
               </tr>

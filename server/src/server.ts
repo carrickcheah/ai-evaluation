@@ -28,6 +28,27 @@ app.get("/api/projects", (c) => {
   return c.json({ projects });
 });
 
+// Project detail (dataset only — no target/secrets) so the UI can pre-lay-out
+// rows and fill them in live as the run streams.
+app.get("/api/projects/:name", (c) => {
+  try {
+    const p = loadProject(c.req.param("name"));
+    return c.json({
+      name: p.name,
+      displayName: p.name,
+      judge: p.judge.model,
+      dataset: p.dataset.map((d) => ({
+        input: d.input,
+        expected: d.expected,
+        tags: d.tags ?? [],
+        description: d.description ?? null,
+      })),
+    });
+  } catch (e) {
+    return c.json({ error: e instanceof Error ? e.message : String(e) }, 404);
+  }
+});
+
 app.get("/api/eval/runs", (c) => c.json({ runs: listRuns() }));
 
 app.get("/api/eval/runs/:id", (c) => {
@@ -65,6 +86,10 @@ app.post("/api/eval/run", async (c) => {
   if (body.limit && body.limit > 0) project = { ...project, dataset: project.dataset.slice(0, body.limit) };
 
   return streamSSE(c, async (stream) => {
+    // Client disconnect (tab closed / Cancel) → abort the server-side eval too, so
+    // we stop spending subscription/bot calls on a run nobody is reading.
+    const controller = new AbortController();
+    stream.onAbort(() => controller.abort());
     // Heartbeat so the socket never idles between slow cases (bot call + grade can
     // exceed the server idleTimeout). The UI ignores non progress/done/error events.
     const hb = setInterval(() => {
@@ -72,16 +97,28 @@ app.post("/api/eval/run", async (c) => {
     }, 5_000);
     try {
       await stream.writeSSE({ event: "start", data: JSON.stringify({ total: project.dataset.length }) });
-      const run = await runEval(project, async (done, total, last) => {
-        await stream.writeSSE({ event: "progress", data: JSON.stringify({ done, total, last }) });
-      });
-      saveRun(run);
-      await stream.writeSSE({ event: "done", data: JSON.stringify(run) });
+      const run = await runEval(
+        project,
+        async (done, total, last, index) => {
+          await stream.writeSSE({
+            event: "progress",
+            data: JSON.stringify({ done, total, last, index }),
+          });
+        },
+        controller.signal,
+      );
+      // Don't persist or announce a run the client abandoned (it's partial).
+      if (!controller.signal.aborted) {
+        saveRun(run);
+        await stream.writeSSE({ event: "done", data: JSON.stringify(run) });
+      }
     } catch (err) {
-      await stream.writeSSE({
-        event: "error",
-        data: JSON.stringify({ message: err instanceof Error ? err.message : String(err) }),
-      });
+      if (!controller.signal.aborted) {
+        await stream.writeSSE({
+          event: "error",
+          data: JSON.stringify({ message: err instanceof Error ? err.message : String(err) }),
+        });
+      }
     } finally {
       clearInterval(hb);
     }
@@ -96,7 +133,6 @@ app.post("/api/subscription/connect", async (c) => {
     return c.json({ error: e instanceof Error ? e.message : String(e) }, 400);
   }
 });
-app.post("/api/subscription/disconnect", async (c) => c.json(await sub.disconnect()));
 
 const port = Number(process.env.PORT) || 8787;
 console.log(`ai-evaluation server → http://localhost:${port}`);

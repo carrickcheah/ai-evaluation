@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getSubscription, connectSubscription, disconnectSubscription } from "../api";
+import { getSubscription, connectSubscription } from "../api";
 import type { SubscriptionStatus } from "../types";
 
 export default function SubscriptionPage() {
@@ -57,23 +57,28 @@ export default function SubscriptionPage() {
             {status?.subscriptionEnabled ? (
               <span className="pill pass">● Connected</span>
             ) : (
-              <span className="muted">not connected</span>
+              <span className="muted">not available</span>
             )}
           </span>
         </div>
+        {status?.subscriptionEnabled && (
+          <div className="row">
+            <label></label>
+            <span className="muted" style={{ maxWidth: 520 }}>
+              Grading runs on your local <code>claude</code> CLI — no toggle needed, no API tokens.
+              {status.connectedAt
+                ? ` Last verified ${new Date(status.connectedAt).toLocaleString()}.`
+                : ""}
+            </span>
+          </div>
+        )}
         <div className="row">
-          {status?.subscriptionEnabled ? (
-            <button className="secondary" disabled={busy} onClick={() => act(disconnectSubscription)}>
-              Disconnect
-            </button>
-          ) : (
-            <button
-              disabled={busy || !status?.claudeCli.detected}
-              onClick={() => act(connectSubscription)}
-            >
-              {busy ? "Verifying…" : "Use Claude subscription"}
-            </button>
-          )}
+          <button
+            disabled={busy || !status?.claudeCli.detected}
+            onClick={() => act(connectSubscription)}
+          >
+            {busy ? "Verifying…" : "Verify connection"}
+          </button>
         </div>
       </div>
     </div>
