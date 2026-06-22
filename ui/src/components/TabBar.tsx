@@ -2,6 +2,9 @@
 export interface EvalTab {
   id: string;
   project?: string;
+  mode?: "bot" | "prompt";
+  systemPrompt?: string;
+  answerModel?: string;
 }
 
 export default function TabBar({

@@ -62,7 +62,14 @@ export interface RunHandlers {
 
 /** POST /api/eval/run and parse the SSE stream over fetch (EventSource can't POST). */
 export async function runEvalStream(
-  body: { project: string; judgeModel?: string; limit?: number },
+  body: {
+    project: string;
+    judgeModel?: string;
+    limit?: number;
+    mode?: "bot" | "prompt";
+    systemPrompt?: string;
+    answerModel?: string;
+  },
   h: RunHandlers,
   signal?: AbortSignal,
 ): Promise<void> {

@@ -5,6 +5,7 @@ import { cors } from "hono/cors";
 import { streamSSE } from "hono/streaming";
 import { listProjects, loadProject } from "./config";
 import { runEval } from "./run-eval";
+import { askPrompt } from "./prompt-runner";
 import { saveRun, listRuns, getRun, updateCase, migrateJsonRuns } from "./history";
 import * as sub from "./subscription";
 import type { ProjectConfig } from "./types";
@@ -73,8 +74,16 @@ app.post("/api/eval/run", async (c) => {
     project?: string;
     judgeModel?: string;
     limit?: number;
+    mode?: "bot" | "prompt";
+    systemPrompt?: string;
+    answerModel?: string;
   };
   if (!body.project) return c.json({ error: "project is required" }, 400);
+  // Prompt mode tests a system prompt you wrote (on the subscription) instead of
+  // the live bot — so it needs a non-empty system prompt.
+  if (body.mode === "prompt" && !body.systemPrompt?.trim()) {
+    return c.json({ error: "systemPrompt is required in prompt mode" }, 400);
+  }
 
   let project: ProjectConfig;
   try {
@@ -97,6 +106,13 @@ app.post("/api/eval/run", async (c) => {
     }, 5_000);
     try {
       await stream.writeSSE({ event: "start", data: JSON.stringify({ total: project.dataset.length }) });
+      // Prompt mode → answer each case from the system prompt on the subscription
+      // ($0); otherwise answerFn stays undefined and runEval calls the live bot.
+      const answerFn =
+        body.mode === "prompt"
+          ? (input: string) =>
+              askPrompt(body.systemPrompt!, input, body.answerModel || "haiku", 120_000, controller.signal)
+          : undefined;
       const run = await runEval(
         project,
         async (done, total, last, index) => {
@@ -106,6 +122,7 @@ app.post("/api/eval/run", async (c) => {
           });
         },
         controller.signal,
+        answerFn,
       );
       // Don't persist or announce a run the client abandoned (it's partial).
       if (!controller.signal.aborted) {

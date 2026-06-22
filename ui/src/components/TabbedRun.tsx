@@ -70,8 +70,8 @@ export default function TabbedRun() {
     }
   }
 
-  function setTabProject(id: string, project: string) {
-    setTabs((ts) => ts.map((t) => (t.id === id ? { ...t, project } : t)));
+  function patchTab(id: string, patch: Partial<EvalTab>) {
+    setTabs((ts) => ts.map((t) => (t.id === id ? { ...t, ...patch } : t)));
   }
 
   return (
@@ -87,7 +87,7 @@ export default function TabbedRun() {
       <div className="tab-panes">
         {tabs.map((t) => (
           <div key={t.id} style={{ display: t.id === activeId ? "block" : "none" }}>
-            <RunPage initialProject={t.project} onProjectChange={(p) => setTabProject(t.id, p)} />
+            <RunPage initial={t} onChange={(patch) => patchTab(t.id, patch)} />
           </div>
         ))}
       </div>

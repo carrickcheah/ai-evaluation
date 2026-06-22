@@ -19,6 +19,9 @@ export async function runEval(
   project: ProjectConfig,
   onProgress?: ProgressFn,
   signal?: AbortSignal,
+  // How to get the bot's answer for a question. Default = call the HTTP target
+  // (Live-bot mode); Prompt mode passes a subscription-CLI answerer instead.
+  answerFn?: (input: string) => Promise<string>,
 ): Promise<RunResult> {
   const { dataset, target, judge, rubric } = project;
   const total = dataset.length;
@@ -43,7 +46,9 @@ export async function runEval(
       const t0 = Date.now();
       let result: CaseResult;
       try {
-        const answer = await askBot(target, tc.input, runSalt, 120_000, signal);
+        const answer = answerFn
+          ? await answerFn(tc.input)
+          : await askBot(target, tc.input, runSalt, 120_000, signal);
         const verdict = await gradeAnswer(rubric, tc.input, tc.expected, answer, judge.model);
         result = {
           input: tc.input,
