@@ -125,7 +125,9 @@ export default function ResultView({ run }: { run: RunResult }) {
                       {c.error ? `ERROR: ${c.error}` : c.verdict.reason}
                     </div>
                   )}
-                  <div className="pf-answer">{c.answer || "(no answer)"}</div>
+                  <div className={"pf-answer" + (failed ? "" : " pass")}>
+                    {c.answer || "(no answer)"}
+                  </div>
                   {typeof c.latencyMs === "number" && (
                     <div className="pf-latency">Latency: {(c.latencyMs / 1000).toFixed(1)}s</div>
                   )}

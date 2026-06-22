@@ -155,4 +155,5 @@ tr.clickable:hover { background: var(--panel-2); cursor: pointer; }
 .pf-icons { color: var(--muted); font-size: 12px; letter-spacing: 3px; opacity: 0.55; white-space: nowrap; user-select: none; }
 .pf-reason { color: var(--fail); font-weight: 600; margin-bottom: 8px; line-height: 1.5; }
 .pf-answer { line-height: 1.55; white-space: pre-wrap; }
+.pf-answer.pass { color: var(--desc-text); }
 .pf-latency { color: var(--muted); font-size: 12px; margin-top: 10px; font-weight: 600; }
