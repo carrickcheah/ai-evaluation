@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import TabbedRun from "./components/TabbedRun";
 import HistoryPage, { HistoryDetail } from "./pages/HistoryPage";
+import ComparePage from "./pages/ComparePage";
 import SubscriptionPage from "./pages/SubscriptionPage";
 
 type Theme = "dark" | "light";
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="/" element={<TabbedRun />} />
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/history/:id" element={<HistoryDetail />} />
+            <Route path="/compare" element={<ComparePage />} />
             <Route path="/subscription" element={<SubscriptionPage />} />
           </Routes>
         </main>

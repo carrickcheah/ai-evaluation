@@ -116,6 +116,15 @@ button.secondary { background: var(--panel-2); color: var(--text); border: 1px s
 .muted { color: var(--muted); }
 .err { color: var(--fail); }
 
+/* Compare runs (borrowed from the Workbench side-by-side eval) */
+.cmp-summary { display: flex; align-items: center; gap: 12px; margin: 18px 0 8px; flex-wrap: wrap; }
+.cmp-arrow { color: var(--muted); }
+.cmp-up { color: #3fb950; font-weight: 600; }
+.cmp-down { color: var(--fail); font-weight: 600; }
+.cmp td { vertical-align: middle; }
+.cmp-row-up { background: rgba(63, 185, 80, 0.08); }
+.cmp-row-down { background: rgba(248, 81, 73, 0.10); }
+
 /* Tabs (browser-style eval workspaces) */
 .tabbar { display: flex; align-items: center; gap: 4px; padding: 6px 0 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
 .tab {

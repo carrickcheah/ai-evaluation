@@ -25,6 +25,9 @@ export default function Sidebar() {
         <NavLink to="/history" className={linkClass}>
           📊 History
         </NavLink>
+        <NavLink to="/compare" className={linkClass}>
+          ⚖️ Compare
+        </NavLink>
         <NavLink to="/subscription" className={linkClass}>
           🔌 Subscription
         </NavLink>
