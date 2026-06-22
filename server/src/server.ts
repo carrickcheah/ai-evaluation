@@ -5,9 +5,11 @@ import { cors } from "hono/cors";
 import { streamSSE } from "hono/streaming";
 import { listProjects, loadProject } from "./config";
 import { runEval } from "./run-eval";
-import { saveRun, listRuns, getRun, updateCase } from "./history";
+import { saveRun, listRuns, getRun, updateCase, migrateJsonRuns } from "./history";
 import * as sub from "./subscription";
 import type { ProjectConfig } from "./types";
+
+migrateJsonRuns(); // one-time: import any legacy data/runs/*.json into SQLite
 
 const app = new Hono();
 app.use("/api/*", cors());

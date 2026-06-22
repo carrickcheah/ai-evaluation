@@ -1,35 +1,80 @@
-/** Run history persisted as JSON files under data/runs/. */
-import { mkdirSync, readdirSync, readFileSync, existsSync, writeFileSync } from "node:fs";
+/** Run history in SQLite (data/eval.db). Same API as before. */
+import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
+import { db } from "./db";
 import type { RunResult, CaseResult } from "./types";
-
-const RUNS_DIR = process.env.RUNS_DIR || resolve(import.meta.dir, "../data/runs");
 
 /** Summary of a run without the (potentially large) per-case results. */
 export type RunSummary = Omit<RunResult, "results">;
 
+const insertStmt = db.query(
+  `INSERT OR REPLACE INTO runs
+     (id, project, judge_model, started_at, finished_at, total, passed, failed, errored, score, results_json)
+   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+);
+
 export function saveRun(run: RunResult): void {
-  mkdirSync(RUNS_DIR, { recursive: true });
-  const safe = run.id.replace(/[^A-Za-z0-9._-]/g, "");
-  writeFileSync(join(RUNS_DIR, `${safe}.json`), JSON.stringify(run, null, 2));
+  insertStmt.run(
+    run.id,
+    run.project,
+    run.judgeModel,
+    run.startedAt,
+    run.finishedAt,
+    run.total,
+    run.passed,
+    run.failed,
+    run.errored,
+    run.score,
+    JSON.stringify(run.results),
+  );
 }
 
-/** All run summaries, newest first. Corrupt files are skipped, not fatal. */
+/** All run summaries, newest first. */
 export function listRuns(): RunSummary[] {
-  if (!existsSync(RUNS_DIR)) return [];
-  const summaries: RunSummary[] = [];
-  for (const f of readdirSync(RUNS_DIR)) {
-    if (!f.endsWith(".json")) continue;
-    try {
-      const r = JSON.parse(readFileSync(join(RUNS_DIR, f), "utf8")) as RunResult;
-      const { results: _omit, ...summary } = r;
-      summaries.push(summary);
-    } catch {
-      /* skip corrupt run file */
-    }
+  return db
+    .query(
+      `SELECT id, project, judge_model AS judgeModel, started_at AS startedAt,
+              finished_at AS finishedAt, total, passed, failed, errored, score
+         FROM runs ORDER BY started_at DESC`,
+    )
+    .all() as RunSummary[];
+}
+
+interface RunRow {
+  id: string;
+  project: string;
+  judge_model: string;
+  started_at: string;
+  finished_at: string;
+  total: number;
+  passed: number;
+  failed: number;
+  errored: number;
+  score: number;
+  results_json: string;
+}
+
+/** Full run by id, or null if missing/corrupt. */
+export function getRun(id: string): RunResult | null {
+  const row = db.query(`SELECT * FROM runs WHERE id = ?`).get(id) as RunRow | undefined;
+  if (!row) return null;
+  try {
+    return {
+      id: row.id,
+      project: row.project,
+      judgeModel: row.judge_model,
+      startedAt: row.started_at,
+      finishedAt: row.finished_at,
+      total: row.total,
+      passed: row.passed,
+      failed: row.failed,
+      errored: row.errored,
+      score: row.score,
+      results: JSON.parse(row.results_json) as CaseResult[],
+    };
+  } catch {
+    return null;
   }
-  summaries.sort((a, b) => b.startedAt.localeCompare(a.startedAt));
-  return summaries;
 }
 
 /** Persist a human review rating/comment onto one case of a saved run. */
@@ -43,18 +88,26 @@ export function updateCase(
   const c = run.results[index]!;
   if ("rating" in patch) c.rating = patch.rating ?? null;
   if (typeof patch.comment === "string") c.comment = patch.comment;
-  saveRun(run);
+  db.query(`UPDATE runs SET results_json = ? WHERE id = ?`).run(JSON.stringify(run.results), runId);
   return c;
 }
 
-/** Full run by id, or null if missing/corrupt. */
-export function getRun(id: string): RunResult | null {
-  const safe = id.replace(/[^A-Za-z0-9._-]/g, "");
-  const p = join(RUNS_DIR, `${safe}.json`);
-  if (!existsSync(p)) return null;
-  try {
-    return JSON.parse(readFileSync(p, "utf8")) as RunResult;
-  } catch {
-    return null;
+/** One-time import of any legacy data/runs/*.json files into SQLite. */
+export function migrateJsonRuns(): void {
+  const dir = process.env.RUNS_DIR || resolve(import.meta.dir, "../data/runs");
+  if (!existsSync(dir)) return;
+  let imported = 0;
+  for (const f of readdirSync(dir)) {
+    if (!f.endsWith(".json")) continue;
+    try {
+      const run = JSON.parse(readFileSync(join(dir, f), "utf8")) as RunResult;
+      if (!run?.id) continue;
+      if (db.query(`SELECT 1 FROM runs WHERE id = ?`).get(run.id)) continue;
+      saveRun(run);
+      imported++;
+    } catch {
+      /* skip corrupt file */
+    }
   }
+  if (imported > 0) console.log(`[db] imported ${imported} legacy JSON run(s) into SQLite`);
 }

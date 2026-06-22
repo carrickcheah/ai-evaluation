@@ -1,10 +1,7 @@
 /** Claude-subscription status for the grader. Mirrors the ai-contact-bun
  * "Connect Subscription" pattern: detect the local `claude` CLI, then verify it
  * can actually answer (i.e. logged into a subscription). No API key is used. */
-import { join, resolve } from "node:path";
-
-const DATA_DIR = process.env.DATA_DIR || resolve(import.meta.dir, "../data");
-const PREF_PATH = join(DATA_DIR, "subscription.json");
+import { db } from "./db";
 
 export interface CliInfo {
   detected: boolean;
@@ -66,18 +63,22 @@ interface Pref {
   enabled: boolean;
   connectedAt: string | null;
 }
-async function readPref(): Promise<Pref> {
+function readPref(): Pref {
+  const row = db.query(`SELECT value FROM settings WHERE key = 'subscription'`).get() as
+    | { value: string }
+    | undefined;
+  if (!row) return { enabled: false, connectedAt: null };
   try {
-    const f = Bun.file(PREF_PATH);
-    if (!(await f.exists())) return { enabled: false, connectedAt: null };
-    const j = (await f.json()) as Partial<Pref>;
+    const j = JSON.parse(row.value) as Partial<Pref>;
     return { enabled: Boolean(j.enabled), connectedAt: j.connectedAt ?? null };
   } catch {
     return { enabled: false, connectedAt: null };
   }
 }
-async function writePref(p: Pref): Promise<void> {
-  await Bun.write(PREF_PATH, JSON.stringify(p, null, 2));
+function writePref(p: Pref): void {
+  db.query(`INSERT OR REPLACE INTO settings (key, value) VALUES ('subscription', ?)`).run(
+    JSON.stringify(p),
+  );
 }
 
 export interface SubscriptionStatus {
@@ -89,7 +90,7 @@ export interface SubscriptionStatus {
 }
 
 export async function getStatus(): Promise<SubscriptionStatus> {
-  const pref = await readPref();
+  const pref = readPref();
   const cli = detectClaudeCli();
   return {
     mode: pref.enabled ? "subscription" : "not-connected",
@@ -110,12 +111,12 @@ export async function connect(): Promise<SubscriptionStatus> {
   if (!works) {
     throw new Error("`claude` CLI found but did not respond — run `claude` once to log into your subscription.");
   }
-  await writePref({ enabled: true, connectedAt: new Date().toISOString() });
+  writePref({ enabled: true, connectedAt: new Date().toISOString() });
   return getStatus();
 }
 
 export async function disconnect(): Promise<SubscriptionStatus> {
-  const prev = await readPref();
-  await writePref({ enabled: false, connectedAt: prev.connectedAt });
+  const prev = readPref();
+  writePref({ enabled: false, connectedAt: prev.connectedAt });
   return getStatus();
 }
