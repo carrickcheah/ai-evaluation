@@ -9,6 +9,7 @@ export default function ResultView({ run }: { run: RunResult }) {
   const live = !run.id;
   const [results, setResults] = useState<CaseResult[]>(run.results);
   const [failedOnly, setFailedOnly] = useState(false);
+  const [showExpected, setShowExpected] = useState(false);
   const [q, setQ] = useState("");
   const [copied, setCopied] = useState<number | null>(null);
   const [detail, setDetail] = useState<{ c: CaseResult; n: number } | null>(null);
@@ -102,7 +103,14 @@ export default function ResultView({ run }: { run: RunResult }) {
         <span className="muted">
           {rows.length} / {run.total}
         </span>
-        <button className="secondary" style={{ marginLeft: "auto" }} onClick={exportCsv}>
+        <button
+          className={"secondary" + (showExpected ? " on" : "")}
+          style={{ marginLeft: "auto" }}
+          onClick={() => setShowExpected((s) => !s)}
+        >
+          {showExpected ? "Hide ideal" : "🎯 Show ideal"}
+        </button>
+        <button className="secondary" onClick={exportCsv}>
           ⬇ Export CSV
         </button>
       </div>
@@ -201,6 +209,11 @@ export default function ResultView({ run }: { run: RunResult }) {
                   <div className={"pf-answer" + (failed ? "" : " pass")}>
                     {c.answer || "(no answer)"}
                   </div>
+                  {showExpected && (
+                    <div className="pf-expected">
+                      <b>Ideal</b> {c.expected || "—"}
+                    </div>
+                  )}
                   {c.comment && <div className="pf-comment">💬 {c.comment}</div>}
                   {editingIdx === idx && (
                     <div className="pf-comment-edit">
