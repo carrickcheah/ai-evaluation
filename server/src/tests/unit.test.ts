@@ -2,9 +2,26 @@ import { describe, it, expect } from "bun:test";
 import { uidFor, substitute, getByPath } from "../bot-runner";
 import { extractJson } from "../grader";
 import { loadProject, listProjects } from "../config";
+import { parseCsv } from "../csv";
 
 // config resolves ${BOT_KEY}; ensure it's present for the project-loading tests
 process.env.BOT_KEY ??= "eval";
+
+describe("parseCsv", () => {
+  it("parses headers + rows, lower-cases headers, trims", () => {
+    const rows = parseCsv("Input,Expected\nBerapa harga 5D scan?,RM75-RM148.40\n");
+    expect(rows).toEqual([{ input: "Berapa harga 5D scan?", expected: "RM75-RM148.40" }]);
+  });
+  it("handles quoted fields with commas and escaped quotes", () => {
+    const rows = parseCsv('input,expected\n"a, b","he said ""hi"""\n');
+    expect(rows[0]!.input).toBe("a, b");
+    expect(rows[0]!.expected).toBe('he said "hi"');
+  });
+  it("skips blank lines and tolerates no trailing newline", () => {
+    expect(parseCsv("input,expected\nq,a\n\n").length).toBe(1);
+    expect(parseCsv("input,expected\nq,a").length).toBe(1);
+  });
+});
 
 describe("uidFor", () => {
   it("is deterministic and prefixed", () => {

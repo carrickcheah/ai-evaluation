@@ -1,6 +1,6 @@
 /** Load and validate project configs (eval.config.yaml + dataset.json). */
 import { parse as parseYaml } from "yaml";
-import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join, resolve, isAbsolute } from "node:path";
 import type { ProjectConfig, TestCase, TargetConfig, JudgeConfig } from "./types";
 
@@ -148,4 +148,38 @@ export function loadProject(name: string): ProjectConfig {
     datasetPath,
     dataset,
   };
+}
+
+/** Append cases to a project's dataset.json, skipping blanks and inputs that
+ * already exist (the no-duplicate-inputs invariant the loader enforces).
+ * Returns how many were added/skipped and the new total. */
+export function appendCases(
+  name: string,
+  cases: Array<{ input?: string; expected?: string; tags?: string[]; description?: string }>,
+): { added: number; skipped: number; total: number } {
+  const project = loadProject(name); // validates the existing dataset + gives datasetPath
+  const seen = new Set(project.dataset.map((c) => c.input));
+  const merged: TestCase[] = [...project.dataset];
+  let added = 0;
+  let skipped = 0;
+
+  for (const c of cases) {
+    const input = (c.input ?? "").trim();
+    const expected = (c.expected ?? "").trim();
+    if (!input || !expected || seen.has(input)) {
+      skipped++;
+      continue;
+    }
+    seen.add(input);
+    const row: TestCase = { input, expected };
+    if (c.tags && c.tags.length) row.tags = c.tags;
+    if (c.description) row.description = c.description;
+    merged.push(row);
+    added++;
+  }
+
+  if (added > 0) {
+    writeFileSync(project.datasetPath, JSON.stringify(merged, null, 2) + "\n", "utf8");
+  }
+  return { added, skipped, total: merged.length };
 }

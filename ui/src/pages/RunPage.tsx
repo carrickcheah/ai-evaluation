@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { getProjects, getProjectDataset, runEvalStream } from "../api";
+import { getProjects, getProjectDataset, importCases, runEvalStream } from "../api";
 import type { ProjectInfo, RunResult, CaseResult } from "../types";
 import ResultView from "../components/ResultView";
 
@@ -63,7 +63,9 @@ export default function RunPage({
   const [live, setLive] = useState<CaseResult[] | null>(null);
   const [run, setRun] = useState<RunResult | null>(null);
   const [error, setError] = useState("");
+  const [notice, setNotice] = useState("");
   const abortRef = useRef<AbortController | null>(null);
+  const fileRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     getProjects()
@@ -103,6 +105,24 @@ export default function RunPage({
   function pickAnswerModel(m: string) {
     setAnswerModel(m);
     onChange?.({ answerModel: m });
+  }
+
+  async function onImportFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    e.target.value = ""; // allow re-importing the same file
+    if (!file || !selected) return;
+    setNotice("Importing…");
+    try {
+      const r = await importCases(selected, await file.text());
+      setNotice(
+        r.added > 0
+          ? `Imported ${r.added} case${r.added === 1 ? "" : "s"}${r.skipped ? `, skipped ${r.skipped} (blank/duplicate)` : ""}. Dataset now ${r.total}.`
+          : r.warning || "No new cases added.",
+      );
+      setProjects(await getProjects()); // refresh case counts
+    } catch (err) {
+      setNotice("Import failed: " + (err instanceof Error ? err.message : String(err)));
+    }
   }
 
   async function start() {
@@ -206,7 +226,28 @@ export default function RunPage({
               </option>
             ))}
           </select>
+          <button
+            className="secondary"
+            disabled={running || !selected}
+            title="Import test cases from CSV (columns: input, expected, tags, description)"
+            onClick={() => fileRef.current?.click()}
+          >
+            ⬆ Import CSV
+          </button>
+          <input
+            ref={fileRef}
+            type="file"
+            accept=".csv,text/csv"
+            style={{ display: "none" }}
+            onChange={onImportFile}
+          />
         </div>
+        {notice && (
+          <div className="row">
+            <label></label>
+            <span className="muted">{notice}</span>
+          </div>
+        )}
 
         {mode === "prompt" && (
           <>
