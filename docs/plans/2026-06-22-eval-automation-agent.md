@@ -143,3 +143,23 @@ L3 auto-apply was chosen, so these are required, not optional:
 4. **Full audit + one-click revert** — every change logged (what / why / before→after score) and individually revertible.
 5. **Shadow mode first** — the agent runs **propose-only** for an initial period; true auto-apply is enabled deliberately once trust is established.
 6. **Kill switch** — a single toggle disables all auto-apply instantly.
+
+---
+
+## 11. Supported upload formats (P1 — generate test cases from docs)
+
+The agent accepts these document types; each is extracted to text/structured text, then fed to `generate_dataset`:
+
+| Format | Extraction | Dep |
+|---|---|---|
+| `.txt` / `.md` | read as text | — |
+| `.csv` | parse rows → text (or pass raw) | — (native) |
+| `.json` | parse → pretty text | — (native) |
+| `.yaml` / `.yml` | parse → text | `yaml` (already a dep) |
+| `.pdf` | the `claude` CLI / Agent SDK **reads PDFs natively** (pass the file); fallback `pdf-parse` | — |
+| `.docx` (MS Word) | extract text | **`mammoth`** |
+| `.xlsx` (Excel) | sheets → CSV/text | **`xlsx`** (SheetJS) |
+
+**Pipeline:** upload → detect type → extract to text → (chunk if large) → agent's `generate_dataset` prompts Claude to produce Q&A test cases + reference answers from the content → review → save as a project dataset.
+
+> Adds `mammoth` + `xlsx` to `server/package.json` (txt/csv/json/yaml are native; pdf handled by `claude` natively). All generation still runs on the **subscription**.
