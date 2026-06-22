@@ -12,6 +12,7 @@
   --sidebar-bg: #171a21;
   --sidebar-text: #fafaf7;
   --desc-text: #fafaf7;
+  --table-line: #fafaf7;
 }
 :root.light {
   --bg: #ebdbbc;
@@ -27,6 +28,7 @@
   --sidebar-bg: #cc785c;
   --sidebar-text: #fafaf7;
   --desc-text: #4a3f33;
+  --table-line: #d6c39b;
 }
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; margin: 0; }
@@ -134,7 +136,7 @@ tr.clickable:hover { background: var(--panel-2); cursor: pointer; }
 
 /* promptfoo-style results table */
 .pf { border-collapse: collapse; width: 100%; table-layout: fixed; margin-top: 6px; }
-.pf th, .pf td { border: 1px solid var(--border); vertical-align: top; padding: 12px 14px; text-align: left; }
+.pf th, .pf td { border: 1px solid var(--table-line); vertical-align: top; padding: 12px 14px; text-align: left; }
 .pf thead th { background: var(--panel); position: sticky; top: 0; }
 .pf-grp th { font-size: 15px; font-weight: 700; border-bottom: none; }
 .pf-sub th { font-weight: 600; border-top: none; color: var(--text); }
