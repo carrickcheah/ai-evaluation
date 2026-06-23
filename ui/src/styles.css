@@ -236,3 +236,26 @@ tr.pf-pending { opacity: 0.7; }
 /* "Show ideal" — borrowed from the Workbench "Show Ideal Outputs" toggle */
 .pf-expected { margin-top: 8px; padding: 7px 11px; border-left: 3px solid var(--accent); background: var(--panel-2); border-radius: 6px; font-size: 13px; line-height: 1.5; }
 .pf-expected b { color: var(--muted); font-weight: 700; margin-right: 6px; text-transform: uppercase; font-size: 11px; letter-spacing: 0.04em; }
+
+/* Charts (borrowed from promptfoo's results view) — dependency-free CSS bars */
+.charts { display: flex; gap: 14px; flex-wrap: wrap; margin: 4px 0 18px; }
+.chart { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; min-width: 220px; flex: 1; }
+.chart-wide { flex: 2 1 360px; }
+.chart-title { color: var(--muted); font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+.hbar { display: flex; height: 16px; border-radius: 8px; overflow: hidden; background: var(--panel-2); }
+.hbar > span { display: block; }
+.seg-pass { background: #1f7a4d; } .seg-fail { background: #b3433c; } .seg-err { background: var(--muted); }
+.chart-legend { display: flex; gap: 14px; margin-top: 8px; font-size: 12px; color: var(--muted); align-items: center; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; }
+.dot-pass { background: #1f7a4d; } .dot-fail { background: #b3433c; } .dot-err { background: var(--muted); }
+.vbars { display: flex; align-items: flex-end; gap: 4px; height: 70px; }
+.vbar-col { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; height: 100%; }
+.vbar { width: 100%; min-height: 2px; background: var(--accent); border-radius: 3px 3px 0 0; transition: height 0.2s; }
+.vbar-label { font-size: 10px; color: var(--muted); margin-top: 3px; }
+.tagbars { display: flex; flex-direction: column; gap: 6px; }
+.tagbar { display: grid; grid-template-columns: 120px 1fr 90px; align-items: center; gap: 8px; font-size: 12px; }
+.tagbar-name { color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tagbar-track { height: 12px; background: var(--panel-2); border-radius: 6px; overflow: hidden; }
+.tagbar-fill { display: block; height: 100%; border-radius: 6px; }
+.tagbar-fill.ok { background: #1f7a4d; } .tagbar-fill.mid { background: #b8770a; } .tagbar-fill.low { background: #b3433c; }
+.tagbar-val { color: var(--muted); text-align: right; white-space: nowrap; }

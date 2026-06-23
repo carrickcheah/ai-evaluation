@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { CaseResult, RunResult } from "../types";
 import { rateCase } from "../api";
+import ResultCharts from "./ResultCharts";
 
 export default function ResultView({ run }: { run: RunResult }) {
   // A live/partial run has no id yet (RunPage builds it). Rating/commenting/copying
@@ -10,6 +11,7 @@ export default function ResultView({ run }: { run: RunResult }) {
   const [results, setResults] = useState<CaseResult[]>(run.results);
   const [failedOnly, setFailedOnly] = useState(false);
   const [showExpected, setShowExpected] = useState(false);
+  const [showCharts, setShowCharts] = useState(true);
   const [q, setQ] = useState("");
   const [copied, setCopied] = useState<number | null>(null);
   const [detail, setDetail] = useState<{ c: CaseResult; n: number } | null>(null);
@@ -104,6 +106,12 @@ export default function ResultView({ run }: { run: RunResult }) {
           {rows.length} / {run.total}
         </span>
         <button
+          className={"secondary" + (showCharts ? " on" : "")}
+          onClick={() => setShowCharts((s) => !s)}
+        >
+          {showCharts ? "Hide charts" : "📊 Charts"}
+        </button>
+        <button
           className={"secondary" + (showExpected ? " on" : "")}
           style={{ marginLeft: "auto" }}
           onClick={() => setShowExpected((s) => !s)}
@@ -114,6 +122,8 @@ export default function ResultView({ run }: { run: RunResult }) {
           ⬇ Export CSV
         </button>
       </div>
+
+      {showCharts && <ResultCharts results={results} />}
 
       <table className="pf">
         <colgroup>
