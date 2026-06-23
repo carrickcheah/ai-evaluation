@@ -49,10 +49,10 @@ export const getProjects = () =>
   jget<{ projects: ProjectInfo[] }>("/api/projects").then((r) => r.projects);
 export const getProjectDataset = (name: string) =>
   jget<ProjectDetail>(`/api/projects/${encodeURIComponent(name)}`);
-export const importCases = (name: string, csv: string) =>
+export const importCases = (name: string, content: string, format?: "csv" | "promptfoo") =>
   jpost<{ added: number; skipped: number; total: number; warning?: string }>(
     `/api/projects/${encodeURIComponent(name)}/import`,
-    { csv },
+    { content, format },
   );
 export const getRuns = () => jget<{ runs: RunSummary[] }>("/api/eval/runs").then((r) => r.runs);
 export const getRun = (id: string) => jget<RunResult>(`/api/eval/runs/${encodeURIComponent(id)}`);

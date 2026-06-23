@@ -1,0 +1,32 @@
+name: flabee-critical
+
+# CRITICAL accuracy eval (exact prices + medical week numbers) for the Flabee/
+# Sonobee bot, account 14. Dataset imported from the promptfoo file
+# ai-contact-bun/evals/bot/flabee-critical.yaml — references extracted from each
+# test's llm-rubric. Use the strict rubric below (every number must match exactly).
+target:
+  url: https://api.nexgpt.nexerp.io/api/chat/sync
+  method: POST
+  headers:
+    X-API-Key: "${BOT_KEY}"
+  body:
+    message: "{{input}}"
+    phone_number: "{{uid}}"
+    source: api
+    account_id: 14
+    session_id: "{{uid}}"
+  answerPath: output
+
+judge:
+  provider: claude-subscription
+  model: sonnet
+
+rubric: |
+  You grade a customer-service bot's answer against the correct reference answer.
+  PASS only if the reply is in the SAME language as the reference (Malay / English /
+  Manglish) AND is factually consistent with the reference.
+  CRITICAL: every price (RM amount) and every gestational week number in the reply must
+  EXACTLY match the reference — if the reply changes, rounds, omits a required figure, or
+  invents a number, mark FAIL. The reply should not use markdown bold (**).
+
+dataset: ./dataset.json

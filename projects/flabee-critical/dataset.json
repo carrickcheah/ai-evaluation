@@ -1,0 +1,605 @@
+[
+  {
+    "input": "Adakah 5D Scan termasuk detail scan/anatomy screening?",
+    "expected": "Tidak. 5D Scan tidak termasuk detail scan. Untuk detail scan bersama 5D, pilih pakej Anatomy Screening + 5D bagi kandungan 18–29 minggu: RM135.80 pada hari biasa dan RM155.80 pada hujung minggu.",
+    "tags": [
+      "price",
+      "5D anatomy"
+    ],
+    "description": "price · 5D anatomy · Adakah 5D Scan termasuk detail scan/anat"
+  },
+  {
+    "input": "Outlet KL/Selangor mana ada 5D scan dengan color printing?",
+    "expected": "Untuk 5D Scan KL/Selangor, outlet tanpa color printing: Ampang, Kota Damansara, Puncak Alam, Bukit Sentosa, Klang, Bangi. Outlet dengan color printing: Kajang, Cyberjaya, Cheras, Gombak, Petaling Jaya, Selayang, Rawang, Shah Alam, Balakong HQ, Puchong Utama, Taman Melawati, Subang Bestari. Caj color printing berbeza ikut outlet, sekitar RM5–15 sekeping.",
+    "tags": [
+      "price",
+      "5D outlets"
+    ],
+    "description": "price · 5D outlets · Outlet KL/Selangor mana ada 5D scan deng"
+  },
+  {
+    "input": "Berapa harga 5D scan di Johor?",
+    "expected": "Untuk cawangan Johor, promo 5D Scan bagi 12–40 minggu ialah RM107.80 pada hari biasa dan RM117.80 pada hujung minggu. Harga termasuk booking fee dan SST 8%. Sabtu dan Ahad dikira harga hujung minggu. Promo dinyatakan sehingga 17 Jun 2026.",
+    "tags": [
+      "price",
+      "5D pricing"
+    ],
+    "description": "price · 5D pricing · Berapa harga 5D scan di Johor?"
+  },
+  {
+    "input": "Berapa harga ultrasound scan abdomen?",
+    "expected": "Harga ultrasound abdomen: Upper Abdomen RM165.80 (weekday), RM185.80 (weekend); Lower Abdomen (men) RM145.80 (weekday), RM165.80 (weekend); Lower Abdomen (women) RM145.80 (weekday), RM165.80 (weekend); Upper + Lower Abdomen RM260.80 (weekday), RM310.80 (weekend). Semua harga termasuk booking fee + SST 8%.",
+    "tags": [
+      "price",
+      "Abdomen scan prices"
+    ],
+    "description": "price · Abdomen scan prices · Berapa harga ultrasound scan abdomen?"
+  },
+  {
+    "input": "Apakah harga Anatomy Screening untuk kandungan 18 hingga 29 minggu?",
+    "expected": "Untuk 18–29 minggu: Anatomy Screening RM100.80 pada hari biasa dan RM120.80 pada hujung minggu. Anatomy Screening +5D RM135.80 pada hari biasa dan RM155.80 pada hujung minggu.",
+    "tags": [
+      "price",
+      "Anatomy Screening"
+    ],
+    "description": "price · Anatomy Screening · Apakah harga Anatomy Screening untuk kan"
+  },
+  {
+    "input": "How much does a DVT scan cost?",
+    "expected": "A DVT scan costs RM160–RM180, plus a RM10.80 booking fee. The price is for both legs.",
+    "tags": [
+      "price",
+      "DVT pricing"
+    ],
+    "description": "price · DVT pricing · How much does a DVT scan cost?"
+  },
+  {
+    "input": "Kalau nak scan alat IUD, perlu pilih pakej apa?",
+    "expected": "Untuk scan alat IUD, boleh ambil pakej Lower Abdomen for Women. Harga Lower Abdomen for Women ialah RM145.80 pada hari bekerja dan RM165.80 pada hujung minggu. Semua harga termasuk booking fee + SST 8%.",
+    "tags": [
+      "price",
+      "IUD scan"
+    ],
+    "description": "price · IUD scan · Kalau nak scan alat IUD, perlu pilih pak"
+  },
+  {
+    "input": "How much is a KUB scan?",
+    "expected": "KUB Scan costs RM165.80 on weekdays and RM185.80 on weekends. Prices include booking fee and SST 8%.",
+    "tags": [
+      "price",
+      "KUB pricing"
+    ],
+    "description": "price · KUB pricing · How much is a KUB scan?"
+  },
+  {
+    "input": "Berapa harga NT Scan?",
+    "expected": "Untuk kandungan 11–13 minggu, NT Scan berharga RM95.80 pada hari biasa dan RM105.80 pada hujung minggu (Sabtu/Ahad). Harga termasuk booking fee dan SST 8%. Promo dinyatakan sehingga 17 Jun 2026.",
+    "tags": [
+      "price",
+      "NT scan price"
+    ],
+    "description": "price · NT scan price · Berapa harga NT Scan?"
+  },
+  {
+    "input": "Are there add-on report options and fees?",
+    "expected": "For Anatomy Screening, a basic report is generated automatically; a more detailed sonographer report costs an additional RM15 and is not a specialist doctor’s report. For Health Screening, a written report reviewed and signed by a Radiologist costs an additional RM30 and is delivered within 7 working days.",
+    "tags": [
+      "price",
+      "Report add-ons"
+    ],
+    "description": "price · Report add-ons · Are there add-on report options and fees"
+  },
+  {
+    "input": "Is there an extra charge for a written health screening report reviewed by a radiologist?",
+    "expected": "Yes. A written health screening report reviewed and signed by a Radiologist has an additional charge of RM30.",
+    "tags": [
+      "price",
+      "Report fees"
+    ],
+    "description": "price · Report fees · Is there an extra charge for a written h"
+  },
+  {
+    "input": "How long does it take to receive the scan report?",
+    "expected": "A normal/basic report is usually ready in 3–5 days. For a radiologist-reviewed written health screening report, there is an additional RM30 charge and it will be delivered within 7 working days.",
+    "tags": [
+      "price",
+      "Report timeline"
+    ],
+    "description": "price · Report timeline · How long does it take to receive the sca"
+  },
+  {
+    "input": "Pada 18 minggu kandungan, scan apa yang paling sesuai?",
+    "expected": "Untuk kandungan 18 hingga 29 minggu, pakej yang paling sesuai ialah Anatomy Screening. Harga RM100.80 pada hari biasa dan RM120.80 pada hujung minggu.",
+    "tags": [
+      "price",
+      "anatomy screening"
+    ],
+    "description": "price · anatomy screening · Pada 18 minggu kandungan, scan apa yang "
+  },
+  {
+    "input": "Berapa caj booking dan bila baki bayaran perlu dibayar?",
+    "expected": "Semasa booking, caj tempahan RM10.80 + SST akan dikenakan. Baki bayaran diselesaikan selepas imbasan.",
+    "tags": [
+      "price",
+      "booking payment"
+    ],
+    "description": "price · booking payment · Berapa caj booking dan bila baki bayaran"
+  },
+  {
+    "input": "Berapa cas tempahan appointment dan bila perlu bayar baki?",
+    "expected": "Cas tempahan RM10.80 + SST dikenakan semasa membuat tempahan. Baki bayaran diselesaikan selepas imbasan.",
+    "tags": [
+      "price",
+      "booking payment"
+    ],
+    "description": "price · booking payment · Berapa cas tempahan appointment dan bila"
+  },
+  {
+    "input": "Macam mana nak buat tempahan appointment dan semak kekosongan slot?",
+    "expected": "Tempahan dibuat melalui pautan https://appointment.flabee.com/guest. Daftar akaun, klik “Beli Sekarang”, pilih lokasi, perkhidmatan, tarikh dan masa, sahkan slot masa, isi butiran tempahan, kemudian teruskan pembayaran. Caj tempahan RM10.80 + SST dikenakan semasa booking, dan baki bayaran diselesaikan selepas imbasan. Pengesahan tempahan diterima melalui notifikasi aplikasi Flabee dan email.",
+    "tags": [
+      "price",
+      "booking procedure"
+    ],
+    "description": "price · booking procedure · Macam mana nak buat tempahan appointment"
+  },
+  {
+    "input": "RM10 itu untuk refund booking atau bayaran extra?",
+    "expected": "RM10 itu adalah untuk refund booking, bukan bayaran extra.",
+    "tags": [
+      "price",
+      "booking refund"
+    ],
+    "description": "price · booking refund · RM10 itu untuk refund booking atau bayar"
+  },
+  {
+    "input": "How do I book a scan appointment online?",
+    "expected": "To book: 1) Open https://appointment.flabee.com/guest 2) Click “Daftar Sekarang” to create an account 3) Fill in required registration details 4) Click “Beli Sekarang” 5) Choose location, service, date, and time 6) Click “Sahkan Slot Masa” 7) Fill in appointment details 8) Click “Teruskan Pembayaran”. A RM10.80 booking charge + SST is paid during booking, and the remaining payment is settled after the scan. Booking confirmation is sent through Flabee app notification and email.",
+    "tags": [
+      "price",
+      "booking steps"
+    ],
+    "description": "price · booking steps · How do I book a scan appointment online?"
+  },
+  {
+    "input": "How much is Course A + Course D, and how much deposit is needed?",
+    "expected": "The price for Course A + Course D is RM1800. A RM400 advance deposit is required to book the slot.",
+    "tags": [
+      "price",
+      "course pricing"
+    ],
+    "description": "price · course pricing · How much is Course A + Course D, and how"
+  },
+  {
+    "input": "Scan apa untuk detail scan dan berapa harganya?",
+    "expected": "Untuk detail scan, pilih Anatomy Screening atau Anatomy Screening +5D. Ia tersedia untuk kandungan 18–29 minggu. Harga Anatomy Screening: RM100.80 weekday, RM120.80 weekend. Harga Anatomy Screening +5D: RM135.80 weekday, RM155.80 weekend.",
+    "tags": [
+      "price",
+      "detail scan"
+    ],
+    "description": "price · detail scan · Scan apa untuk detail scan dan berapa ha"
+  },
+  {
+    "input": "How much is a gender scan and from what pregnancy week can it be done?",
+    "expected": "Promo Gender Scan is available from 15 to 40 weeks. Price is RM25.80 on weekdays and RM30.80 on weekends. Saturday and Sunday are considered weekend price. Prices include booking fees and SST 8%. Promo stated until 17 June 2026.",
+    "tags": [
+      "price",
+      "gender scan"
+    ],
+    "description": "price · gender scan · How much is a gender scan and from what "
+  },
+  {
+    "input": "Berapa harga pakej scan ultrasound Sonobee di Negeri 9, Melaka dan Pahang?",
+    "expected": "Harga promo sehingga 17 Jun 2026: Gender Scan 15–40 minggu RM25.80 weekday/RM30.80 weekend; 2D Growth Scan 4–40 minggu RM35.80 weekday/RM40.80 weekend; 5D Scan 12–40 minggu RM85.80 weekday/RM95.80 weekend; NT Scan 11–13 minggu RM95.80 weekday/RM105.80 weekend; Anatomy Screening 18–29 minggu RM100.80 weekday/RM120.80 weekend; Anatomy Screening + 5D 18–29 minggu RM135.80 weekday/RM155.80 weekend. Semua harga termasuk booking fee dan SST 8%.",
+    "tags": [
+      "price",
+      "harga pakej"
+    ],
+    "description": "price · harga pakej · Berapa harga pakej scan ultrasound Sonob"
+  },
+  {
+    "input": "Berapa caj ultrasound hati di Melaka?",
+    "expected": "Untuk ultrasound hati, pilih pakej Upper Abdomen Scan. Harga di Negeri Sembilan, Melaka & Pahang: RM165.80 pada hari bekerja dan RM185.80 pada hujung minggu. Harga termasuk Booking Fee + SST 8%.",
+    "tags": [
+      "price",
+      "harga ultrasound"
+    ],
+    "description": "price · harga ultrasound · Berapa caj ultrasound hati di Melaka?"
+  },
+  {
+    "input": "Bila perlu bayar untuk tempahan ultrasound?",
+    "expected": "Semasa proses tempahan, caj tempahan RM10.80 + SST akan dikenakan. Baki bayaran diselesaikan selepas scan.",
+    "tags": [
+      "price",
+      "payment process"
+    ],
+    "description": "price · payment process · Bila perlu bayar untuk tempahan ultrasou"
+  },
+  {
+    "input": "Berapakah caj untuk print report atau gambar scan?",
+    "expected": "Printing report/gambar scan dikenakan caj tambahan RM2-5 setiap keping untuk black/white. Untuk pakej 4D/5D, printing berwarna perlu disahkan di klinik; anggaran caj RM5-15 setiap keping.",
+    "tags": [
+      "price",
+      "printing charges"
+    ],
+    "description": "price · printing charges · Berapakah caj untuk print report atau ga"
+  },
+  {
+    "input": "How much is phototherapy machine rental?",
+    "expected": "Phototherapy machine rental is RM200/day for KL and Selangor, and RM220/day for other states. Minimum rental is 2 days. Extension is RM120/day. Some areas may incur additional delivery charges depending on location.",
+    "tags": [
+      "price",
+      "rental pricing"
+    ],
+    "description": "price · rental pricing · How much is phototherapy machine rental?"
+  },
+  {
+    "input": "How are ultrasound images and reports provided, and are printouts available?",
+    "expected": "Images and reports are provided in softcopy only and uploaded to the Flabee app within 3–5 working days. Printed black-and-white reports/images are available with additional charges of RM2–5 per piece. For 4D/5D packages, color printouts are available upon request at the clinic, estimated at RM5–15 per piece.",
+    "tags": [
+      "price",
+      "reports printouts"
+    ],
+    "description": "price · reports printouts · How are ultrasound images and reports pr"
+  },
+  {
+    "input": "Berapa harga scan 2D untuk walk-in?",
+    "expected": "Harga scan 2D untuk walk-in ialah RM60.",
+    "tags": [
+      "price",
+      "scan price"
+    ],
+    "description": "price · scan price · Berapa harga scan 2D untuk walk-in?"
+  },
+  {
+    "input": "Berapakah harga ultrasound atau scan tiroid?",
+    "expected": "Thyroid Scan berharga RM145.80 pada hari bekerja dan RM165.80 pada hujung minggu. Harga termasuk Booking Fee + SST 8%.",
+    "tags": [
+      "price",
+      "scan price"
+    ],
+    "description": "price · scan price · Berapakah harga ultrasound atau scan tir"
+  },
+  {
+    "input": "Berapa harga pregnancy scan?",
+    "expected": "Promo scan sehingga 17 June 2026. Harga weekday/weekend: Gender Scan (15-40 minggu) RM25.80/RM30.80; 2D Growth Scan (4-40 minggu) RM35.80/RM40.80; 5D Scan (12-40 minggu) RM85.80/RM95.80; NT Scan (11-13 minggu) RM95.80/RM105.80; Anatomy Screening (18-29 minggu) RM100.80/RM120.80; Anatomy Screening + 5D (18-29 minggu) RM135.80/RM155.80. Semua harga termasuk booking fees & SST 8%. Sabtu dan Ahad dikira harga weekend.",
+    "tags": [
+      "price",
+      "scan prices"
+    ],
+    "description": "price · scan prices · Berapa harga pregnancy scan?"
+  },
+  {
+    "input": "Berapa harga pregnancy scan di cawangan Sarawak?",
+    "expected": "Promo scan sehingga 17 June 2026. Harga Sabtu dan Ahad adalah harga weekend. Gender Scan (15–40 minggu): RM30.80 weekday, RM35.80 weekend. 2D Growth Scan (4–40 minggu): RM40.80 weekday, RM45.80 weekend. 5D Scan (12–40 minggu): RM107.80 weekday, RM117.80 weekend. NT Scan (11–13 minggu): RM107.80 weekday, RM117.80 weekend. Anatomy Screening (18–29 minggu): RM117.80 weekday, RM137.80 weekend. Anatomy Screening + 5D (18–29 minggu): RM147.80 weekday, RM167.80 weekend. Semua harga termasuk booking fee dan SST 8%.",
+    "tags": [
+      "price",
+      "scan prices"
+    ],
+    "description": "price · scan prices · Berapa harga pregnancy scan di cawangan "
+  },
+  {
+    "input": "Berapa harga scan ultrasound terkini?",
+    "expected": "Promo scan sehingga 17 June 2026 untuk branch Perak, Penang, Kedah, Perlis, Terengganu dan Kelantan: Gender Scan 15-40 minggu RM25.80 weekday / RM30.80 weekend; 2D Growth Scan 4-40 minggu RM35.80 weekday / RM40.80 weekend; 5D Scan 12-40 minggu RM85.80 weekday / RM95.80 weekend; NT Scan 11-13 minggu RM95.80 weekday / RM105.80 weekend; Anatomy Screening 18-29 minggu RM100.80 weekday / RM120.80 weekend; Anatomy Screening + 5D 18-29 minggu RM135.80 weekday / RM155.80 weekend. Semua harga termasuk booking fee dan SST 8%. Saturday dan Sunday dikira harga weekend.",
+    "tags": [
+      "price",
+      "scan prices"
+    ],
+    "description": "price · scan prices · Berapa harga scan ultrasound terkini?"
+  },
+  {
+    "input": "Berapa harga promo scan di cawangan Johor, Sabah dan Sarawak?",
+    "expected": "Promo scan hingga 17 June 2026. Harga hujung minggu berbeza. 15-40 minggu: Gender Scan RM30.80 weekday, RM35.80 weekend. 4-40 minggu: 2D Growth Scan RM40.80 weekday, RM45.80 weekend. 12-40 minggu: 5D Scan RM107.80 weekday, RM117.80 weekend. 11-13 minggu: NT Scan RM107.80 weekday, RM117.80 weekend. 18-29 minggu: Anatomy Screening RM117.80 weekday, RM137.80 weekend. 18-29 minggu: Anatomy Screening + 5D RM147.80 weekday, RM167.80 weekend. Semua harga termasuk booking fee dan SST 8%.",
+    "tags": [
+      "price",
+      "scan prices"
+    ],
+    "description": "price · scan prices · Berapa harga promo scan di cawangan Joho"
+  },
+  {
+    "input": "What are the ultrasound scan packages and promo prices for Negeri Sembilan, Melaka and Pahang branches?",
+    "expected": "Promo scan prices until 17 June 2026: Gender Scan (15–40 weeks) RM25.80 weekday, RM30.80 weekend; 2D Growth Scan (4–40 weeks) RM35.80 weekday, RM40.80 weekend; 5D Scan (12–40 weeks) RM85.80 weekday, RM95.80 weekend; NT Scan (11–13 weeks) RM95.80 weekday, RM105.80 weekend; Anatomy Screening (18–29 weeks) RM100.80 weekday, RM120.80 weekend; Anatomy Screening + 5D (18–29 weeks) RM135.80 weekday, RM155.80 weekend. All prices include booking fees and SST 8%. Saturday and Sunday use weekend prices.",
+    "tags": [
+      "price",
+      "scan prices"
+    ],
+    "description": "price · scan prices · What are the ultrasound scan packages an"
+  },
+  {
+    "input": "How much do ultrasound scan packages cost at Sonobee Sabah/Kota Kinabalu?",
+    "expected": "Promo prices until 17 June 2026: Gender Scan (15–40 weeks) RM30.80 weekday / RM35.80 weekend; 2D Growth Scan (4–40 weeks) RM40.80 weekday / RM45.80 weekend; 5D Scan (12–40 weeks) RM107.80 weekday / RM117.80 weekend; NT Scan (11–13 weeks) RM107.80 weekday / RM117.80 weekend; Anatomy Screening (18–29 weeks) RM117.80 weekday / RM137.80 weekend; Anatomy Screening + 5D (18–29 weeks) RM147.80 weekday / RM167.80 weekend. Prices include booking fee and SST 8%. No walk-ins.",
+    "tags": [
+      "price",
+      "scan prices"
+    ],
+    "description": "price · scan prices · How much do ultrasound scan packages cos"
+  },
+  {
+    "input": "What are Sonobee Johor ultrasound promo prices?",
+    "expected": "Promo scan prices until 17 June 2026: Gender Scan 15-40 weeks RM30.80 weekday / RM35.80 weekend; 2D Growth Scan 4-40 weeks RM40.80 weekday / RM45.80 weekend; 5D Scan 12-40 weeks RM107.80 weekday / RM117.80 weekend; NT Scan 11-13 weeks RM107.80 weekday / RM117.80 weekend; Anatomy Screening 18-29 weeks RM117.80 weekday / RM137.80 weekend; Anatomy Screening + 5D 18-29 weeks RM147.80 weekday / RM167.80 weekend. Prices include booking fees and 8% SST. Saturday and Sunday use weekend price.",
+    "tags": [
+      "price",
+      "scan prices"
+    ],
+    "description": "price · scan prices · What are Sonobee Johor ultrasound promo "
+  },
+  {
+    "input": "What are the latest ultrasound scan rates?",
+    "expected": "Promo scan rates until 17 June 2026: Gender Scan 15–40 weeks RM30.80 weekday / RM35.80 weekend; 2D Growth Scan 4–40 weeks RM40.80 weekday / RM45.80 weekend; 5D Scan 12–40 weeks RM107.80 weekday / RM117.80 weekend; NT Scan 11–13 weeks RM107.80 weekday / RM117.80 weekend; Anatomy Screening 18–29 weeks RM117.80 weekday / RM137.80 weekend; Anatomy Screening + 5D 18–29 weeks RM147.80 weekday / RM167.80 weekend. Saturday and Sunday use weekend prices. All prices include booking fees and SST 8%.",
+    "tags": [
+      "price",
+      "scan prices"
+    ],
+    "description": "price · scan prices · What are the latest ultrasound scan rate"
+  },
+  {
+    "input": "Berapakah harga scan ultrasound di Sonobee Johor, Sabah dan Sarawak?",
+    "expected": "Promo scan sehingga 17 June 2026. Harga termasuk Booking Fees & SST 8%. Harga weekend berbeza: Gender Scan 15-40 minggu RM30.80 weekday, RM35.80 weekend; 2D Growth Scan 4-40 minggu RM40.80 weekday, RM45.80 weekend; 5D Scan 12-40 minggu RM107.80 weekday, RM117.80 weekend; NT Scan 11-13 minggu RM107.80 weekday, RM117.80 weekend; Anatomy Screening 18-29 minggu RM117.80 weekday, RM137.80 weekend; Anatomy Screening + 5D 18-29 minggu RM147.80 weekday, RM167.80 weekend.",
+    "tags": [
+      "price",
+      "scan prices"
+    ],
+    "description": "price · scan prices · Berapakah harga scan ultrasound di Sonob"
+  },
+  {
+    "input": "What are the promo ultrasound scan prices for weekday and weekend?",
+    "expected": "Promo scan prices until 17 June 2026: Gender Scan 15–40 weeks RM25.80 weekday / RM30.80 weekend; 2D Growth Scan 4–40 weeks RM35.80 weekday / RM40.80 weekend; 5D Scan 12–40 weeks RM85.80 weekday / RM95.80 weekend; NT Scan 11–13 weeks RM95.80 weekday / RM105.80 weekend; Anatomy Screening 18–29 weeks RM100.80 weekday / RM120.80 weekend; Anatomy Screening + 5D 18–29 weeks RM135.80 weekday / RM155.80 weekend. All prices include booking fees and SST 8%.",
+    "tags": [
+      "price",
+      "scan pricing"
+    ],
+    "description": "price · scan pricing · What are the promo ultrasound scan price"
+  },
+  {
+    "input": "Berapakah harga scan ultrasound promo untuk cawangan Perak, Penang, Kedah, Perlis, Terengganu dan Kelantan?",
+    "expected": "Promo scan hingga 17 June 2026. Sabtu dan Ahad dikira harga weekend. Harga: Gender Scan 15-40 minggu RM25.80 weekday / RM30.80 weekend; 2D Growth Scan 4-40 minggu RM35.80 weekday / RM40.80 weekend; 5D Scan 12-40 minggu RM85.80 weekday / RM95.80 weekend; NT Scan 11-13 minggu RM95.80 weekday / RM105.80 weekend; Anatomy Screening 18-29 minggu RM100.80 weekday / RM120.80 weekend; Anatomy Screening + 5D 18-29 minggu RM135.80 weekday / RM155.80 weekend. Semua harga termasuk booking fees dan SST 8%.",
+    "tags": [
+      "price",
+      "scan pricing"
+    ],
+    "description": "price · scan pricing · Berapakah harga scan ultrasound promo un"
+  },
+  {
+    "input": "Detail/anatomy scan biasanya dibuat pada minggu ke berapa dan berapa harga?",
+    "expected": "Detail/anatomy scan ditawarkan untuk kandungan 18 hingga 29 minggu. Pakej Anatomy Screening +5D: RM135.80 pada hari biasa, RM155.80 pada hujung minggu. Pakej Anatomy Screening sahaja: RM100.80 pada hari biasa, RM120.80 pada hujung minggu.",
+    "tags": [
+      "price",
+      "scan pricing"
+    ],
+    "description": "price · scan pricing · Detail/anatomy scan biasanya dibuat pada"
+  },
+  {
+    "input": "Berapakah harga pregnancy scan di cawangan Negeri 9, Melaka dan Pahang?",
+    "expected": "Promo scan sehingga 17 Jun 2026. Harga weekday/weekend: Gender Scan (15-40 minggu) RM25.80/RM30.80; 2D Growth Scan (4-40 minggu) RM35.80/RM40.80; 5D Scan (12-40 minggu) RM85.80/RM95.80; NT Scan (11-13 minggu) RM95.80/RM105.80; Anatomy Screening (18-29 minggu) RM100.80/RM120.80; Anatomy Screening + 5D (18-29 minggu) RM135.80/RM155.80. Semua harga termasuk booking fee dan SST 8%.",
+    "tags": [
+      "price",
+      "scan pricing"
+    ],
+    "description": "price · scan pricing · Berapakah harga pregnancy scan di cawang"
+  },
+  {
+    "input": "How much is the Anatomy Screening + 5D scan?",
+    "expected": "Anatomy Screening + 5D is available for 18–29 weeks. Price: RM135.80 on weekdays and RM155.80 on weekends.",
+    "tags": [
+      "price",
+      "scan pricing"
+    ],
+    "description": "price · scan pricing · How much is the Anatomy Screening + 5D s"
+  },
+  {
+    "input": "Berapa harga scan gender, NT scan, 2D growth, 5D scan dan anatomy screening?",
+    "expected": "Promo scan sehingga 17 June 2026. Harga weekday/weekend: Gender Scan (15–40 minggu) RM30.80/RM35.80; 2D Growth Scan (4–40 minggu) RM40.80/RM45.80; 5D Scan (12–40 minggu) RM107.80/RM117.80; NT Scan (11–13 minggu) RM107.80/RM117.80; Anatomy Screening (18–29 minggu) RM117.80/RM137.80; Anatomy Screening + 5D (18–29 minggu) RM147.80/RM167.80. Semua harga termasuk booking fees dan SST 8%.",
+    "tags": [
+      "price",
+      "scan pricing"
+    ],
+    "description": "price · scan pricing · Berapa harga scan gender, NT scan, 2D gr"
+  },
+  {
+    "input": "What is the best pregnancy week to do a 5D scan?",
+    "expected": "The most suitable time for a 5D scan is around 24 to 32 weeks of pregnancy.",
+    "tags": [
+      "rule",
+      "5D scan timing"
+    ],
+    "description": "rule · 5D scan timing · What is the best pregnancy week to do a "
+  },
+  {
+    "input": "Untuk usia kandungan berapa 6D scan silhouette tersedia?",
+    "expected": "6D scan silhouette hanya untuk usia kandungan 10–15 minggu. Lebih daripada itu, tiada 6D scan lain; rujuk pakej penuh dan penerangan di katalog WhatsApp.",
+    "tags": [
+      "rule",
+      "6D ultrasound"
+    ],
+    "description": "rule · 6D ultrasound · Untuk usia kandungan berapa 6D scan silh"
+  },
+  {
+    "input": "Bila 2D Gender Scan sesuai dibuat dan berapa ketepatannya?",
+    "expected": "2D Gender Scan sesuai dilakukan mulai 15 minggu ke atas dengan ketepatan kira-kira 60%. Mulai 20 minggu ke atas, ketepatan meningkat kepada kira-kira 90% kerana struktur genital bayi biasanya lebih jelas.",
+    "tags": [
+      "rule",
+      "Gender accuracy"
+    ],
+    "description": "rule · Gender accuracy · Bila 2D Gender Scan sesuai dibuat dan be"
+  },
+  {
+    "input": "Kalau nak confirm gender baby, scan apa perlu pilih untuk appointment?",
+    "expected": "Pilih 2D Gender Scan untuk check/confirm jantina bayi. Scan ini adalah ultrasound untuk mengenal pasti jantina bayi sahaja, lelaki atau perempuan. Sesuai dibuat mulai 15 minggu ke atas dengan ketepatan sekitar 60%; mulai 20 minggu ke atas ketepatan sekitar 90% kerana lebih jelas.",
+    "tags": [
+      "rule",
+      "Gender scan"
+    ],
+    "description": "rule · Gender scan · Kalau nak confirm gender baby, scan apa "
+  },
+  {
+    "input": "Boleh buat NT scan kalau kandungan sudah 15 minggu?",
+    "expected": "Tidak boleh. NT scan hanya boleh dibuat sehingga 13 minggu 6 hari sahaja.",
+    "tags": [
+      "rule",
+      "NT scan"
+    ],
+    "description": "rule · NT scan · Boleh buat NT scan kalau kandungan sudah"
+  },
+  {
+    "input": "Apa beza NT scan dengan anatomy scan?",
+    "expected": "NT scan digunakan untuk check risiko Down syndrome dan hanya boleh dibuat sehingga 13 minggu 6 hari. Anatomy scan termasuk growth scan, gender scan dan organ baby scan.",
+    "tags": [
+      "rule",
+      "Scan comparison"
+    ],
+    "description": "rule · Scan comparison · Apa beza NT scan dengan anatomy scan?"
+  },
+  {
+    "input": "Ada buat 6D scan? Kalau kandungan 27 minggu boleh buat scan apa?",
+    "expected": "Sonobee tidak menyediakan 6D scan. Untuk kandungan 27 minggu, pelanggan boleh buat 5D scan.",
+    "tags": [
+      "rule",
+      "Scan types"
+    ],
+    "description": "rule · Scan types · Ada buat 6D scan? Kalau kandungan 27 min"
+  },
+  {
+    "input": "Apa itu anatomy screening/detail scan dan bila waktu sesuai untuk buat scan ini?",
+    "expected": "Anatomy Screening ialah pemeriksaan ultrasound terperinci untuk melihat perkembangan organ dan struktur bayi seperti otak, jantung, tulang belakang, buah pinggang, tangan dan kaki. Perkembangan dan jantina bayi juga akan di-scan. Usia kandungan yang paling sesuai untuk Anatomy Screening ialah 20 hingga 24 minggu. Bagi usia 25–29 minggu, pemeriksaan masih boleh dilakukan, tetapi bergantung kepada kedudukan dan saiz bayi semasa scan.",
+    "tags": [
+      "rule",
+      "anatomy screening"
+    ],
+    "description": "rule · anatomy screening · Apa itu anatomy screening/detail scan da"
+  },
+  {
+    "input": "What is Anatomy Screening, and when is the best time to do it?",
+    "expected": "Anatomy Screening is a detailed ultrasound examination that checks the baby's organs and body structures, including the brain, heart, spine, kidneys, arms, and legs. The baby's growth, development, and gender are also assessed. The most suitable pregnancy period for Anatomy Screening is 20 to 24 weeks. At 25–29 weeks, the scan can still be performed, but visibility may depend on the baby's position and size during the examination.",
+    "tags": [
+      "rule",
+      "anatomy screening"
+    ],
+    "description": "rule · anatomy screening · What is Anatomy Screening, and when is t"
+  },
+  {
+    "input": "Apa itu anatomy screening/detail scan dan adakah termasuk jantina bayi?",
+    "expected": "Anatomy Screening lebih kurang sama dengan detail scan. Ia ialah pemeriksaan ultrasound terperinci untuk melihat perkembangan organ dan struktur bayi seperti otak, jantung, tulang belakang, buah pinggang, tangan dan kaki. Perkembangan dan jantina bayi juga akan di-scan. Usia kandungan paling sesuai ialah 20 hingga 24 minggu; pada 25–29 minggu masih boleh dilakukan tetapi bergantung kepada kedudukan dan saiz bayi semasa scan.",
+    "tags": [
+      "rule",
+      "anatomy screening"
+    ],
+    "description": "rule · anatomy screening · Apa itu anatomy screening/detail scan da"
+  },
+  {
+    "input": "Boleh buat detail scan baby?",
+    "expected": "Ya. Sonobee menyediakan Anatomy Screening yang lebih kurang sama dengan detail scan. Ia adalah ultrasound terperinci untuk melihat organ dan struktur bayi seperti otak, jantung, tulang belakang, buah pinggang, tangan dan kaki. Perkembangan, tumbesaran dan jantina bayi juga akan dinilai. Waktu paling sesuai ialah usia kandungan 20 hingga 24 minggu; untuk 25–29 minggu masih boleh dilakukan tetapi bergantung pada kedudukan dan saiz bayi semasa scan.",
+    "tags": [
+      "rule",
+      "anatomy screening"
+    ],
+    "description": "rule · anatomy screening · Boleh buat detail scan baby?"
+  },
+  {
+    "input": "Which ultrasound package is suitable for early pregnancy?",
+    "expected": "For early pregnancy, choose the 2D Growth Scan. It is available from 4 to 40 weeks and monitors the baby's growth and development, including estimated weight, heartbeat, gender, movement, and position. It is not intended to assess or detect structural abnormalities.",
+    "tags": [
+      "rule",
+      "early pregnancy scan"
+    ],
+    "description": "rule · early pregnancy scan · Which ultrasound package is suitable for"
+  },
+  {
+    "input": "Can I do a gender scan at 28 weeks?",
+    "expected": "Yes. A 2D Gender Scan can be done at 28 weeks. It is used to determine the baby's gender only. It is suitable from 15 weeks onwards, with about 60% accuracy; from 20 weeks onwards, accuracy increases to about 90% because the baby's genital structures are usually clearer.",
+    "tags": [
+      "rule",
+      "gender scan"
+    ],
+    "description": "rule · gender scan · Can I do a gender scan at 28 weeks?"
+  },
+  {
+    "input": "Boleh buat scan jantina pada usia kandungan 20 minggu?",
+    "expected": "Ya, 20 minggu sudah boleh buat scan jantina. 2D Gender Scan sesuai dilakukan mulai 15 minggu ke atas dengan ketepatan sekitar 60%; pada 20 minggu ke atas ketepatan sekitar 90% kerana struktur jantina bayi biasanya lebih jelas.",
+    "tags": [
+      "rule",
+      "gender scan"
+    ],
+    "description": "rule · gender scan · Boleh buat scan jantina pada usia kandun"
+  },
+  {
+    "input": "Berapa minggu sesuai untuk buat gender scan?",
+    "expected": "Gender scan disarankan pada usia kandungan 18 minggu ke atas.",
+    "tags": [
+      "rule",
+      "gender scan timing"
+    ],
+    "description": "rule · gender scan timing · Berapa minggu sesuai untuk buat gender s"
+  },
+  {
+    "input": "Pada 11 minggu, adakah jantina bayi sudah boleh nampak melalui scan?",
+    "expected": "Pada 11 minggu, jantina bayi belum boleh nampak dengan jelas. 2D Gender Scan sesuai dibuat mulai 15 minggu ke atas, dan lebih jelas mulai 20 minggu ke atas.",
+    "tags": [
+      "rule",
+      "gender timing"
+    ],
+    "description": "rule · gender timing · Pada 11 minggu, adakah jantina bayi suda"
+  },
+  {
+    "input": "Which ultrasound package is suitable for around 6 weeks of pregnancy?",
+    "expected": "For around 6 weeks of pregnancy, the suitable package is the 2D Growth Scan.",
+    "tags": [
+      "rule",
+      "package selection"
+    ],
+    "description": "rule · package selection · Which ultrasound package is suitable for"
+  },
+  {
+    "input": "Adakah Sonobee buat detailed scan untuk kandungan sekitar 23 minggu?",
+    "expected": "Sonobee menyediakan anatomy screening oleh sonographer sahaja, bukan detailed scan.",
+    "tags": [
+      "rule",
+      "pregnancy scan"
+    ],
+    "description": "rule · pregnancy scan · Adakah Sonobee buat detailed scan untuk "
+  },
+  {
+    "input": "Kalau kandungan 37 minggu, scan apa yang sesuai untuk tengok baby?",
+    "expected": "Untuk kandungan 37 minggu, boleh buat 2D Growth Scan. Scan ini memantau tumbesaran bayi dalam kandungan. Sonographer akan melihat perkembangan bayi, anggaran berat, degupan jantung, jantina, pergerakan dan kedudukan bayi untuk memastikan tumbesaran normal mengikut usia kandungan. Scan ini tidak membuat pemeriksaan kecacatan struktur bayi.",
+    "tags": [
+      "rule",
+      "pregnancy scan"
+    ],
+    "description": "rule · pregnancy scan · Kalau kandungan 37 minggu, scan apa yang"
+  },
+  {
+    "input": "How early in pregnancy can I do a scan?",
+    "expected": "A pregnancy scan can be done from 4 weeks at the earliest.",
+    "tags": [
+      "rule",
+      "pregnancy scan"
+    ],
+    "description": "rule · pregnancy scan · How early in pregnancy can I do a scan?"
+  },
+  {
+    "input": "Boleh buat 2D Growth Scan pada usia kandungan 8 minggu?",
+    "expected": "Boleh. 2D Growth Scan ditawarkan untuk usia kandungan 4 hingga 40 minggu.",
+    "tags": [
+      "rule",
+      "scan eligibility"
+    ],
+    "description": "rule · scan eligibility · Boleh buat 2D Growth Scan pada usia kand"
+  },
+  {
+    "input": "Can I do an ultrasound scan at 1–2 weeks? What is the earliest week for a 2D scan?",
+    "expected": "Ultrasound scan is not available at 1–2 weeks. A 2D scan can be done from as early as 4 weeks.",
+    "tags": [
+      "rule",
+      "scan timing"
+    ],
+    "description": "rule · scan timing · Can I do an ultrasound scan at 1–2 weeks"
+  },
+  {
+    "input": "Kalau kandungan 35 minggu dan mahu scan satu bahagian sahaja, pakej apa perlu pilih?",
+    "expected": "Untuk kandungan 35 minggu, pihak staff perlu semak dahulu dengan sonografer sama ada boleh diterima. Jika diterima, pelanggan boleh book pakej “Targeted one part” melalui app.",
+    "tags": [
+      "rule",
+      "targeted scan"
+    ],
+    "description": "rule · targeted scan · Kalau kandungan 35 minggu dan mahu scan "
+  }
+]

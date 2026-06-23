@@ -7,6 +7,7 @@ import { listProjects, loadProject, appendCases } from "./config";
 import { runEval } from "./run-eval";
 import { askPrompt } from "./prompt-runner";
 import { parseCsv } from "./csv";
+import { parsePromptfoo, looksLikePromptfoo } from "./promptfoo";
 import { saveRun, listRuns, getRun, updateCase, migrateJsonRuns } from "./history";
 import * as sub from "./subscription";
 import type { ProjectConfig } from "./types";
@@ -51,28 +52,44 @@ app.get("/api/projects/:name", (c) => {
   }
 });
 
-// Import test cases (CSV) into a project's dataset. Columns: input, expected,
-// tags (| separated), description. Header aliases accepted (question/answer/ideal).
+// Import test cases into a project's dataset. Accepts CSV (columns input,
+// expected, tags via "|", description; header aliases question/answer/ideal)
+// OR a promptfoo eval YAML (tests[].vars.message + the «reference» in llm-rubric).
+// Format is auto-detected, or forced via body.format.
 app.post("/api/projects/:name/import", async (c) => {
   const name = c.req.param("name");
-  const body = (await c.req.json().catch(() => ({}))) as { csv?: string };
-  if (!body.csv?.trim()) return c.json({ error: "csv is required" }, 400);
+  const body = (await c.req.json().catch(() => ({}))) as {
+    content?: string;
+    csv?: string;
+    format?: "csv" | "promptfoo";
+  };
+  const text = (body.content ?? body.csv ?? "").trim();
+  if (!text) return c.json({ error: "content is required" }, 400);
 
-  let rows: Record<string, string>[];
+  const format = body.format ?? (looksLikePromptfoo(text) ? "promptfoo" : "csv");
+  let cases: Array<{ input: string; expected: string; tags: string[]; description?: string }>;
   try {
-    rows = parseCsv(body.csv);
+    if (format === "promptfoo") {
+      cases = parsePromptfoo(text);
+    } else {
+      cases = parseCsv(text).map((r) => ({
+        input: r.input ?? r.question ?? "",
+        expected: r.expected ?? r.answer ?? r.ideal ?? "",
+        tags: (r.tags ?? "").split("|").map((t) => t.trim()).filter(Boolean),
+        description: r.description || undefined,
+      }));
+    }
   } catch (e) {
-    return c.json({ error: `could not parse CSV: ${e instanceof Error ? e.message : String(e)}` }, 400);
+    return c.json({ error: `could not parse ${format}: ${e instanceof Error ? e.message : String(e)}` }, 400);
   }
-  const cases = rows.map((r) => ({
-    input: r.input ?? r.question ?? "",
-    expected: r.expected ?? r.answer ?? r.ideal ?? "",
-    tags: (r.tags ?? "").split("|").map((t) => t.trim()).filter(Boolean),
-    description: r.description || undefined,
-  }));
   if (cases.length === 0) {
     return c.json(
-      { error: "no rows found — need a header row + at least one data row (columns: input, expected[, tags, description])" },
+      {
+        error:
+          format === "promptfoo"
+            ? "no importable tests found (each needs vars.message + an llm-rubric reference in «...»)"
+            : "no rows found — need a header row + a data row (columns: input, expected[, tags, description])",
+      },
       400,
     );
   }
@@ -80,7 +97,7 @@ app.post("/api/projects/:name/import", async (c) => {
     const result = appendCases(name, cases);
     return c.json(
       result.added === 0
-        ? { ...result, warning: "no new cases added (all rows blank or duplicate inputs)" }
+        ? { ...result, warning: "no new cases added (all blank or duplicate inputs)" }
         : result,
     );
   } catch (e) {

@@ -3,6 +3,7 @@ import { uidFor, substitute, getByPath } from "../bot-runner";
 import { extractJson } from "../grader";
 import { loadProject, listProjects } from "../config";
 import { parseCsv } from "../csv";
+import { parsePromptfoo } from "../promptfoo";
 
 // config resolves ${BOT_KEY}; ensure it's present for the project-loading tests
 process.env.BOT_KEY ??= "eval";
@@ -20,6 +21,32 @@ describe("parseCsv", () => {
   it("skips blank lines and tolerates no trailing newline", () => {
     expect(parseCsv("input,expected\nq,a\n\n").length).toBe(1);
     expect(parseCsv("input,expected\nq,a").length).toBe(1);
+  });
+});
+
+describe("parsePromptfoo", () => {
+  const yaml = `
+tests:
+  - description: "price · 5D · Berapa harga 5D scan?"
+    vars:
+      message: "Berapa harga 5D scan?"
+    assert:
+      - type: icontains-any
+        value: ["85.80", "95.80"]
+      - type: llm-rubric
+        value: "Reference correct answer: «5D Scan RM85.80 weekday, RM95.80 weekend.». PASS only if Malay."
+  - description: "no reference here"
+    vars: { message: "Hi" }
+    assert:
+      - type: icontains-any
+        value: ["x"]
+`;
+  it("maps tests → {input, expected, tags} and skips tests without a reference", () => {
+    const cases = parsePromptfoo(yaml);
+    expect(cases.length).toBe(1); // the "Hi" test has no llm-rubric reference
+    expect(cases[0]!.input).toBe("Berapa harga 5D scan?");
+    expect(cases[0]!.expected).toBe("5D Scan RM85.80 weekday, RM95.80 weekend.");
+    expect(cases[0]!.tags).toEqual(["price", "5D"]);
   });
 });
 

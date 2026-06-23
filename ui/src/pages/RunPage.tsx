@@ -113,7 +113,9 @@ export default function RunPage({
     if (!file || !selected) return;
     setNotice("Importing…");
     try {
-      const r = await importCases(selected, await file.text());
+      const n = file.name.toLowerCase();
+      const format = n.endsWith(".yaml") || n.endsWith(".yml") ? "promptfoo" : "csv";
+      const r = await importCases(selected, await file.text(), format);
       setNotice(
         r.added > 0
           ? `Imported ${r.added} case${r.added === 1 ? "" : "s"}${r.skipped ? `, skipped ${r.skipped} (blank/duplicate)` : ""}. Dataset now ${r.total}.`
@@ -229,15 +231,15 @@ export default function RunPage({
           <button
             className="secondary"
             disabled={running || !selected}
-            title="Import test cases from CSV (columns: input, expected, tags, description)"
+            title="Import test cases — CSV (input, expected, tags, description) or a promptfoo eval .yaml"
             onClick={() => fileRef.current?.click()}
           >
-            ⬆ Import CSV
+            ⬆ Import CSV / promptfoo
           </button>
           <input
             ref={fileRef}
             type="file"
-            accept=".csv,text/csv"
+            accept=".csv,.yaml,.yml,text/csv,text/yaml"
             style={{ display: "none" }}
             onChange={onImportFile}
           />
