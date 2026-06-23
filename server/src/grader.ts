@@ -40,7 +40,12 @@ export function extractJson(text: string): Record<string, unknown> | null {
 }
 
 /** Run `claude -p <prompt> --model <model>` on the subscription. Throws on failure/timeout. */
-async function runClaude(prompt: string, model: string, timeoutMs: number): Promise<string> {
+async function runClaude(
+  prompt: string,
+  model: string,
+  timeoutMs: number,
+  signal?: AbortSignal,
+): Promise<string> {
   // Strip API-key env so the CLI uses the Max SUBSCRIPTION, never the paid API.
   const env: Record<string, string | undefined> = { ...process.env };
   delete env.ANTHROPIC_API_KEY;
@@ -51,6 +56,11 @@ async function runClaude(prompt: string, model: string, timeoutMs: number): Prom
     stderr: "pipe",
     env: env as Record<string, string>,
   });
+
+  // Run aborted (Cancel / client disconnect) → kill the grader subprocess now,
+  // instead of letting it run to its 120s timeout.
+  const onAbort = () => proc.kill("SIGKILL");
+  signal?.addEventListener("abort", onAbort, { once: true });
 
   let timer: ReturnType<typeof setTimeout> | undefined;
   const timeout = new Promise<never>((_, reject) => {
@@ -80,6 +90,7 @@ async function runClaude(prompt: string, model: string, timeoutMs: number): Prom
     throw e;
   } finally {
     if (timer) clearTimeout(timer);
+    signal?.removeEventListener("abort", onAbort);
   }
 }
 
@@ -91,11 +102,13 @@ export async function gradeAnswer(
   answer: string,
   model: string,
   timeoutMs = 120_000,
+  signal?: AbortSignal,
 ): Promise<Verdict> {
   const base = buildPrompt(rubric, input, expected, answer);
   for (let attempt = 0; attempt < 2; attempt++) {
+    if (signal?.aborted) break; // don't spawn another grader for an abandoned run
     const prompt = attempt === 0 ? base : `${base}\n\nIMPORTANT: output ONLY the raw JSON object.`;
-    const out = await runClaude(prompt, model, timeoutMs);
+    const out = await runClaude(prompt, model, timeoutMs, signal);
     const parsed = extractJson(out);
     if (parsed && typeof parsed.pass === "boolean" && typeof parsed.score === "number") {
       return {

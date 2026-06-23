@@ -7,6 +7,14 @@ const STORE_KEY = "matrix-cfg";
 
 const pendingCell = (): MatrixCell => ({ answer: "", verdict: { pass: false, score: 0, reason: "" }, pending: true });
 
+function loadCfg(): { systemPrompt?: string; models?: Record<string, boolean>; limit?: string } {
+  try {
+    return JSON.parse(localStorage.getItem(STORE_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
 /** Per-column pass rate computed live from the rows (don't wait for the server summary). */
 function columns(rows: MatrixRow[], variants: MatrixVariant[]) {
   return variants.map((v, c) => {
@@ -20,13 +28,18 @@ function columns(rows: MatrixRow[], variants: MatrixVariant[]) {
 export default function MatrixPage() {
   const [projects, setProjects] = useState<ProjectInfo[]>([]);
   const [selected, setSelected] = useState("");
-  const [systemPrompt, setSystemPrompt] = useState("");
-  const [models, setModels] = useState<Record<string, boolean>>({ haiku: true, sonnet: true, opus: false });
-  const [limit, setLimit] = useState("4");
+  // Lazy-init from localStorage so the config restores without a restore-effect
+  // racing the persist-effect (which would clobber it with defaults on mount).
+  const [systemPrompt, setSystemPrompt] = useState<string>(() => loadCfg().systemPrompt ?? "");
+  const [models, setModels] = useState<Record<string, boolean>>(
+    () => loadCfg().models ?? { haiku: true, sonnet: true, opus: false },
+  );
+  const [limit, setLimit] = useState<string>(() => loadCfg().limit ?? "4");
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState<{ done: number; total: number } | null>(null);
   const [matrix, setMatrix] = useState<MatrixResult | null>(null);
   const [error, setError] = useState("");
+  const [cancelled, setCancelled] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
@@ -36,20 +49,19 @@ export default function MatrixPage() {
         if (p[0]) setSelected(p[0].name);
       })
       .catch((e) => setError(String(e)));
-    try {
-      const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "{}");
-      if (typeof saved.systemPrompt === "string") setSystemPrompt(saved.systemPrompt);
-      if (saved.models && typeof saved.models === "object") setModels(saved.models);
-      if (typeof saved.limit === "string") setLimit(saved.limit);
-    } catch {
-      /* ignore corrupt storage */
-    }
   }, []);
 
   useEffect(() => () => abortRef.current?.abort(), []);
   useEffect(() => {
     localStorage.setItem(STORE_KEY, JSON.stringify({ systemPrompt, models, limit }));
   }, [systemPrompt, models, limit]);
+  // Switching dataset invalidates the prior run's matrix — clear it so a stale
+  // table can't sit under a different selected dataset.
+  useEffect(() => {
+    setMatrix(null);
+    setProgress(null);
+    setCancelled(false);
+  }, [selected]);
 
   const project = projects.find((p) => p.name === selected);
   const chosen = MODELS.filter((m) => models[m]);
@@ -59,13 +71,17 @@ export default function MatrixPage() {
     setRunning(true);
     setError("");
     setMatrix(null);
+    setCancelled(false);
     const lim = limit.trim() ? Math.max(1, Number(limit) || 0) : undefined;
     const total = lim ? Math.min(lim, project?.cases ?? lim) : project?.cases ?? 0;
     setProgress({ done: 0, total: total * chosen.length });
 
     // Pre-build the matrix from the dataset so all rows/cells show immediately.
     const variants: MatrixVariant[] = chosen.map((m) => ({ key: m, label: m, model: m }));
-    let rows: MatrixRow[] = [];
+    // Progress events can only FILL existing rows (they carry no question text), so
+    // we must pre-build the rows. If the dataset fetch fails, stop with an error
+    // rather than streaming into an empty, never-rendered table.
+    let rows: MatrixRow[];
     try {
       const detail = await getProjectDataset(selected);
       const ds = lim ? detail.dataset.slice(0, lim) : detail.dataset;
@@ -76,8 +92,10 @@ export default function MatrixPage() {
         description: d.description ?? undefined,
         cells: variants.map(() => pendingCell()),
       }));
-    } catch {
-      /* fall back to empty; cells arrive via progress */
+    } catch (e) {
+      setError("Couldn't load the dataset to build the table: " + String(e));
+      setRunning(false);
+      return;
     }
     setMatrix({ id: "", project: selected, judgeModel: project?.judge ?? "sonnet", variants, rows, summary: [] });
 
@@ -87,7 +105,9 @@ export default function MatrixPage() {
       { project: selected, systemPrompt, models: chosen, limit: lim },
       {
         onProgress: (p) => {
-          setProgress((cur) => ({ done: (cur?.done ?? 0) + 1, total: cur?.total ?? p.totalCells }));
+          // p.totalCells is server-authoritative (fresh dataset × models); prefer it
+          // over the optimistic estimate seeded from the cached project.cases.
+          setProgress((cur) => ({ done: (cur?.done ?? 0) + 1, total: p.totalCells || cur?.total || 1 }));
           setMatrix((m) => {
             if (!m) return m;
             const rows2 = m.rows.slice();
@@ -115,14 +135,17 @@ export default function MatrixPage() {
 
   function cancel() {
     abortRef.current?.abort();
+    setCancelled(true);
     setRunning(false);
   }
 
   const cols = matrix ? columns(matrix.rows, matrix.variants) : [];
-  const pct = progress && progress.total ? (progress.done / progress.total) * 100 : 0;
+  const pct = progress && progress.total ? Math.min(100, (progress.done / progress.total) * 100) : 0;
 
   function cell(c: MatrixCell | undefined) {
-    if (!c || c.pending) return <span className="pf-badge pending">⏳</span>;
+    // While running, un-run cells show a spinner; once stopped (cancelled), show
+    // a neutral "—" so a cancelled run can't masquerade as a completed one.
+    if (!c || c.pending) return running ? <span className="pf-badge pending">⏳</span> : <span className="muted">—</span>;
     if (c.error) return <span className="pf-badge fail" title={c.error}>ERROR</span>;
     const pass = !c.error && c.verdict.pass;
     return (
@@ -221,6 +244,12 @@ export default function MatrixPage() {
           </div>
         )}
       </div>
+
+      {cancelled && matrix && (
+        <p className="err" style={{ marginTop: 14 }}>
+          ⚠️ Run cancelled — partial results. Un-run cells show “—”; column rates are over the cells that finished.
+        </p>
+      )}
 
       {matrix && matrix.rows.length > 0 && (
         <table className="pf mtx" style={{ marginTop: 22 }}>

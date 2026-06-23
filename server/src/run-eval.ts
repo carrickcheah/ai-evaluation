@@ -49,7 +49,7 @@ export async function runEval(
         const answer = answerFn
           ? await answerFn(tc.input)
           : await askBot(target, tc.input, runSalt, 120_000, signal);
-        const verdict = await gradeAnswer(rubric, tc.input, tc.expected, answer, judge.model);
+        const verdict = await gradeAnswer(rubric, tc.input, tc.expected, answer, judge.model, 120_000, signal);
         result = {
           input: tc.input,
           expected: tc.expected,

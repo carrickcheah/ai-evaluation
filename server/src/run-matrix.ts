@@ -84,7 +84,7 @@ export async function runMatrix(
       let cell: MatrixCell;
       try {
         const answer = await askPrompt(systemPrompt, tc.input, model, 120_000, signal);
-        const verdict = await gradeAnswer(rubric, tc.input, tc.expected, answer, judge.model);
+        const verdict = await gradeAnswer(rubric, tc.input, tc.expected, answer, judge.model, 120_000, signal);
         cell = { answer, verdict, latencyMs: Date.now() - t0 };
       } catch (err) {
         cell = {
