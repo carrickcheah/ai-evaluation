@@ -6,6 +6,8 @@ import type {
   ProgressEvent,
   CaseResult,
   ProjectDetail,
+  MatrixResult,
+  MatrixProgress,
 } from "./types";
 
 async function jget<T>(url: string): Promise<T> {
@@ -145,6 +147,89 @@ export async function runEvalStream(
   }
   // Stream ended (clean EOF) without a done/error event — e.g. the server restarted
   // or a proxy timed out mid-run. Surface it so the UI doesn't spin "running" forever.
+  if (!terminal && !signal?.aborted) {
+    h.onError("connection closed before the run finished");
+  }
+}
+
+export interface MatrixHandlers {
+  onStart?: (s: { cases: number; models: string[] }) => void;
+  onProgress: (p: MatrixProgress) => void;
+  onDone: (result: MatrixResult) => void;
+  onError: (msg: string) => void;
+}
+
+/** POST /api/eval/run-matrix and parse its SSE stream (multi-model comparison). */
+export async function runMatrixStream(
+  body: { project: string; systemPrompt: string; models: string[]; limit?: number },
+  h: MatrixHandlers,
+  signal?: AbortSignal,
+): Promise<void> {
+  let res: Response;
+  try {
+    res = await fetch("/api/eval/run-matrix", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+      signal,
+    });
+  } catch (e) {
+    if (signal?.aborted) return;
+    h.onError(e instanceof Error ? e.message : String(e));
+    return;
+  }
+  if (!res.ok || !res.body) {
+    const txt = await res.text().catch(() => "");
+    h.onError(txt || `HTTP ${res.status}`);
+    return;
+  }
+  const reader = res.body.getReader();
+  const dec = new TextDecoder();
+  let buf = "";
+  let terminal = false;
+  for (;;) {
+    let chunk: ReadableStreamReadResult<Uint8Array>;
+    try {
+      chunk = await reader.read();
+    } catch (e) {
+      if (signal?.aborted) return;
+      h.onError(e instanceof Error ? e.message : String(e));
+      return;
+    }
+    if (chunk.done) break;
+    buf += dec.decode(chunk.value, { stream: true });
+    const parts = buf.split("\n\n");
+    buf = parts.pop() ?? "";
+    for (const block of parts) {
+      let event = "message";
+      let data = "";
+      for (const line of block.split("\n")) {
+        if (line.startsWith("event:")) {
+          event = line.slice(6).trim();
+        } else if (line.startsWith("data:")) {
+          let v = line.slice(5);
+          if (v.startsWith(" ")) v = v.slice(1);
+          data += (data ? "\n" : "") + v;
+        }
+      }
+      if (!data) continue;
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(data);
+      } catch {
+        continue;
+      }
+      if (event === "start") h.onStart?.(parsed as { cases: number; models: string[] });
+      else if (event === "progress") h.onProgress(parsed as MatrixProgress);
+      else if (event === "done") {
+        terminal = true;
+        h.onDone(parsed as MatrixResult);
+      } else if (event === "error") {
+        terminal = true;
+        h.onError((parsed as { message?: string }).message ?? "error");
+      }
+    }
+  }
   if (!terminal && !signal?.aborted) {
     h.onError("connection closed before the run finished");
   }

@@ -5,6 +5,7 @@ import { cors } from "hono/cors";
 import { streamSSE } from "hono/streaming";
 import { listProjects, loadProject, appendCases } from "./config";
 import { runEval } from "./run-eval";
+import { runMatrix } from "./run-matrix";
 import { askPrompt } from "./prompt-runner";
 import { parseCsv } from "./csv";
 import { parsePromptfoo, looksLikePromptfoo } from "./promptfoo";
@@ -183,6 +184,67 @@ app.post("/api/eval/run", async (c) => {
       if (!controller.signal.aborted) {
         saveRun(run);
         await stream.writeSSE({ event: "done", data: JSON.stringify(run) });
+      }
+    } catch (err) {
+      if (!controller.signal.aborted) {
+        await stream.writeSSE({
+          event: "error",
+          data: JSON.stringify({ message: err instanceof Error ? err.message : String(err) }),
+        });
+      }
+    } finally {
+      clearInterval(hb);
+    }
+  });
+});
+
+// Multi-model comparison: run a dataset against several models (columns) in
+// Prompt mode on the subscription, grading each cell. Streams cells as they land.
+app.post("/api/eval/run-matrix", async (c) => {
+  const body = (await c.req.json().catch(() => ({}))) as {
+    project?: string;
+    systemPrompt?: string;
+    models?: string[];
+    limit?: number;
+  };
+  if (!body.project) return c.json({ error: "project is required" }, 400);
+  if (!body.systemPrompt?.trim()) return c.json({ error: "systemPrompt is required" }, 400);
+  const models = (body.models ?? []).map((m) => m.trim()).filter(Boolean);
+  if (models.length === 0) return c.json({ error: "select at least one model" }, 400);
+
+  let project: ProjectConfig;
+  try {
+    project = loadProject(body.project);
+  } catch (e) {
+    return c.json({ error: e instanceof Error ? e.message : String(e) }, 400);
+  }
+  if (body.limit && body.limit > 0) project = { ...project, dataset: project.dataset.slice(0, body.limit) };
+
+  return streamSSE(c, async (stream) => {
+    const controller = new AbortController();
+    stream.onAbort(() => controller.abort());
+    const hb = setInterval(() => {
+      stream.writeSSE({ event: "heartbeat", data: "hb" }).catch(() => {});
+    }, 5_000);
+    try {
+      await stream.writeSSE({
+        event: "start",
+        data: JSON.stringify({ cases: project.dataset.length, models }),
+      });
+      const result = await runMatrix(
+        project,
+        body.systemPrompt!,
+        models,
+        async (row, col, cell, totalCells) => {
+          await stream.writeSSE({
+            event: "progress",
+            data: JSON.stringify({ row, col, cell, totalCells }),
+          });
+        },
+        controller.signal,
+      );
+      if (!controller.signal.aborted) {
+        await stream.writeSSE({ event: "done", data: JSON.stringify(result) });
       }
     } catch (err) {
       if (!controller.signal.aborted) {

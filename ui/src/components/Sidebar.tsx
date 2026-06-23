@@ -28,6 +28,9 @@ export default function Sidebar() {
         <NavLink to="/compare" className={linkClass}>
           ⚖️ Compare
         </NavLink>
+        <NavLink to="/matrix" className={linkClass}>
+          🆚 Models
+        </NavLink>
         <NavLink to="/subscription" className={linkClass}>
           🔌 Subscription
         </NavLink>

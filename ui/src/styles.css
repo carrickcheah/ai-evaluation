@@ -259,3 +259,12 @@ tr.pf-pending { opacity: 0.7; }
 .tagbar-fill { display: block; height: 100%; border-radius: 6px; }
 .tagbar-fill.ok { background: #1f7a4d; } .tagbar-fill.mid { background: #b8770a; } .tagbar-fill.low { background: #b3433c; }
 .tagbar-val { color: var(--muted); text-align: right; white-space: nowrap; }
+
+/* Multi-model comparison (matrix) */
+.modelboxes { display: inline-flex; gap: 8px; flex-wrap: wrap; }
+.chk { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--panel-2); color: var(--muted); cursor: pointer; font-size: 13px; user-select: none; }
+.chk.on { border-color: var(--accent); color: var(--text); }
+.chk input { accent-color: var(--accent); }
+.mtx th { vertical-align: top; }
+.mtx-rate { font-weight: 600; color: var(--accent); font-size: 12px; margin-top: 3px; }
+.mtx-cell { text-align: center; vertical-align: middle; }

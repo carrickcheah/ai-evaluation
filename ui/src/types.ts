@@ -63,3 +63,38 @@ export interface ProjectDetail {
   judge: string;
   dataset: { input: string; expected: string; tags?: string[]; description?: string | null }[];
 }
+
+// Multi-model comparison (matrix: rows = cases, columns = models)
+export interface MatrixVariant {
+  key: string;
+  label: string;
+  model: string;
+}
+export interface MatrixCell {
+  answer: string;
+  verdict: Verdict;
+  error?: string;
+  latencyMs?: number;
+  pending?: boolean;
+}
+export interface MatrixRow {
+  input: string;
+  expected: string;
+  tags: string[];
+  description?: string;
+  cells: MatrixCell[];
+}
+export interface MatrixResult {
+  id: string;
+  project: string;
+  judgeModel: string;
+  variants: MatrixVariant[];
+  rows: MatrixRow[];
+  summary: Array<{ key: string; label: string; pass: number; fail: number; errored: number; total: number; score: number }>;
+}
+export interface MatrixProgress {
+  row: number;
+  col: number;
+  cell: MatrixCell;
+  totalCells: number;
+}

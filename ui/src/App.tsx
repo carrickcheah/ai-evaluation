@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar";
 import TabbedRun from "./components/TabbedRun";
 import HistoryPage, { HistoryDetail } from "./pages/HistoryPage";
 import ComparePage from "./pages/ComparePage";
+import MatrixPage from "./pages/MatrixPage";
 import SubscriptionPage from "./pages/SubscriptionPage";
 
 type Theme = "dark" | "light";
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/history/:id" element={<HistoryDetail />} />
             <Route path="/compare" element={<ComparePage />} />
+            <Route path="/matrix" element={<MatrixPage />} />
             <Route path="/subscription" element={<SubscriptionPage />} />
           </Routes>
         </main>
