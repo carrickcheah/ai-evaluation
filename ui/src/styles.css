@@ -182,6 +182,7 @@ tr.clickable:hover { background: var(--panel-2); cursor: pointer; }
 .pf-num { width: 46px; text-align: center; color: var(--muted); }
 .pf-desc { color: var(--desc-text); word-break: break-word; }
 .pf-msg { word-break: break-word; }
+.pf-ideal-col { border-left: 3px solid var(--accent); background: var(--panel-2); font-size: 13px; line-height: 1.5; vertical-align: top; }
 .pf-out { }
 .pf-summary { margin-top: 8px; font-weight: 400; font-size: 13px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .pf-summary b.ok { color: var(--pass); }

@@ -214,7 +214,7 @@ export default function RunPage({
               disabled={running}
               onClick={() => pickMode("prompt")}
             >
-              Prompt · $0
+              Prompt mode
             </button>
           </span>
         </div>

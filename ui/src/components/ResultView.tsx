@@ -10,7 +10,7 @@ export default function ResultView({ run }: { run: RunResult }) {
   const live = !run.id;
   const [results, setResults] = useState<CaseResult[]>(run.results);
   const [failedOnly, setFailedOnly] = useState(false);
-  const [showExpected, setShowExpected] = useState(false);
+  const [showExpected, setShowExpected] = useState(true);
   const [showCharts, setShowCharts] = useState(true);
   const [q, setQ] = useState("");
   const [copied, setCopied] = useState<number | null>(null);
@@ -128,15 +128,16 @@ export default function ResultView({ run }: { run: RunResult }) {
       <table className="pf">
         <colgroup>
           <col style={{ width: "46px" }} />
-          <col style={{ width: "26%" }} />
-          <col style={{ width: "27%" }} />
+          <col style={{ width: showExpected ? "20%" : "26%" }} />
+          <col style={{ width: showExpected ? "22%" : "27%" }} />
+          {showExpected && <col style={{ width: "24%" }} />}
           <col />
         </colgroup>
         <thead>
           <tr className="pf-grp">
             <th></th>
             <th></th>
-            <th>Variables</th>
+            <th colSpan={showExpected ? 2 : 1}>Variables</th>
             <th>
               Outputs
               <div className="pf-summary">
@@ -153,6 +154,7 @@ export default function ResultView({ run }: { run: RunResult }) {
             <th className="pf-num">#</th>
             <th>Description</th>
             <th>message</th>
+            {showExpected && <th>🎯 Ideal answer</th>}
             <th>{"{{message}}"}</th>
           </tr>
         </thead>
@@ -165,6 +167,7 @@ export default function ResultView({ run }: { run: RunResult }) {
                 <td className="pf-num">{n}</td>
                 <td className="pf-desc">{c.description ?? c.input}</td>
                 <td className="pf-msg">{c.input}</td>
+                {showExpected && <td className="pf-msg pf-ideal-col">{c.expected || "—"}</td>}
                 <td className="pf-out">
                   {pending ? (
                     <span className="pf-badge pending">⏳ running…</span>
@@ -219,11 +222,6 @@ export default function ResultView({ run }: { run: RunResult }) {
                   <div className={"pf-answer" + (failed ? "" : " pass")}>
                     {c.answer || "(no answer)"}
                   </div>
-                  {showExpected && (
-                    <div className="pf-expected">
-                      <b>Ideal</b> {c.expected || "—"}
-                    </div>
-                  )}
                   {c.comment && <div className="pf-comment">💬 {c.comment}</div>}
                   {editingIdx === idx && (
                     <div className="pf-comment-edit">

@@ -1,0 +1,16 @@
+name: flabee14
+judge:
+  provider: claude-subscription
+  model: sonnet
+rubric: >-
+  You grade an assistant's answer against a correct reference answer.
+
+  PASS only if the answer is factually consistent with the reference and
+  actually
+
+  addresses the question. Minor wording or formatting differences are fine; a
+  FAIL is
+
+  a contradiction, a missing required fact, or an invented detail not in the
+  reference.
+dataset: ./dataset.json
