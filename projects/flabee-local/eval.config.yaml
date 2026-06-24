@@ -1,0 +1,37 @@
+name: flabee-local (account 14 · localhost)
+
+# Live-bot eval against the LOCAL ai-contact-bun stack (ai-brain on :8002), not
+# production. The local bot runs on the Claude Max subscription and reads account
+# 14's knowledge base (faqs + website_knowledge) synced into the local Postgres,
+# so this is a $0 way to benchmark the real RAG bot.
+#
+# Bring the bot up first (in ai-contact-bun): make infra && make run
+# {{input}} = the question, {{uid}} = a fresh per-question id (new session/phone
+# so the bot never thinks it "already answered"). No API key needed locally —
+# /chat/sync only enforces auth when NODE_ENV=production.
+target:
+  url: http://localhost:8002/api/chat/sync
+  method: POST
+  body:
+    message: "{{input}}"
+    phone_number: "{{uid}}"
+    source: api
+    account_id: 14
+    session_id: "{{uid}}"
+  answerPath: output
+
+judge:
+  provider: claude-subscription
+  model: sonnet
+
+rubric: |
+  You grade a customer-service bot's answer against the correct reference answer.
+  PASS only if the bot's answer is factually consistent with the reference.
+  - Prices/numbers must match. A correct PRICE RANGE counts as a pass even if the
+    reference gives a range (prices vary by branch and weekday/weekend).
+  - Do NOT pass an answer that states a single exact price as if it were the only price,
+    or that quotes an expired promo price.
+  - The reply must be in the SAME language as the question (Malay, English, or Manglish).
+  FAIL if a required number is missing, changed, invented, or stale.
+
+dataset: ./dataset.json
