@@ -31,6 +31,9 @@ export default function Sidebar() {
         <NavLink to="/matrix" className={linkClass}>
           🆚 Models
         </NavLink>
+        <NavLink to="/upload" className={linkClass}>
+          ⬆ Upload
+        </NavLink>
         <NavLink to="/subscription" className={linkClass}>
           🔌 Subscription
         </NavLink>

@@ -101,8 +101,8 @@ describe("project loading", () => {
   it("loads and validates flabee (env resolved)", () => {
     const p = loadProject("flabee");
     expect(p.name).toBe("flabee-bot");
-    expect(p.target.url).toContain("nexgpt");
-    expect(p.target.headers?.["X-API-Key"]).toBe(process.env.BOT_KEY);
+    expect(p.target!.url).toContain("nexgpt");
+    expect(p.target!.headers?.["X-API-Key"]).toBe(process.env.BOT_KEY);
     expect(p.dataset.length).toBeGreaterThanOrEqual(10);
     expect(p.rubric).toContain("PASS");
   });

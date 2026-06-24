@@ -30,7 +30,9 @@ export interface JudgeConfig {
 /** A fully-loaded, env-resolved project. */
 export interface ProjectConfig {
   name: string;
-  target: TargetConfig;
+  /** The bot endpoint under test. Absent for dataset-only projects (uploaded
+   * datasets), which only run in Prompt mode / Models comparison — no live bot. */
+  target?: TargetConfig;
   judge: JudgeConfig;
   rubric: string;
   datasetPath: string;

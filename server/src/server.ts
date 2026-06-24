@@ -3,7 +3,7 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { streamSSE } from "hono/streaming";
-import { listProjects, loadProject, appendCases } from "./config";
+import { listProjects, loadProject, appendCases, createProject } from "./config";
 import { runEval } from "./run-eval";
 import { runMatrix } from "./run-matrix";
 import { askPrompt } from "./prompt-runner";
@@ -19,6 +19,21 @@ const app = new Hono();
 app.use("/api/*", cors());
 
 app.get("/api/health", (c) => c.json({ ok: true }));
+
+// Parse uploaded CSV / promptfoo YAML into importable cases. Shared by the
+// "import into existing dataset" and "create new dataset" endpoints.
+function parseCasesFromText(
+  text: string,
+  format: "csv" | "promptfoo",
+): Array<{ input: string; expected: string; tags: string[]; description?: string }> {
+  if (format === "promptfoo") return parsePromptfoo(text);
+  return parseCsv(text).map((r) => ({
+    input: r.input ?? r.question ?? "",
+    expected: r.expected ?? r.answer ?? r.ideal ?? "",
+    tags: (r.tags ?? "").split("|").map((t) => t.trim()).filter(Boolean),
+    description: r.description || undefined,
+  }));
+}
 
 app.get("/api/projects", (c) => {
   const projects = listProjects().map((name) => {
@@ -70,16 +85,7 @@ app.post("/api/projects/:name/import", async (c) => {
   const format = body.format ?? (looksLikePromptfoo(text) ? "promptfoo" : "csv");
   let cases: Array<{ input: string; expected: string; tags: string[]; description?: string }>;
   try {
-    if (format === "promptfoo") {
-      cases = parsePromptfoo(text);
-    } else {
-      cases = parseCsv(text).map((r) => ({
-        input: r.input ?? r.question ?? "",
-        expected: r.expected ?? r.answer ?? r.ideal ?? "",
-        tags: (r.tags ?? "").split("|").map((t) => t.trim()).filter(Boolean),
-        description: r.description || undefined,
-      }));
-    }
+    cases = parseCasesFromText(text, format);
   } catch (e) {
     return c.json({ error: `could not parse ${format}: ${e instanceof Error ? e.message : String(e)}` }, 400);
   }
@@ -101,6 +107,47 @@ app.post("/api/projects/:name/import", async (c) => {
         ? { ...result, warning: "no new cases added (all blank or duplicate inputs)" }
         : result,
     );
+  } catch (e) {
+    return c.json({ error: e instanceof Error ? e.message : String(e) }, 400);
+  }
+});
+
+// Create a brand-new dataset from an uploaded CSV / promptfoo file. Unlike
+// /import (which appends to an existing project), this scaffolds a fresh
+// dataset-only project (no bot target) that shows up in the dropdown for
+// Prompt mode + Models comparison.
+app.post("/api/projects/create", async (c) => {
+  const body = (await c.req.json().catch(() => ({}))) as {
+    name?: string;
+    content?: string;
+    format?: "csv" | "promptfoo";
+    rubric?: string;
+  };
+  const name = (body.name ?? "").trim();
+  if (!name) return c.json({ error: "name is required" }, 400);
+  const text = (body.content ?? "").trim();
+  if (!text) return c.json({ error: "a CSV or promptfoo file is required" }, 400);
+
+  const format = body.format ?? (looksLikePromptfoo(text) ? "promptfoo" : "csv");
+  let cases: Array<{ input: string; expected: string; tags: string[]; description?: string }>;
+  try {
+    cases = parseCasesFromText(text, format);
+  } catch (e) {
+    return c.json({ error: `could not parse ${format}: ${e instanceof Error ? e.message : String(e)}` }, 400);
+  }
+  if (cases.length === 0) {
+    return c.json(
+      {
+        error:
+          format === "promptfoo"
+            ? "no importable tests found (each needs vars.message + an llm-rubric reference in «...»)"
+            : "no rows found — need a header row + a data row (columns: input, expected[, tags, description])",
+      },
+      400,
+    );
+  }
+  try {
+    return c.json(createProject(name, cases, body.rubric));
   } catch (e) {
     return c.json({ error: e instanceof Error ? e.message : String(e) }, 400);
   }

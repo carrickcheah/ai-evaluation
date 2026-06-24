@@ -259,7 +259,6 @@ export default function RunPage({
                 <option value="haiku">haiku</option>
                 <option value="sonnet">sonnet</option>
               </select>
-              <span className="muted" style={{ marginLeft: 8 }}>· subscription · $0</span>
             </div>
             <div className="row" style={{ alignItems: "flex-start" }}>
               <label style={{ paddingTop: 8 }}>System Prompt</label>
@@ -277,7 +276,7 @@ export default function RunPage({
 
         <div className="row">
           <label>Judge</label>
-          <span className="muted">Claude {judge} · subscription</span>
+          <span className="muted">Claude {judge}</span>
         </div>
         <div className="row">
           {!running ? (

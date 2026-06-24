@@ -56,6 +56,18 @@ export const importCases = (name: string, content: string, format?: "csv" | "pro
     `/api/projects/${encodeURIComponent(name)}/import`,
     { content, format },
   );
+export const createDataset = (
+  name: string,
+  content: string,
+  format?: "csv" | "promptfoo",
+  rubric?: string,
+) =>
+  jpost<{ name: string; displayName: string; total: number }>("/api/projects/create", {
+    name,
+    content,
+    format,
+    rubric,
+  });
 export const getRuns = () => jget<{ runs: RunSummary[] }>("/api/eval/runs").then((r) => r.runs);
 export const getRun = (id: string) => jget<RunResult>(`/api/eval/runs/${encodeURIComponent(id)}`);
 export const getSubscription = () => jget<SubscriptionStatus>("/api/subscription/status");

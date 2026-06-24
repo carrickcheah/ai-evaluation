@@ -1,6 +1,6 @@
 /** Load and validate project configs (eval.config.yaml + dataset.json). */
-import { parse as parseYaml } from "yaml";
-import { readFileSync, writeFileSync, readdirSync, existsSync, statSync } from "node:fs";
+import { parse as parseYaml, stringify as stringifyYaml } from "yaml";
+import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync, statSync } from "node:fs";
 import { join, resolve, isAbsolute } from "node:path";
 import type { ProjectConfig, TestCase, TargetConfig, JudgeConfig } from "./types";
 
@@ -66,26 +66,31 @@ export function loadProject(name: string): ProjectConfig {
     throw new Error(`Project "${name}": eval.config.yaml is empty or not an object`);
   }
 
+  // target is OPTIONAL: dataset-only projects (uploaded datasets) have no bot
+  // endpoint and only run in Prompt mode / Models comparison. Validate it only
+  // when present; Bot mode raises a clear error later if it's missing.
   const targetRaw = parsed.target as Record<string, unknown> | undefined;
-  if (!targetRaw) throw new Error(`Project "${name}": missing "target" block`);
-  if (targetRaw.method !== undefined && typeof targetRaw.method !== "string") {
-    throw new Error(`Project "${name}": target.method must be a string`);
+  let target: TargetConfig | undefined;
+  if (targetRaw) {
+    if (targetRaw.method !== undefined && typeof targetRaw.method !== "string") {
+      throw new Error(`Project "${name}": target.method must be a string`);
+    }
+    if (
+      targetRaw.headers !== undefined &&
+      (typeof targetRaw.headers !== "object" ||
+        targetRaw.headers === null ||
+        Array.isArray(targetRaw.headers))
+    ) {
+      throw new Error(`Project "${name}": target.headers must be an object`);
+    }
+    target = {
+      url: assertString(targetRaw.url, "target.url"),
+      method: typeof targetRaw.method === "string" ? targetRaw.method : "POST",
+      headers: (targetRaw.headers as Record<string, string>) ?? {},
+      body: targetRaw.body,
+      answerPath: assertString(targetRaw.answerPath, "target.answerPath"),
+    };
   }
-  if (
-    targetRaw.headers !== undefined &&
-    (typeof targetRaw.headers !== "object" ||
-      targetRaw.headers === null ||
-      Array.isArray(targetRaw.headers))
-  ) {
-    throw new Error(`Project "${name}": target.headers must be an object`);
-  }
-  const target: TargetConfig = {
-    url: assertString(targetRaw.url, "target.url"),
-    method: typeof targetRaw.method === "string" ? targetRaw.method : "POST",
-    headers: (targetRaw.headers as Record<string, string>) ?? {},
-    body: targetRaw.body,
-    answerPath: assertString(targetRaw.answerPath, "target.answerPath"),
-  };
 
   const judgeRaw = (parsed.judge as Record<string, unknown>) ?? {};
   const judge: JudgeConfig = {
@@ -182,4 +187,69 @@ export function appendCases(
     writeFileSync(project.datasetPath, JSON.stringify(merged, null, 2) + "\n", "utf8");
   }
   return { added, skipped, total: merged.length };
+}
+
+/** Default grading rubric for an uploaded dataset (no bot, Prompt-mode only).
+ * Editable afterwards in the dataset's eval.config.yaml. */
+const DEFAULT_RUBRIC = `You grade an assistant's answer against a correct reference answer.
+PASS only if the answer is factually consistent with the reference and actually
+addresses the question. Minor wording or formatting differences are fine; a FAIL is
+a contradiction, a missing required fact, or an invented detail not in the reference.`;
+
+/** Turn a human dataset name into a safe folder slug (matches loadProject's rule). */
+function slugify(name: string): string {
+  return name
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9._-]+/g, "-")
+    .replace(/^[-.]+|[-.]+$/g, "");
+}
+
+/** Create a brand-new dataset-only project: writes eval.config.yaml (no target,
+ * judge=Claude sonnet, default rubric) + dataset.json. Used by the Upload page so
+ * a fresh dataset shows up in the dropdown, ready for Prompt mode / Models. */
+export function createProject(
+  displayName: string,
+  cases: Array<{ input?: string; expected?: string; tags?: string[]; description?: string }>,
+  rubric?: string,
+): { name: string; displayName: string; total: number } {
+  const name = (displayName ?? "").trim();
+  if (!name) throw new Error("Dataset name is required");
+  const slug = slugify(name);
+  if (!slug || !/^[A-Za-z0-9._-]+$/.test(slug)) {
+    throw new Error("Dataset name must contain at least one letter or number");
+  }
+  const dir = join(PROJECTS_DIR, slug);
+  if (existsSync(dir)) {
+    throw new Error(`A dataset named "${slug}" already exists — pick a different name`);
+  }
+
+  // Same invariants loadProject enforces: non-empty input+expected, no dup inputs.
+  const seen = new Set<string>();
+  const rows: TestCase[] = [];
+  for (const c of cases) {
+    const input = (c.input ?? "").trim();
+    const expected = (c.expected ?? "").trim();
+    if (!input || !expected || seen.has(input)) continue;
+    seen.add(input);
+    const row: TestCase = { input, expected };
+    if (c.tags && c.tags.length) row.tags = c.tags;
+    if (c.description) row.description = c.description;
+    rows.push(row);
+  }
+  if (rows.length === 0) {
+    throw new Error("No valid cases — each needs a non-empty input and expected answer");
+  }
+
+  const config = {
+    name,
+    judge: { provider: "claude-subscription", model: "sonnet" },
+    rubric: (rubric ?? "").trim() || DEFAULT_RUBRIC,
+    dataset: "./dataset.json",
+  };
+
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "eval.config.yaml"), stringifyYaml(config), "utf8");
+  writeFileSync(join(dir, "dataset.json"), JSON.stringify(rows, null, 2) + "\n", "utf8");
+  return { name: slug, displayName: name, total: rows.length };
 }

@@ -17,6 +17,7 @@ async function main() {
   if (cmd === "ask") {
     if (!projectName) throw new Error("usage: cli.ts ask <project>");
     const project = loadProject(projectName);
+    if (!project.target) throw new Error(`Project "${project.name}" has no bot target (dataset-only)`);
     const first = project.dataset[0]!;
     console.log(`Project: ${project.name} | target: ${project.target.url}`);
     console.log(`Q: ${first.input}`);

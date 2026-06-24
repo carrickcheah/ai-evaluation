@@ -24,6 +24,13 @@ export async function runEval(
   answerFn?: (input: string) => Promise<string>,
 ): Promise<RunResult> {
   const { dataset, target, judge, rubric } = project;
+  // Bot mode (no answerFn) calls the HTTP target — dataset-only projects have none.
+  if (!answerFn && !target) {
+    throw new Error(
+      `Project "${project.name}" has no bot endpoint configured — run it in Prompt mode, ` +
+        `or add a "target" block to its eval.config.yaml.`,
+    );
+  }
   const total = dataset.length;
   const results: CaseResult[] = new Array(total);
   const concurrency = Math.max(1, Math.min(8, Number(process.env.EVAL_CONCURRENCY) || 3));
@@ -48,7 +55,7 @@ export async function runEval(
       try {
         const answer = answerFn
           ? await answerFn(tc.input)
-          : await askBot(target, tc.input, runSalt, 120_000, signal);
+          : await askBot(target!, tc.input, runSalt, 120_000, signal);
         const verdict = await gradeAnswer(rubric, tc.input, tc.expected, answer, judge.model, 120_000, signal);
         result = {
           input: tc.input,

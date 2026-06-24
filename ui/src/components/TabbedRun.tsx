@@ -6,6 +6,7 @@
  * another, and switching tabs never loses state. A tab only unmounts (and
  * aborts its run) when you close it. */
 import { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import TabBar, { type EvalTab } from "./TabBar";
 import RunPage from "../pages/RunPage";
 
@@ -47,10 +48,43 @@ export default function TabbedRun() {
   if (!init.current) init.current = loadTabs();
   const [tabs, setTabs] = useState<EvalTab[]>(init.current.tabs);
   const [activeId, setActiveId] = useState<string>(init.current.activeId);
+  const location = useLocation();
+  const navigate = useNavigate();
+  // The id of a tab to activate after a preselect adds it (set during setTabs).
+  const pendingActive = useRef<string | null>(null);
+  const consumedPreselect = useRef<string | null>(null);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ tabs, activeId }));
   }, [tabs, activeId]);
+
+  // The Upload page navigates here with state.preselectProject after creating a
+  // dataset. Open a fresh Prompt-mode tab on it (or, if tabs are maxed out,
+  // repurpose the last one) and clear the nav state so a refresh doesn't re-fire.
+  useEffect(() => {
+    const pre = (location.state as { preselectProject?: string } | null)?.preselectProject;
+    if (!pre || consumedPreselect.current === pre) return;
+    consumedPreselect.current = pre;
+    navigate(".", { replace: true, state: null });
+    setTabs((ts) => {
+      if (ts.length < MAX_TABS) {
+        const id = newId();
+        pendingActive.current = id;
+        return [...ts, { id, project: pre, mode: "prompt" }];
+      }
+      const last = ts[ts.length - 1];
+      pendingActive.current = last.id;
+      return ts.map((t) => (t.id === last.id ? { ...t, project: pre, mode: "prompt" } : t));
+    });
+  }, [location.state, navigate]);
+
+  // Activate the tab queued by the preselect effect, once it exists in state.
+  useEffect(() => {
+    if (pendingActive.current && tabs.some((t) => t.id === pendingActive.current)) {
+      setActiveId(pendingActive.current);
+      pendingActive.current = null;
+    }
+  }, [tabs]);
 
   function addTab() {
     if (tabs.length >= MAX_TABS) return;
