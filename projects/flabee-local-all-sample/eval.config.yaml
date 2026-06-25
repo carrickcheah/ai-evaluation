@@ -1,0 +1,37 @@
+name: Flabee Sample — All (FAQ+WK+CK)
+
+# ALL account-14 knowledge: faqs + website_knowledge + continuous-knowledge (tagged by source).
+#
+# These projects are DATASET-ONLY (no target) so they always load and run in
+# Prompt mode / Compare-models on your Claude subscription ($0).
+#
+# Prompt mode uses a bare system prompt with NO retrieval, so the model can't
+# "use" website_knowledge / continuous-knowledge — to truly test that the LIVE
+# Flabee bot retrieves this knowledge, uncomment the target below and set BOT_KEY:
+#
+# target:
+#   url: https://api.nexgpt.nexerp.io/api/chat/sync
+#   method: POST
+#   headers:
+#     X-API-Key: "${BOT_KEY}"
+#   body:
+#     message: "{{input}}"
+#     phone_number: "{{uid}}"
+#     source: api
+#     account_id: 14
+#     session_id: "{{uid}}"
+#   answerPath: output
+
+judge:
+  provider: claude-subscription
+  model: sonnet
+
+rubric: |
+  You grade a customer-service assistant's answer against a known-correct reference
+  drawn from the Flabee/Sonobee (account 14) knowledge base.
+  PASS only if the answer is factually consistent with the reference and actually
+  addresses the question, in the same language as the reference (Malay / English /
+  Manglish). FAIL on any contradiction, a missing required fact (price, gestational
+  week, step), or an invented detail not supported by the reference.
+
+dataset: ./dataset.json

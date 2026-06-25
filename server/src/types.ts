@@ -27,6 +27,21 @@ export interface JudgeConfig {
   model: string;
 }
 
+/** A named, persisted bot endpoint the UI can pick between (e.g. Local vs Live
+ * production), so any dataset can run against any bot without a per-endpoint
+ * project. Secrets stay as ${ENV} placeholders, resolved only at run time. */
+export interface Connection {
+  id: string;
+  name: string;
+  url: string;
+  method?: string; // default POST
+  headers?: Record<string, string>;
+  /** Request body template; {{input}} and {{uid}} are substituted per case. */
+  body?: unknown;
+  /** Dot-path into the JSON response where the reply text lives (e.g. "output"). */
+  answerPath: string;
+}
+
 /** A fully-loaded, env-resolved project. */
 export interface ProjectConfig {
   name: string;
@@ -72,5 +87,7 @@ export interface RunResult {
   failed: number;
   errored: number;
   score: number; // percent passed, 0-100
+  /** True when the run was cancelled/disconnected — results are partial. */
+  cancelled?: boolean;
   results: CaseResult[];
 }

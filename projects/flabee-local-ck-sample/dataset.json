@@ -1,0 +1,82 @@
+[
+  {
+    "input": "What Pantang Food package durations are available?",
+    "expected": "# What Pantang Food package durations are available?\n\nPantang Food packages are available for 1, 3, 5, 10, 20, or 40 days.",
+    "tags": [
+      "Pantang packages",
+      "en"
+    ]
+  },
+  {
+    "input": "How do customers book the 10 Days Pantang Food package?",
+    "expected": "# How do customers book the 10 Days Pantang Food package?\n\nCustomers can book the 10 Days Pantang Food package through this link: https://appointment.flabee.com/bm/guest/services/10-days-pantang-food-package-",
+    "tags": [
+      "Booking link",
+      "en"
+    ]
+  },
+  {
+    "input": "Can marketing agents and customer service agents use the same WhatsApp number?",
+    "expected": "# Can marketing agents and customer service agents use the same WhatsApp number?\n\nNo. This WhatsApp number is for customer service, not marketing. Marketing agents should use their own number; in the described setup, agents/numbers have their own knowledge base.",
+    "tags": [
+      "WhatsApp channels",
+      "en"
+    ]
+  },
+  {
+    "input": "Apakah link website untuk booking appointment?",
+    "expected": "# Apakah link website untuk booking appointment?\n\nLink website untuk booking appointment ialah: https://appointment.flabee.com/guest",
+    "tags": [
+      "booking website",
+      "my"
+    ]
+  },
+  {
+    "input": "Is the separation of customer service and marketing WhatsApp numbers a company design or Chatwoot/Chatwool design?",
+    "expected": "# Is the separation of customer service and marketing WhatsApp numbers a company design or Chatwoot/Chatwool design?\n\nIt is the company's own design.",
+    "tags": [
+      "Channel design",
+      "en"
+    ]
+  },
+  {
+    "input": "How do I share my location so the team can check service coverage?",
+    "expected": "# How do I share my location so the team can check service coverage?\n\nShare your WhatsApp live/current location pin in the chat so the team can check coverage and arrange the next step.",
+    "tags": [
+      "location sharing",
+      "en"
+    ]
+  },
+  {
+    "input": "What are the customer service operating hours?",
+    "expected": "# What are the customer service operating hours?\n\nCustomer service operates from 7:30 AM to 10:30 PM.",
+    "tags": [
+      "operating hours",
+      "en"
+    ]
+  },
+  {
+    "input": "What are the KL/Selangor branch operating hours?",
+    "expected": "# What are the KL/Selangor branch operating hours?\n\nKL/Selangor branches operate from 9:00 AM to 6:30 PM, with lunch break from 1:30 PM to 2:30 PM.",
+    "tags": [
+      "branch hours",
+      "en"
+    ]
+  },
+  {
+    "input": "Untuk scan awal kehamilan, pakej apa yang sesuai?",
+    "expected": "# Untuk scan awal kehamilan, pakej apa yang sesuai?\n\nUntuk awal kehamilan, pelanggan boleh pilih 2D Growth Scan. Scan ini memantau tumbesaran bayi dalam kandungan termasuk anggaran berat, degupan jantung, jantina, pergerakan dan kedudukan bayi, tetapi tidak memeriksa kecacatan struktur bayi.",
+    "tags": [
+      "scan kehamilan",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa caj ultrasound hati di Melaka?",
+    "expected": "# Berapa caj ultrasound hati di Melaka?\n\nUntuk ultrasound hati, pilih pakej Upper Abdomen Scan. Harga di Negeri Sembilan, Melaka & Pahang: RM165.80 pada hari bekerja dan RM185.80 pada hujung minggu. Harga termasuk Booking Fee + SST 8%.",
+    "tags": [
+      "harga ultrasound",
+      "my"
+    ]
+  }
+]

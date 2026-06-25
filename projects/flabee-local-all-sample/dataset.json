@@ -1,0 +1,88 @@
+[
+  {
+    "input": "saya tak boleh login di flabee app",
+    "expected": "Sila cuba langkah berikut ya:\n \n 1️⃣ Buka aplikasi Flabee Care\n 2️⃣ Tekan “Lupa Kata Laluan / Forgot Password” di skrin log masuk\n 3️⃣ Masukkan email yang didaftarkan\n 4️⃣ Masukkan kod OTP yang diterima melalui email / whatsapp\n 5️⃣ Tetapkan kata laluan baru dan cuba login semula\n \n Jika masih tidak berjaya login, mohon berikan maklumat berikut untuk bantuan lanjut:\n \n 📌 Nama penuh:\n 📌 Email:\n 📌 Nombor telefon:\n 📌 Cawangan & tarikh scan (jika ada):\n \n Kami sedia bantu puan/encik secepat mungkin! 🌸",
+    "tags": [
+      "faq",
+      "Account; Login; Flabee Care"
+    ]
+  },
+  {
+    "input": "bagaimana nak reschedule appointment saya?",
+    "expected": "Langkah-langkah Reschedule Appointment\n \n 1. Buka aplikasi Flabee Care dan log masuk menggunakan akaun anda. \n \n \n 2. Pergi ke menu “Appointments” atau “Janji Temu” — biasanya tersedia di tab utama atau dalam menu profil.\n \n \n 3. Pilih janji temu yang ingin anda tukar. Anda akan melihat butang seperti “Reschedule”, “Tukar Janji Temu” atau simbol pen. \n \n \n 4. Klik pilihan itu dan pilih tarikh serta masa baru yang sesuai dengan jadual anda.\n \n \n 5. Sahkan pilihan anda, dan aplikasi akan mengemas kini janji temu tersebut. Anda mungkin juga menerima pengesahan melalui emel atau notifikasi. Sekiranya anda menghadapi sebarang masalah, sila hubungi pasukan khidmat pelanggan kami di cawangan pilihan anda 0189092933 - KL/SELANGOR 0149317226 - NEGERI SEMBILAN/JOHOR/SABAH/SARAWAK/MELAKA/PAHANG 0143577226 - KANGAR/PENAG/KELANTAN/PERAK/TERENGGANU",
+    "tags": [
+      "faq",
+      "Appointment; Reschedule"
+    ]
+  },
+  {
+    "input": "bagaimana cara nak tukar email?",
+    "expected": "Baik, puan/encik! Untuk kemaskini maklumat emel dan nombor telefon di Flabee Care, sila ikut langkah berikut:\n \n 1. Log masuk ke aplikasi Flabee Care.\n \n \n 2. Pergi ke tab ‘Akaun Saya’ (atau ikon profil).\n \n \n 3. Tekan ikon ⚙️ Tetapan / Edit di bahagian maklumat email\n \n \n 4. Masukkan email baru.\n \n \n 5. Sahkan melalui kod pengesahan yang akan dihantar ke emel atau SMS.\n \n \n 6. Setelah disahkan, maklumat akan dikemaskini secara automatik!",
+    "tags": [
+      "faq",
+      "Account; Update; Email"
+    ]
+  },
+  {
+    "input": "Saya guna nombor lama. Boleh tukar nombor telefon?",
+    "expected": "Baik, puan/encik! Untuk kemaskini maklumat emel dan nombor telefon di Flabee Care, sila ikut langkah berikut:\n \n 1. Log masuk ke aplikasi Flabee Care.\n \n \n 2. Pergi ke tab ‘Akaun Saya’ (atau ikon profil).\n \n \n 3. Tekan ikon ⚙️ Tetapan / Edit di bahagian maklumat nombor telefon.\n \n \n 4. Masukkan nombor telefon baru.\n \n \n 5. Sahkan melalui kod pengesahan yang akan dihantar ke emel atau SMS.\n \n \n 6. Setelah disahkan, maklumat akan dikemaskini secara automatik!",
+    "tags": [
+      "faq",
+      "Account; Update; Phone"
+    ]
+  },
+  {
+    "input": "What Pantang Food package durations are available?",
+    "expected": "Q: What Pantang Food package durations are available?\nA: Pantang Food packages are available for 1, 3, 5, 10, 20, or 40 days.",
+    "tags": [
+      "website",
+      "1"
+    ],
+    "description": "article://1#0"
+  },
+  {
+    "input": "Berapa caj ultrasound hati di Melaka?",
+    "expected": "Q: Berapa caj ultrasound hati di Melaka?\nA: Untuk ultrasound hati, pilih pakej Upper Abdomen Scan. Harga di Negeri Sembilan, Melaka & Pahang: RM165.80 pada hari bekerja dan RM185.80 pada hujung minggu. Harga termasuk Booking Fee + SST 8%.",
+    "tags": [
+      "website",
+      "10"
+    ],
+    "description": "article://10#0"
+  },
+  {
+    "input": "Which branch or area is this contact for?",
+    "expected": "Q: Which branch or area is this contact for?\nA: This contact is for Sonobee KL/Selangor.",
+    "tags": [
+      "website",
+      "100"
+    ],
+    "description": "article://100#0"
+  },
+  {
+    "input": "What Pantang Food package durations are available? #2",
+    "expected": "# What Pantang Food package durations are available?\n\nPantang Food packages are available for 1, 3, 5, 10, 20, or 40 days.",
+    "tags": [
+      "continuous",
+      "Pantang packages",
+      "en"
+    ]
+  },
+  {
+    "input": "How do customers book the 10 Days Pantang Food package? #2",
+    "expected": "# How do customers book the 10 Days Pantang Food package?\n\nCustomers can book the 10 Days Pantang Food package through this link: https://appointment.flabee.com/bm/guest/services/10-days-pantang-food-package-",
+    "tags": [
+      "continuous",
+      "Booking link",
+      "en"
+    ]
+  },
+  {
+    "input": "Can marketing agents and customer service agents use the same WhatsApp number? #2",
+    "expected": "# Can marketing agents and customer service agents use the same WhatsApp number?\n\nNo. This WhatsApp number is for customer service, not marketing. Marketing agents should use their own number; in the described setup, agents/numbers have their own knowledge base.",
+    "tags": [
+      "continuous",
+      "WhatsApp channels",
+      "en"
+    ]
+  }
+]

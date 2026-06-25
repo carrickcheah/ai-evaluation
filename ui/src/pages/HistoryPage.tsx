@@ -26,6 +26,7 @@ export default function HistoryPage() {
               <th>When</th>
               <th>Project</th>
               <th>Judge</th>
+              <th>Status</th>
               <th>Score</th>
               <th>Pass / Total</th>
             </tr>
@@ -36,6 +37,13 @@ export default function HistoryPage() {
                 <td>{new Date(r.startedAt).toLocaleString()}</td>
                 <td>{r.project}</td>
                 <td className="muted">{r.judgeModel}</td>
+                <td>
+                  {r.cancelled ? (
+                    <span className="badge-cancelled">cancelled</span>
+                  ) : (
+                    <span className="muted">done</span>
+                  )}
+                </td>
                 <td>{r.score}%</td>
                 <td>
                   {r.passed} / {r.total}

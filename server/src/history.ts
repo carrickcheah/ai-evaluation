@@ -9,8 +9,8 @@ export type RunSummary = Omit<RunResult, "results">;
 
 const insertStmt = db.query(
   `INSERT OR REPLACE INTO runs
-     (id, project, judge_model, started_at, finished_at, total, passed, failed, errored, score, results_json)
-   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+     (id, project, judge_model, started_at, finished_at, total, passed, failed, errored, score, cancelled, results_json)
+   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 );
 
 export function saveRun(run: RunResult): void {
@@ -25,6 +25,7 @@ export function saveRun(run: RunResult): void {
     run.failed,
     run.errored,
     run.score,
+    run.cancelled ? 1 : 0,
     JSON.stringify(run.results),
   );
 }
@@ -34,10 +35,15 @@ export function listRuns(): RunSummary[] {
   return db
     .query(
       `SELECT id, project, judge_model AS judgeModel, started_at AS startedAt,
-              finished_at AS finishedAt, total, passed, failed, errored, score
+              finished_at AS finishedAt, total, passed, failed, errored, score,
+              cancelled
          FROM runs ORDER BY started_at DESC`,
     )
-    .all() as RunSummary[];
+    .all()
+    .map((r) => {
+      const row = r as Omit<RunSummary, "cancelled"> & { cancelled: number };
+      return { ...row, cancelled: !!row.cancelled };
+    });
 }
 
 interface RunRow {
@@ -51,6 +57,7 @@ interface RunRow {
   failed: number;
   errored: number;
   score: number;
+  cancelled: number;
   results_json: string;
 }
 
@@ -70,6 +77,7 @@ export function getRun(id: string): RunResult | null {
       failed: row.failed,
       errored: row.errored,
       score: row.score,
+      cancelled: !!row.cancelled,
       results: JSON.parse(row.results_json) as CaseResult[],
     };
   } catch {

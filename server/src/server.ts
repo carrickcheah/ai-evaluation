@@ -4,6 +4,12 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { streamSSE } from "hono/streaming";
 import { listProjects, loadProject, appendCases, createProject } from "./config";
+import {
+  listConnections,
+  resolveConnection,
+  upsertConnection,
+  deleteConnection,
+} from "./connections";
 import { runEval } from "./run-eval";
 import { runMatrix } from "./run-matrix";
 import { askPrompt } from "./prompt-runner";
@@ -153,6 +159,21 @@ app.post("/api/projects/create", async (c) => {
   }
 });
 
+// Bot connections — named endpoints (Local / Live production / …) the Run page
+// picks between. Stored in connections.json; secrets resolved only at run time.
+app.get("/api/connections", (c) => c.json({ connections: listConnections() }));
+app.post("/api/connections", async (c) => {
+  const body = (await c.req.json().catch(() => ({}))) as Record<string, unknown>;
+  if (!(body.name as string)?.trim()) return c.json({ error: "name is required" }, 400);
+  if (!(body.url as string)?.trim()) return c.json({ error: "url is required" }, 400);
+  return c.json(upsertConnection(body));
+});
+app.delete("/api/connections/:id", (c) =>
+  deleteConnection(c.req.param("id"))
+    ? c.json({ ok: true })
+    : c.json({ error: "connection not found" }, 404),
+);
+
 app.get("/api/eval/runs", (c) => c.json({ runs: listRuns() }));
 
 app.get("/api/eval/runs/:id", (c) => {
@@ -180,6 +201,7 @@ app.post("/api/eval/run", async (c) => {
     mode?: "bot" | "prompt";
     systemPrompt?: string;
     answerModel?: string;
+    connectionId?: string;
   };
   if (!body.project) return c.json({ error: "project is required" }, 400);
   // Prompt mode tests a system prompt you wrote (on the subscription) instead of
@@ -196,6 +218,27 @@ app.post("/api/eval/run", async (c) => {
   }
   if (body.judgeModel) project = { ...project, judge: { ...project.judge, model: body.judgeModel } };
   if (body.limit && body.limit > 0) project = { ...project, dataset: project.dataset.slice(0, body.limit) };
+  // Bot mode + a chosen connection → send to THAT endpoint (Local / Live prod)
+  // instead of the project's own target. Lets any dataset hit any bot.
+  if (body.mode !== "prompt" && body.connectionId) {
+    let conn;
+    try {
+      conn = resolveConnection(body.connectionId);
+    } catch (e) {
+      return c.json({ error: e instanceof Error ? e.message : String(e) }, 400);
+    }
+    if (!conn) return c.json({ error: `connection not found: ${body.connectionId}` }, 400);
+    project = {
+      ...project,
+      target: {
+        url: conn.url,
+        method: conn.method ?? "POST",
+        headers: conn.headers ?? {},
+        body: conn.body,
+        answerPath: conn.answerPath,
+      },
+    };
+  }
 
   return streamSSE(c, async (stream) => {
     // Client disconnect (tab closed / Cancel) → abort the server-side eval too, so
@@ -227,10 +270,12 @@ app.post("/api/eval/run", async (c) => {
         controller.signal,
         answerFn,
       );
-      // Don't persist or announce a run the client abandoned (it's partial).
+      // Always persist — even a cancelled/abandoned run appears in History (with
+      // its partial results), so the user sees every run they pressed Run on.
+      const saved = controller.signal.aborted ? { ...run, cancelled: true } : run;
+      if (run.total > 0) saveRun(saved);
       if (!controller.signal.aborted) {
-        saveRun(run);
-        await stream.writeSSE({ event: "done", data: JSON.stringify(run) });
+        await stream.writeSSE({ event: "done", data: JSON.stringify(saved) });
       }
     } catch (err) {
       if (!controller.signal.aborted) {

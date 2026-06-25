@@ -1,0 +1,1946 @@
+[
+  {
+    "input": "What Pantang Food package durations are available?",
+    "expected": "# What Pantang Food package durations are available?\n\nPantang Food packages are available for 1, 3, 5, 10, 20, or 40 days.",
+    "tags": [
+      "Pantang packages",
+      "en"
+    ]
+  },
+  {
+    "input": "How do customers book the 10 Days Pantang Food package?",
+    "expected": "# How do customers book the 10 Days Pantang Food package?\n\nCustomers can book the 10 Days Pantang Food package through this link: https://appointment.flabee.com/bm/guest/services/10-days-pantang-food-package-",
+    "tags": [
+      "Booking link",
+      "en"
+    ]
+  },
+  {
+    "input": "Can marketing agents and customer service agents use the same WhatsApp number?",
+    "expected": "# Can marketing agents and customer service agents use the same WhatsApp number?\n\nNo. This WhatsApp number is for customer service, not marketing. Marketing agents should use their own number; in the described setup, agents/numbers have their own knowledge base.",
+    "tags": [
+      "WhatsApp channels",
+      "en"
+    ]
+  },
+  {
+    "input": "Apakah link website untuk booking appointment?",
+    "expected": "# Apakah link website untuk booking appointment?\n\nLink website untuk booking appointment ialah: https://appointment.flabee.com/guest",
+    "tags": [
+      "booking website",
+      "my"
+    ]
+  },
+  {
+    "input": "Is the separation of customer service and marketing WhatsApp numbers a company design or Chatwoot/Chatwool design?",
+    "expected": "# Is the separation of customer service and marketing WhatsApp numbers a company design or Chatwoot/Chatwool design?\n\nIt is the company's own design.",
+    "tags": [
+      "Channel design",
+      "en"
+    ]
+  },
+  {
+    "input": "How do I share my location so the team can check service coverage?",
+    "expected": "# How do I share my location so the team can check service coverage?\n\nShare your WhatsApp live/current location pin in the chat so the team can check coverage and arrange the next step.",
+    "tags": [
+      "location sharing",
+      "en"
+    ]
+  },
+  {
+    "input": "What are the customer service operating hours?",
+    "expected": "# What are the customer service operating hours?\n\nCustomer service operates from 7:30 AM to 10:30 PM.",
+    "tags": [
+      "operating hours",
+      "en"
+    ]
+  },
+  {
+    "input": "What are the KL/Selangor branch operating hours?",
+    "expected": "# What are the KL/Selangor branch operating hours?\n\nKL/Selangor branches operate from 9:00 AM to 6:30 PM, with lunch break from 1:30 PM to 2:30 PM.",
+    "tags": [
+      "branch hours",
+      "en"
+    ]
+  },
+  {
+    "input": "Untuk scan awal kehamilan, pakej apa yang sesuai?",
+    "expected": "# Untuk scan awal kehamilan, pakej apa yang sesuai?\n\nUntuk awal kehamilan, pelanggan boleh pilih 2D Growth Scan. Scan ini memantau tumbesaran bayi dalam kandungan termasuk anggaran berat, degupan jantung, jantina, pergerakan dan kedudukan bayi, tetapi tidak memeriksa kecacatan struktur bayi.",
+    "tags": [
+      "scan kehamilan",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa caj ultrasound hati di Melaka?",
+    "expected": "# Berapa caj ultrasound hati di Melaka?\n\nUntuk ultrasound hati, pilih pakej Upper Abdomen Scan. Harga di Negeri Sembilan, Melaka & Pahang: RM165.80 pada hari bekerja dan RM185.80 pada hujung minggu. Harga termasuk Booking Fee + SST 8%.",
+    "tags": [
+      "harga ultrasound",
+      "my"
+    ]
+  },
+  {
+    "input": "Perlu puasa sebelum Upper Abdomen Scan?",
+    "expected": "# Perlu puasa sebelum Upper Abdomen Scan?\n\nYa. Perlu puasa sekurang-kurangnya 6 jam sebelum scan.",
+    "tags": [
+      "persediaan scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Di mana lokasi cawangan Sonobee/Sono di Melaka?",
+    "expected": "# Di mana lokasi cawangan Sonobee/Sono di Melaka?\n\nCawangan Melaka: 1) Sono@Ayer Keroh HQ, sebelah Terapi Matematik, Jalan KNMP 1, Kompleks Niaga Melaka Perdana, 75450 Ayer Keroh, Melaka. 2) Sonobee@Kota Melaka, inside Klinik Salam, No 202-A & 202-B, Seksyen 2, Jalan Kampung Lapan, Taman Kenanga, 75200 Melaka. 3) Sonobee@Durian Tunggal, inside Klinik Dr.Champz, 15, Jalan PNG, Pusat Niaga Gangsa, 76100 Durian Tunggal, Melaka.",
+    "tags": [
+      "lokasi melaka",
+      "my"
+    ]
+  },
+  {
+    "input": "Adakah Sono Ultrasound menerima walk-in dan bagaimana cara buat tempahan?",
+    "expected": "# Adakah Sono Ultrasound menerima walk-in dan bagaimana cara buat tempahan?\n\nTempahan perlu dibuat secara online melalui pautan https://appointment.flabee.com/guest. Walk-in tidak diterima.",
+    "tags": [
+      "booking policy",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapakah harga scan ultrasound promo untuk cawangan Perak, Penang, Kedah, Perlis, Terengganu dan Kelantan?",
+    "expected": "# Berapakah harga scan ultrasound promo untuk cawangan Perak, Penang, Kedah, Perlis, Terengganu dan Kelantan?\n\nPromo scan hingga 17 June 2026. Sabtu dan Ahad dikira harga weekend. Harga: Gender Scan 15-40 minggu RM25.80 weekday / RM30.80 weekend; 2D Growth Scan 4-40 minggu RM35.80 weekday / RM40.80 weekend; 5D Scan 12-40 minggu RM85.80 weekday / RM95.80 weekend; NT Scan 11-13 minggu RM95.80 weekday / RM105.80 weekend; Anatomy Screening 18-29 minggu RM100.80 weekday / RM120.80 weekend; Anatomy Screening + 5D 18-29 minggu RM135.80 weekday / RM155.80 weekend. Semua harga termasuk booking fees dan SST 8%.",
+    "tags": [
+      "scan pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "Bila perlu bayar untuk tempahan ultrasound?",
+    "expected": "# Bila perlu bayar untuk tempahan ultrasound?\n\nSemasa proses tempahan, caj tempahan RM10.80 + SST akan dikenakan. Baki bayaran diselesaikan selepas scan.",
+    "tags": [
+      "payment process",
+      "my"
+    ]
+  },
+  {
+    "input": "Is NICC/NIPT testing currently available?",
+    "expected": "# Is NICC/NIPT testing currently available?\n\nNICC/NIPT testing is not available for now, and there is no confirmed date when it will resume.",
+    "tags": [
+      "test availability",
+      "en"
+    ]
+  },
+  {
+    "input": "Di mana lokasi Sonobee Ultrasound cawangan Kuantan?",
+    "expected": "# Di mana lokasi Sonobee Ultrasound cawangan Kuantan?\n\nSonobee@Kuantan terletak di sebelah Reserved Restaurant, A-209, Tingkat 1, Jalan Air Putih, Taman Sentosa Baru, 25300 Kuantan, Pahang.",
+    "tags": [
+      "branch location",
+      "my"
+    ]
+  },
+  {
+    "input": "Macam mana nak buat tempahan appointment dan semak kekosongan slot?",
+    "expected": "# Macam mana nak buat tempahan appointment dan semak kekosongan slot?\n\nTempahan dibuat melalui pautan https://appointment.flabee.com/guest. Daftar akaun, klik “Beli Sekarang”, pilih lokasi, perkhidmatan, tarikh dan masa, sahkan slot masa, isi butiran tempahan, kemudian teruskan pembayaran. Caj tempahan RM10.80 + SST dikenakan semasa booking, dan baki bayaran diselesaikan selepas imbasan. Pengesahan tempahan diterima melalui notifikasi aplikasi Flabee dan email.",
+    "tags": [
+      "booking procedure",
+      "my"
+    ]
+  },
+  {
+    "input": "Pada 18 minggu kandungan, scan apa yang paling sesuai?",
+    "expected": "# Pada 18 minggu kandungan, scan apa yang paling sesuai?\n\nUntuk kandungan 18 hingga 29 minggu, pakej yang paling sesuai ialah Anatomy Screening. Harga RM100.80 pada hari biasa dan RM120.80 pada hujung minggu.",
+    "tags": [
+      "anatomy screening",
+      "my"
+    ]
+  },
+  {
+    "input": "Detail/anatomy scan biasanya dibuat pada minggu ke berapa dan berapa harga?",
+    "expected": "# Detail/anatomy scan biasanya dibuat pada minggu ke berapa dan berapa harga?\n\nDetail/anatomy scan ditawarkan untuk kandungan 18 hingga 29 minggu. Pakej Anatomy Screening +5D: RM135.80 pada hari biasa, RM155.80 pada hujung minggu. Pakej Anatomy Screening sahaja: RM100.80 pada hari biasa, RM120.80 pada hujung minggu.",
+    "tags": [
+      "scan pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa harga pregnancy scan?",
+    "expected": "# Berapa harga pregnancy scan?\n\nPromo scan sehingga 17 June 2026. Harga weekday/weekend: Gender Scan (15-40 minggu) RM25.80/RM30.80; 2D Growth Scan (4-40 minggu) RM35.80/RM40.80; 5D Scan (12-40 minggu) RM85.80/RM95.80; NT Scan (11-13 minggu) RM95.80/RM105.80; Anatomy Screening (18-29 minggu) RM100.80/RM120.80; Anatomy Screening + 5D (18-29 minggu) RM135.80/RM155.80. Semua harga termasuk booking fees & SST 8%. Sabtu dan Ahad dikira harga weekend.",
+    "tags": [
+      "scan prices",
+      "my"
+    ]
+  },
+  {
+    "input": "Adakah outlet Temerloh masih beroperasi?",
+    "expected": "# Adakah outlet Temerloh masih beroperasi?\n\nOutlet di Temerloh sudah tidak beroperasi. Buat masa ini hanya ada satu outlet di Kuantan, dan outlet Kuantan cuti setiap hari Isnin.",
+    "tags": [
+      "Outlet operasi",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa harga promo scan di cawangan Johor, Sabah dan Sarawak?",
+    "expected": "# Berapa harga promo scan di cawangan Johor, Sabah dan Sarawak?\n\nPromo scan hingga 17 June 2026. Harga hujung minggu berbeza. 15-40 minggu: Gender Scan RM30.80 weekday, RM35.80 weekend. 4-40 minggu: 2D Growth Scan RM40.80 weekday, RM45.80 weekend. 12-40 minggu: 5D Scan RM107.80 weekday, RM117.80 weekend. 11-13 minggu: NT Scan RM107.80 weekday, RM117.80 weekend. 18-29 minggu: Anatomy Screening RM117.80 weekday, RM137.80 weekend. 18-29 minggu: Anatomy Screening + 5D RM147.80 weekday, RM167.80 weekend. Semua harga termasuk booking fee dan SST 8%.",
+    "tags": [
+      "scan prices",
+      "my"
+    ]
+  },
+  {
+    "input": "Apa itu anatomy screening/detail scan dan bila waktu sesuai untuk buat scan ini?",
+    "expected": "# Apa itu anatomy screening/detail scan dan bila waktu sesuai untuk buat scan ini?\n\nAnatomy Screening ialah pemeriksaan ultrasound terperinci untuk melihat perkembangan organ dan struktur bayi seperti otak, jantung, tulang belakang, buah pinggang, tangan dan kaki. Perkembangan dan jantina bayi juga akan di-scan. Usia kandungan yang paling sesuai untuk Anatomy Screening ialah 20 hingga 24 minggu. Bagi usia 25–29 minggu, pemeriksaan masih boleh dilakukan, tetapi bergantung kepada kedudukan dan saiz bayi semasa scan.",
+    "tags": [
+      "anatomy screening",
+      "my"
+    ]
+  },
+  {
+    "input": "How do I book an ultrasound appointment through Flabee?",
+    "expected": "# How do I book an ultrasound appointment through Flabee?\n\nDownload and open the Flabee app, register or log in, select the scan/service package, choose outlet/date/time slot, fill in the required details, review the booking, pay the booking fee to secure the slot, and once payment succeeds the appointment is confirmed. Attend the selected outlet at the scheduled time; the remaining service fee is paid at the outlet during the visit.",
+    "tags": [
+      "booking steps",
+      "en"
+    ]
+  },
+  {
+    "input": "Where are the Sonobee Sabah outlets in Kota Kinabalu?",
+    "expected": "# Where are the Sonobee Sabah outlets in Kota Kinabalu?\n\nSonobee@Kota Kinabalu HQ is at Lot B212-B, Second Floor, Wisma Merdeka, Phase II, 88300 Kota Kinabalu, Sabah. Sonobee@Kingfisher is beside Atukupi, Block B, Plaza Kingfisher, 16-0-6, Lot 51, Lorong Plaza Kingfisher 4, 88450 Kota Kinabalu, Sabah.",
+    "tags": [
+      "outlet locations",
+      "en"
+    ]
+  },
+  {
+    "input": "Berapa harga 5D scan di Johor?",
+    "expected": "# Berapa harga 5D scan di Johor?\n\nUntuk cawangan Johor, promo 5D Scan bagi 12–40 minggu ialah RM107.80 pada hari biasa dan RM117.80 pada hujung minggu. Harga termasuk booking fee dan SST 8%. Sabtu dan Ahad dikira harga hujung minggu. Promo dinyatakan sehingga 17 Jun 2026.",
+    "tags": [
+      "5D pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "Apa maksud pakej Anatomy Screening +5D?",
+    "expected": "# Apa maksud pakej Anatomy Screening +5D?\n\nPakej Anatomy Screening +5D merangkumi growth scan, gender scan, scan muka baby, dan organ baby scan.",
+    "tags": [
+      "scan package",
+      "my"
+    ]
+  },
+  {
+    "input": "Scan apa untuk detail scan dan berapa harganya?",
+    "expected": "# Scan apa untuk detail scan dan berapa harganya?\n\nUntuk detail scan, pilih Anatomy Screening atau Anatomy Screening +5D. Ia tersedia untuk kandungan 18–29 minggu. Harga Anatomy Screening: RM100.80 weekday, RM120.80 weekend. Harga Anatomy Screening +5D: RM135.80 weekday, RM155.80 weekend.",
+    "tags": [
+      "detail scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Untuk bayaran Medilife, perlu bayar kepada Medilife atau kepada customer?",
+    "expected": "# Untuk bayaran Medilife, perlu bayar kepada Medilife atau kepada customer?\n\nBayaran perlu dibuat terus kepada Medilife.",
+    "tags": [
+      "payment procedure",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh buat NT scan kalau kandungan sudah 15 minggu?",
+    "expected": "# Boleh buat NT scan kalau kandungan sudah 15 minggu?\n\nTidak boleh. NT scan hanya boleh dibuat sehingga 13 minggu 6 hari sahaja.",
+    "tags": [
+      "NT scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Apakah harga Anatomy Screening untuk kandungan 18 hingga 29 minggu?",
+    "expected": "# Apakah harga Anatomy Screening untuk kandungan 18 hingga 29 minggu?\n\nUntuk 18–29 minggu: Anatomy Screening RM100.80 pada hari biasa dan RM120.80 pada hujung minggu. Anatomy Screening +5D RM135.80 pada hari biasa dan RM155.80 pada hujung minggu.",
+    "tags": [
+      "Anatomy Screening",
+      "my"
+    ]
+  },
+  {
+    "input": "Parking depan SonoBee Seremban yang ada papan Fairy Park itu milik SonoBee ke?",
+    "expected": "# Parking depan SonoBee Seremban yang ada papan Fairy Park itu milik SonoBee ke?\n\nParking tersebut bukan milik SonoBee.",
+    "tags": [
+      "parking Seremban",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapakah harga pregnancy scan di cawangan Negeri 9, Melaka dan Pahang?",
+    "expected": "# Berapakah harga pregnancy scan di cawangan Negeri 9, Melaka dan Pahang?\n\nPromo scan sehingga 17 Jun 2026. Harga weekday/weekend: Gender Scan (15-40 minggu) RM25.80/RM30.80; 2D Growth Scan (4-40 minggu) RM35.80/RM40.80; 5D Scan (12-40 minggu) RM85.80/RM95.80; NT Scan (11-13 minggu) RM95.80/RM105.80; Anatomy Screening (18-29 minggu) RM100.80/RM120.80; Anatomy Screening + 5D (18-29 minggu) RM135.80/RM155.80. Semua harga termasuk booking fee dan SST 8%.",
+    "tags": [
+      "scan pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "RM10 itu untuk refund booking atau bayaran extra?",
+    "expected": "# RM10 itu untuk refund booking atau bayaran extra?\n\nRM10 itu adalah untuk refund booking, bukan bayaran extra.",
+    "tags": [
+      "booking refund",
+      "my"
+    ]
+  },
+  {
+    "input": "What are the promo ultrasound scan prices for weekday and weekend?",
+    "expected": "# What are the promo ultrasound scan prices for weekday and weekend?\n\nPromo scan prices until 17 June 2026: Gender Scan 15–40 weeks RM25.80 weekday / RM30.80 weekend; 2D Growth Scan 4–40 weeks RM35.80 weekday / RM40.80 weekend; 5D Scan 12–40 weeks RM85.80 weekday / RM95.80 weekend; NT Scan 11–13 weeks RM95.80 weekday / RM105.80 weekend; Anatomy Screening 18–29 weeks RM100.80 weekday / RM120.80 weekend; Anatomy Screening + 5D 18–29 weeks RM135.80 weekday / RM155.80 weekend. All prices include booking fees and SST 8%.",
+    "tags": [
+      "scan pricing",
+      "en"
+    ]
+  },
+  {
+    "input": "Which areas does this Sonobee Ultrasound branch cover?",
+    "expected": "# Which areas does this Sonobee Ultrasound branch cover?\n\nThis Sonobee Ultrasound branch covers Perak, Penang, Kedah, Perlis, Terengganu, and Kelantan.",
+    "tags": [
+      "branch coverage",
+      "en"
+    ]
+  },
+  {
+    "input": "Kalau lewat appointment scan, ada caj lewat ke dan berapa?",
+    "expected": "# Kalau lewat appointment scan, ada caj lewat ke dan berapa?\n\nJika lewat lebih 15 minit untuk appointment, akan dikenakan caj lewat sebanyak 30% daripada harga scan.",
+    "tags": [
+      "caj lewat",
+      "my"
+    ]
+  },
+  {
+    "input": "Kalau bayaran booking online gagal atau terkeluar semula, apa perlu dibuat?",
+    "expected": "# Kalau bayaran booking online gagal atau terkeluar semula, apa perlu dibuat?\n\nCuba buat booking sekali lagi. Booking hanya berjaya selepas bayaran selesai.",
+    "tags": [
+      "Online booking",
+      "my"
+    ]
+  },
+  {
+    "input": "Perlu datang klinik berapa awal sebelum masa appointment?",
+    "expected": "# Perlu datang klinik berapa awal sebelum masa appointment?\n\nDatang ke klinik 10 minit lebih awal daripada masa appointment.",
+    "tags": [
+      "Appointment arrival",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh buat 2D Growth Scan pada usia kandungan 8 minggu?",
+    "expected": "# Boleh buat 2D Growth Scan pada usia kandungan 8 minggu?\n\nBoleh. 2D Growth Scan ditawarkan untuk usia kandungan 4 hingga 40 minggu.",
+    "tags": [
+      "scan eligibility",
+      "my"
+    ]
+  },
+  {
+    "input": "Can I walk in for a scan without an appointment?",
+    "expected": "# Can I walk in for a scan without an appointment?\n\nNo walk-ins are accepted. Appointments must be booked in advance.",
+    "tags": [
+      "walk in policy",
+      "en"
+    ]
+  },
+  {
+    "input": "Where is the Sarawak Sonobee Ultrasound branch?",
+    "expected": "# Where is the Sarawak Sonobee Ultrasound branch?\n\nThe Sarawak Sonobee branch is Sonobee@Stutong, Kuching, located at 11, Jalan Setia Raja, Muara Tebas Land District, 93350 Kuching, Sarawak.",
+    "tags": [
+      "branch location",
+      "en"
+    ]
+  },
+  {
+    "input": "Kalau tertinggal IC atau barang di outlet Bukit Indah, bila boleh datang ambil?",
+    "expected": "# Kalau tertinggal IC atau barang di outlet Bukit Indah, bila boleh datang ambil?\n\nIC atau barang yang tertinggal di outlet Bukit Indah boleh diambil sebelum jam 6 petang.",
+    "tags": [
+      "lost item pickup",
+      "my"
+    ]
+  },
+  {
+    "input": "What happens if I’m late for my appointment?",
+    "expected": "# What happens if I’m late for my appointment?\n\nIf you are more than 15 minutes late, a late fee will be charged.",
+    "tags": [
+      "late fee",
+      "en"
+    ]
+  },
+  {
+    "input": "Ada lokasi Sonobee di mana?",
+    "expected": "# Ada lokasi Sonobee di mana?\n\nSonobee mempunyai lokasi di Melaka: 1) Sono@Ayer Keroh HQ, sebelah Terapi Matematik, Jalan KNMP 1, Kompleks Niaga Melaka Perdana, 75450 Ayer Keroh, Melaka. 2) Sonobee@Kota Melaka, inside Klinik Salam, No 202-A & 202-B, Seksyen 2, Jalan Kampung Lapan, Taman Kenanga, 75200 Melaka. 3) Sonobee@Durian Tunggal, inside Klinik Dr.Champz, 15, Jalan PNG, Pusat Niaga Gangsa, 76100 Durian Tunggal, Melaka.",
+    "tags": [
+      "lokasi cawangan",
+      "my"
+    ]
+  },
+  {
+    "input": "Outlet KL/Selangor mana ada 5D scan dengan color printing?",
+    "expected": "# Outlet KL/Selangor mana ada 5D scan dengan color printing?\n\nUntuk 5D Scan KL/Selangor, outlet tanpa color printing: Ampang, Kota Damansara, Puncak Alam, Bukit Sentosa, Klang, Bangi. Outlet dengan color printing: Kajang, Cyberjaya, Cheras, Gombak, Petaling Jaya, Selayang, Rawang, Shah Alam, Balakong HQ, Puchong Utama, Taman Melawati, Subang Bestari. Caj color printing berbeza ikut outlet, sekitar RM5–15 sekeping.",
+    "tags": [
+      "5D outlets",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh buat scan untuk ibu mengandung?",
+    "expected": "# Boleh buat scan untuk ibu mengandung?\n\nYa, Sonobee boleh buat scan untuk ibu mengandung.",
+    "tags": [
+      "pregnancy scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Bagaimana cara untuk semak slot dan buat tempahan janji temu?",
+    "expected": "# Bagaimana cara untuk semak slot dan buat tempahan janji temu?\n\nTempahan dibuat melalui aplikasi FLABEE CARE. Muat turun aplikasi di App Store/Google Play, daftar akaun dan lengkapkan maklumat pendaftaran. Di Home, klik “Tempah janji temu”, pilih lokasi yang ada perkataan “Sonobee” di depan, pilih perkhidmatan, tarikh dan masa. Jika pilihan masa tidak boleh ditekan, maksudnya outlet tutup atau slot penuh. Klik “Sahkan Slot Masa”, baca borang persetujuan dan isi data, pilih kaedah pembayaran, kemudian klik “Tempah janji temu”. Tempahan berjaya akan disahkan melalui notifikasi aplikasi Flabee Care dan email.",
+    "tags": [
+      "tempahan slot",
+      "my"
+    ]
+  },
+  {
+    "input": "How much is phototherapy machine rental?",
+    "expected": "# How much is phototherapy machine rental?\n\nPhototherapy machine rental is RM200/day for KL and Selangor, and RM220/day for other states. Minimum rental is 2 days. Extension is RM120/day. Some areas may incur additional delivery charges depending on location.",
+    "tags": [
+      "rental pricing",
+      "en"
+    ]
+  },
+  {
+    "input": "Can I get a receipt for phototherapy machine rental payment?",
+    "expected": "# Can I get a receipt for phototherapy machine rental payment?\n\nA receipt is available upon request in PDF format after payment.",
+    "tags": [
+      "payment receipt",
+      "en"
+    ]
+  },
+  {
+    "input": "Berapa harga scan 2D untuk walk-in?",
+    "expected": "# Berapa harga scan 2D untuk walk-in?\n\nHarga scan 2D untuk walk-in ialah RM60.",
+    "tags": [
+      "scan price",
+      "my"
+    ]
+  },
+  {
+    "input": "Macam mana nak ambil softcopy yang telah discan?",
+    "expected": "# Macam mana nak ambil softcopy yang telah discan?\n\nSoftcopy akan diupload dalam Flabee apps dalam masa 3 hingga 5 hari bekerja. Untuk pertanyaan lanjut, pelanggan boleh hubungi atau WhatsApp person in charge.",
+    "tags": [
+      "softcopy scan",
+      "my"
+    ]
+  },
+  {
+    "input": "What are the ultrasound scan packages and promo prices for Negeri Sembilan, Melaka and Pahang branches?",
+    "expected": "# What are the ultrasound scan packages and promo prices for Negeri Sembilan, Melaka and Pahang branches?\n\nPromo scan prices until 17 June 2026: Gender Scan (15–40 weeks) RM25.80 weekday, RM30.80 weekend; 2D Growth Scan (4–40 weeks) RM35.80 weekday, RM40.80 weekend; 5D Scan (12–40 weeks) RM85.80 weekday, RM95.80 weekend; NT Scan (11–13 weeks) RM95.80 weekday, RM105.80 weekend; Anatomy Screening (18–29 weeks) RM100.80 weekday, RM120.80 weekend; Anatomy Screening + 5D (18–29 weeks) RM135.80 weekday, RM155.80 weekend. All prices include booking fees and SST 8%. Saturday and Sunday use weekend prices.",
+    "tags": [
+      "scan prices",
+      "en"
+    ]
+  },
+  {
+    "input": "Where can I check a branch location, address, or outlet photos?",
+    "expected": "# Where can I check a branch location, address, or outlet photos?\n\nBranch location, address, and outlet pictures can be checked through the booking website/outlets page.",
+    "tags": [
+      "Branch location",
+      "en"
+    ]
+  },
+  {
+    "input": "Di mana lokasi cawangan Sonobee/Sono di Perak?",
+    "expected": "# Di mana lokasi cawangan Sonobee/Sono di Perak?\n\nLokasi Perak yang dinyatakan: Sono @ Ipoh HQ di Medan Meru Bestari, Bandar Meru Raya, Ipoh; Sono @ Kuala Kangsar di Medan Suria, Kuala Kangsar; Sono @ Kamunting Perak di Medan Saujana, Kamunting; Sono @ Manjung di Seri Manjung; dan Sono @ Seri Manjung di Pusat Perniagaan Manjung Point 3, Seri Manjung.",
+    "tags": [
+      "perak locations",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa harga pregnancy scan di cawangan Sarawak?",
+    "expected": "# Berapa harga pregnancy scan di cawangan Sarawak?\n\nPromo scan sehingga 17 June 2026. Harga Sabtu dan Ahad adalah harga weekend. Gender Scan (15–40 minggu): RM30.80 weekday, RM35.80 weekend. 2D Growth Scan (4–40 minggu): RM40.80 weekday, RM45.80 weekend. 5D Scan (12–40 minggu): RM107.80 weekday, RM117.80 weekend. NT Scan (11–13 minggu): RM107.80 weekday, RM117.80 weekend. Anatomy Screening (18–29 minggu): RM117.80 weekday, RM137.80 weekend. Anatomy Screening + 5D (18–29 minggu): RM147.80 weekday, RM167.80 weekend. Semua harga termasuk booking fee dan SST 8%.",
+    "tags": [
+      "scan prices",
+      "my"
+    ]
+  },
+  {
+    "input": "Di mana lokasi cawangan Sonobee di Sarawak?",
+    "expected": "# Di mana lokasi cawangan Sonobee di Sarawak?\n\nCawangan Sarawak ialah Sonobee@Stutong, Kuching, beralamat di 11, Jalan Setia Raja, Muara Tebas Land District, 93350 Kuching, Sarawak.",
+    "tags": [
+      "branch location",
+      "my"
+    ]
+  },
+  {
+    "input": "Do you provide a medical certificate (MC) after a scan?",
+    "expected": "# Do you provide a medical certificate (MC) after a scan?\n\nNo, they do not provide medical certificates (MC) after scans.",
+    "tags": [
+      "medical certificate",
+      "en"
+    ]
+  },
+  {
+    "input": "What does it mean if I cannot select a time slot in the booking system?",
+    "expected": "# What does it mean if I cannot select a time slot in the booking system?\n\nIf a time slot cannot be selected, it means the outlet is either closed or fully booked. All available slots are shown on the website/app only.",
+    "tags": [
+      "booking slots",
+      "en"
+    ]
+  },
+  {
+    "input": "Where can I find the lower abdomen scan package in the booking system?",
+    "expected": "# Where can I find the lower abdomen scan package in the booking system?\n\nThe lower abdomen scan can be found under Health Screening, or by typing “package lower” in the booking system. It can also be booked directly through the lower abdomen service link.",
+    "tags": [
+      "lower abdomen scan",
+      "en"
+    ]
+  },
+  {
+    "input": "Is the Kota Damansara outlet open on Sundays?",
+    "expected": "# Is the Kota Damansara outlet open on Sundays?\n\nThe Kota Damansara outlet is closed on Sundays. If no slot is available, customers should choose another date; available slots depend on the website/app.",
+    "tags": [
+      "outlet hours",
+      "en"
+    ]
+  },
+  {
+    "input": "How does payment work for an appointment booking?",
+    "expected": "# How does payment work for an appointment booking?\n\nA booking fee is required when making the appointment. The full package price is paid at the counter.",
+    "tags": [
+      "payment policy",
+      "en"
+    ]
+  },
+  {
+    "input": "Can Course A and Course D be done on the same day, and what is the schedule?",
+    "expected": "# Can Course A and Course D be done on the same day, and what is the schedule?\n\nYes, Course A and Course D can be done on the same day as a full-day course. Course A runs 10am–12pm, and Course D runs 2pm–6pm.",
+    "tags": [
+      "course schedule",
+      "my"
+    ]
+  },
+  {
+    "input": "How much is Course A + Course D, and how much deposit is needed?",
+    "expected": "# How much is Course A + Course D, and how much deposit is needed?\n\nThe price for Course A + Course D is RM1800. A RM400 advance deposit is required to book the slot.",
+    "tags": [
+      "course pricing",
+      "en"
+    ]
+  },
+  {
+    "input": "What details are needed for e-invoicing submission?",
+    "expected": "# What details are needed for e-invoicing submission?\n\nFor e-invoicing submission, provide TIN Number, Company Name if any, BRN Number if any, Peppol ID if any, and Registered Address. The TIN is the Tax Identification Number from LHDN, starting with IG.",
+    "tags": [
+      "e-invoicing details",
+      "en"
+    ]
+  },
+  {
+    "input": "Jika masa appointment tidak boleh dipilih, apa maksudnya?",
+    "expected": "# Jika masa appointment tidak boleh dipilih, apa maksudnya?\n\nJika pilihan masa tidak boleh ditekan semasa membuat tempahan, maksudnya outlet tersebut tutup atau slot sudah penuh.",
+    "tags": [
+      "slot appointment",
+      "my"
+    ]
+  },
+  {
+    "input": "Adakah Sonobee buat detailed scan atau anatomy screening?",
+    "expected": "# Adakah Sonobee buat detailed scan atau anatomy screening?\n\nSonobee membuat anatomy screening oleh sonographer sahaja, bukan detailed scan.",
+    "tags": [
+      "jenis scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Macam mana nak request promo code untuk repeat pakej 5D?",
+    "expected": "# Macam mana nak request promo code untuk repeat pakej 5D?\n\nUntuk request promo code, berikan maklumat berikut: nama, email, outlet, tarikh last scan, masa last scan, dan pakej. Selepas diproses, promo code boleh disemak melalui email atau notification dalam apps.",
+    "tags": [
+      "promo code",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh walk in untuk pakej 5D atau kena buat appointment?",
+    "expected": "# Boleh walk in untuk pakej 5D atau kena buat appointment?\n\nUntuk pakej 5D, walk-in tidak dibenarkan. Pelanggan perlu membuat booking/appointment terlebih dahulu.",
+    "tags": [
+      "5D booking",
+      "my"
+    ]
+  },
+  {
+    "input": "Adakah 5D Scan termasuk detail scan/anatomy screening?",
+    "expected": "# Adakah 5D Scan termasuk detail scan/anatomy screening?\n\nTidak. 5D Scan tidak termasuk detail scan. Untuk detail scan bersama 5D, pilih pakej Anatomy Screening + 5D bagi kandungan 18–29 minggu: RM135.80 pada hari biasa dan RM155.80 pada hujung minggu.",
+    "tags": [
+      "5D anatomy",
+      "my"
+    ]
+  },
+  {
+    "input": "What time is the break at Sonobee Kingfisher?",
+    "expected": "# What time is the break at Sonobee Kingfisher?\n\nThe break time is 1:30 PM to 2:30 PM.",
+    "tags": [
+      "break time",
+      "en"
+    ]
+  },
+  {
+    "input": "What is the best pregnancy week to do a 5D scan?",
+    "expected": "# What is the best pregnancy week to do a 5D scan?\n\nThe most suitable time for a 5D scan is around 24 to 32 weeks of pregnancy.",
+    "tags": [
+      "5D scan timing",
+      "en"
+    ]
+  },
+  {
+    "input": "Is 4D scan available in Johor?",
+    "expected": "# Is 4D scan available in Johor?\n\nFor Johor, only 5D scan is available.",
+    "tags": [
+      "Johor scan availability",
+      "en"
+    ]
+  },
+  {
+    "input": "Apa maksudnya jika pilihan masa tidak boleh ditekan semasa tempahan?",
+    "expected": "# Apa maksudnya jika pilihan masa tidak boleh ditekan semasa tempahan?\n\nJika pilihan masa tidak boleh ditekan, maksudnya outlet tutup atau slot sudah penuh.",
+    "tags": [
+      "slot tempahan",
+      "my"
+    ]
+  },
+  {
+    "input": "What are Sonobee KL/Selangor customer service and branch operating hours?",
+    "expected": "# What are Sonobee KL/Selangor customer service and branch operating hours?\n\nCustomer Service operates from 7:30 AM to 10:30 PM. KL/Selangor branches operate from 9:00 AM to 6:30 PM, with lunch break from 1:30 PM to 2:30 PM.",
+    "tags": [
+      "operating hours",
+      "en"
+    ]
+  },
+  {
+    "input": "Can I do an ultrasound scan at 1–2 weeks? What is the earliest week for a 2D scan?",
+    "expected": "# Can I do an ultrasound scan at 1–2 weeks? What is the earliest week for a 2D scan?\n\nUltrasound scan is not available at 1–2 weeks. A 2D scan can be done from as early as 4 weeks.",
+    "tags": [
+      "scan timing",
+      "my"
+    ]
+  },
+  {
+    "input": "Ada cawangan di Bayan Lepas?",
+    "expected": "# Ada cawangan di Bayan Lepas?\n\nCawangan Bayan Lepas sudah tiada. Untuk Penang, hanya ada di Gelugor sahaja.",
+    "tags": [
+      "Penang branch",
+      "my"
+    ]
+  },
+  {
+    "input": "Does the 5D scan include checking baby growth or abnormalities, as well as seeing the baby's features?",
+    "expected": "# Does the 5D scan include checking baby growth or abnormalities, as well as seeing the baby's features?\n\nYes. The 5D scan includes checking the baby's growth/normality or abnormalities as described, and can be used to see the baby's features.",
+    "tags": [
+      "5D scan scope",
+      "en"
+    ]
+  },
+  {
+    "input": "Which Perak and Perlis ultrasound branches are available?",
+    "expected": "# Which Perak and Perlis ultrasound branches are available?\n\nAvailable branches listed: Perak — Ipoh HQ, Kuala Kangsar, Kamunting, Manjung, and Seri Manjung. Perlis — Kangar.",
+    "tags": [
+      "branch locations",
+      "en"
+    ]
+  },
+  {
+    "input": "How much do ultrasound scan packages cost at Sonobee Sabah/Kota Kinabalu?",
+    "expected": "# How much do ultrasound scan packages cost at Sonobee Sabah/Kota Kinabalu?\n\nPromo prices until 17 June 2026: Gender Scan (15–40 weeks) RM30.80 weekday / RM35.80 weekend; 2D Growth Scan (4–40 weeks) RM40.80 weekday / RM45.80 weekend; 5D Scan (12–40 weeks) RM107.80 weekday / RM117.80 weekend; NT Scan (11–13 weeks) RM107.80 weekday / RM117.80 weekend; Anatomy Screening (18–29 weeks) RM117.80 weekday / RM137.80 weekend; Anatomy Screening + 5D (18–29 weeks) RM147.80 weekday / RM167.80 weekend. Prices include booking fee and SST 8%. No walk-ins.",
+    "tags": [
+      "scan prices",
+      "en"
+    ]
+  },
+  {
+    "input": "Which ultrasound package is suitable for early pregnancy?",
+    "expected": "# Which ultrasound package is suitable for early pregnancy?\n\nFor early pregnancy, choose the 2D Growth Scan. It is available from 4 to 40 weeks and monitors the baby's growth and development, including estimated weight, heartbeat, gender, movement, and position. It is not intended to assess or detect structural abnormalities.",
+    "tags": [
+      "early pregnancy scan",
+      "en"
+    ]
+  },
+  {
+    "input": "When and where can I view the scan softcopy images?",
+    "expected": "# When and where can I view the scan softcopy images?\n\nThe scan softcopy will be uploaded to the Flabee application within 3 to 5 working days.",
+    "tags": [
+      "scan softcopy",
+      "en"
+    ]
+  },
+  {
+    "input": "Is the 5D 8K AI service an ultrasound service?",
+    "expected": "# Is the 5D 8K AI service an ultrasound service?\n\nNo. The 5D 8K AI service is not an ultrasound service. It only generates an 8K AI image from a valid 5D image.",
+    "tags": [
+      "AI enhancement",
+      "en"
+    ]
+  },
+  {
+    "input": "How do Sonobee and non-Sonobee users upload images for 5D 8K AI?",
+    "expected": "# How do Sonobee and non-Sonobee users upload images for 5D 8K AI?\n\nSonobee users can upload from their scan history. Non-Sonobee users can upload their 5D image from their gallery.",
+    "tags": [
+      "image upload",
+      "en"
+    ]
+  },
+  {
+    "input": "Bagaimana cara membuat tempahan janji temu?",
+    "expected": "# Bagaimana cara membuat tempahan janji temu?\n\nTempahan janji temu boleh dibuat melalui aplikasi FLABEE CARE: muat turun aplikasi di App Store/Google Play, daftar akaun, lengkapkan maklumat pendaftaran, klik Home > Tempah janji temu, pilih lokasi yang ada perkataan “Sonobee” di depan, pilih perkhidmatan, tarikh dan masa, kemudian klik “Sahkan Slot Masa”. Selepas itu baca borang persetujuan, isi data, pilih kaedah pembayaran dan klik “Tempah janji temu”.",
+    "tags": [
+      "appointment booking",
+      "my"
+    ]
+  },
+  {
+    "input": "Bagaimana nak semak outlet atau slot yang tersedia?",
+    "expected": "# Bagaimana nak semak outlet atau slot yang tersedia?\n\nOutlet atau slot yang tersedia boleh disemak melalui pautan: https://appointment.flabee.com/guest/outlets. Jika pilihan masa tidak boleh ditekan, maksudnya outlet tutup atau slot sudah penuh.",
+    "tags": [
+      "slot availability",
+      "my"
+    ]
+  },
+  {
+    "input": "Adakah Sonobee buat detailed scan untuk kandungan sekitar 23 minggu?",
+    "expected": "# Adakah Sonobee buat detailed scan untuk kandungan sekitar 23 minggu?\n\nSonobee menyediakan anatomy screening oleh sonographer sahaja, bukan detailed scan.",
+    "tags": [
+      "pregnancy scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Kenapa saya tidak boleh beli melalui aplikasi iOS?",
+    "expected": "# Kenapa saya tidak boleh beli melalui aplikasi iOS?\n\nAplikasi iOS belum dilancarkan sepenuhnya. Buat masa sekarang, di iOS hanya boleh beli pilihan 2 PCS sahaja; fungsi penuh hanya tersedia di Android.",
+    "tags": [
+      "app availability",
+      "my"
+    ]
+  },
+  {
+    "input": "Bagaimana cara generate gambar 5D kepada 8K AI?",
+    "expected": "# Bagaimana cara generate gambar 5D kepada 8K AI?\n\nUntuk 5D 8K AI, muat turun aplikasi Flabee Care, daftar akaun (pengguna baharu) atau login (pengguna sedia ada). Pergi ke Ultrasound, pilih Flabee AI Enhance dan ikut langkah yang diberikan. Buat bayaran terus dalam aplikasi. Imej akan dijana dalam aplikasi dalam masa 3–5 minit. Servis ini bukan ultrasound; ia hanya generate imej daripada 5D kepada 8K AI dan sah untuk imej 5D sahaja. Pengguna Sonobee boleh upload daripada scan history; pengguna bukan Sonobee boleh upload imej 5D daripada galeri.",
+    "tags": [
+      "5D 8K AI",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh tukar atau reschedule appointment ke slot lain yang masih available?",
+    "expected": "# Boleh tukar atau reschedule appointment ke slot lain yang masih available?\n\nBoleh. Jika slot yang diingini masih tersedia, buat proses reschedule appointment terlebih dahulu.",
+    "tags": [
+      "appointment reschedule",
+      "my"
+    ]
+  },
+  {
+    "input": "Bila softcopy akan diupload dalam Flabee apps?",
+    "expected": "# Bila softcopy akan diupload dalam Flabee apps?\n\nSoftcopy akan diupload dalam Flabee apps dalam masa 3 hingga 5 hari bekerja.",
+    "tags": [
+      "softcopy upload",
+      "my"
+    ]
+  },
+  {
+    "input": "Suami dan anak boleh masuk bilik scan Sonobee?",
+    "expected": "# Suami dan anak boleh masuk bilik scan Sonobee?\n\nYa, suami dan anak-anak boleh masuk ke bilik scan.",
+    "tags": [
+      "scan room",
+      "my"
+    ]
+  },
+  {
+    "input": "Nombor mana untuk blood test atau phototherapy?",
+    "expected": "# Nombor mana untuk blood test atau phototherapy?\n\nUntuk blood test atau phototherapy, hubungi [phone].",
+    "tags": [
+      "blood phototherapy",
+      "my"
+    ]
+  },
+  {
+    "input": "Adakah servis convert to 8K tersedia untuk iOS dan Android?",
+    "expected": "# Adakah servis convert to 8K tersedia untuk iOS dan Android?\n\nUntuk iOS, servis masih menunggu setup baharu. Buat masa sekarang hanya 2 PCS tersedia. Untuk Android, servis sudah dilancarkan sepenuhnya.",
+    "tags": [
+      "8K conversion",
+      "my"
+    ]
+  },
+  {
+    "input": "What services are available besides ultrasound appointments?",
+    "expected": "# What services are available besides ultrasound appointments?\n\nAvailable service categories include softcopy/report/review, NIPT-NICC, blood test, phototherapy, gender reveal balloon cake, massage, maternity and newborn photography, pantang food, and baby spa.",
+    "tags": [
+      "Service categories",
+      "en"
+    ]
+  },
+  {
+    "input": "What is Anatomy Screening, and when is the best time to do it?",
+    "expected": "# What is Anatomy Screening, and when is the best time to do it?\n\nAnatomy Screening is a detailed ultrasound examination that checks the baby's organs and body structures, including the brain, heart, spine, kidneys, arms, and legs. The baby's growth, development, and gender are also assessed. The most suitable pregnancy period for Anatomy Screening is 20 to 24 weeks. At 25–29 weeks, the scan can still be performed, but visibility may depend on the baby's position and size during the examination.",
+    "tags": [
+      "anatomy screening",
+      "en"
+    ]
+  },
+  {
+    "input": "Kalau kandungan 35 minggu dan mahu scan satu bahagian sahaja, pakej apa perlu pilih?",
+    "expected": "# Kalau kandungan 35 minggu dan mahu scan satu bahagian sahaja, pakej apa perlu pilih?\n\nUntuk kandungan 35 minggu, pihak staff perlu semak dahulu dengan sonografer sama ada boleh diterima. Jika diterima, pelanggan boleh book pakej “Targeted one part” melalui app.",
+    "tags": [
+      "targeted scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Where can I view the service list?",
+    "expected": "# Where can I view the service list?\n\nThe service list can be viewed through the provided service links: https://wa.me/c/[phone] and https://appointment.flabee.com/guest/services",
+    "tags": [
+      "service list",
+      "en"
+    ]
+  },
+  {
+    "input": "Which branch or area is this contact for?",
+    "expected": "# Which branch or area is this contact for?\n\nThis contact is for Sonobee KL/Selangor.",
+    "tags": [
+      "service area",
+      "en"
+    ]
+  },
+  {
+    "input": "Bila slot 5D scan tersedia di Wisma Merdeka?",
+    "expected": "# Bila slot 5D scan tersedia di Wisma Merdeka?\n\nSlot untuk 5D scan tersedia pada hari Ahad hingga Rabu.",
+    "tags": [
+      "slot availability",
+      "my"
+    ]
+  },
+  {
+    "input": "What are the current operating days for Pasir Gudang?",
+    "expected": "# What are the current operating days for Pasir Gudang?\n\nCurrently, Pasir Gudang is covered on Tuesday and Sunday only.",
+    "tags": [
+      "branch schedule",
+      "en"
+    ]
+  },
+  {
+    "input": "Doktor atau sonographer di Sonobee Kuala Besut lelaki atau perempuan?",
+    "expected": "# Doktor atau sonographer di Sonobee Kuala Besut lelaki atau perempuan?\n\nSonographer di Sonobee Kuala Besut ialah perempuan.",
+    "tags": [
+      "staff gender",
+      "my"
+    ]
+  },
+  {
+    "input": "Do you have a Sonobee/Sono Ultrasound branch in Kamunting?",
+    "expected": "# Do you have a Sonobee/Sono Ultrasound branch in Kamunting?\n\nYes. Sono @ Kamunting Perak is located at 41 & No 43 Jalan Kamunting, Jalan Medan Saujana, Kamunting, 34600 Perak.",
+    "tags": [
+      "branch location",
+      "my"
+    ]
+  },
+  {
+    "input": "Kalau link booking tak boleh masuk, boleh booking melalui app?",
+    "expected": "# Kalau link booking tak boleh masuk, boleh booking melalui app?\n\nYa. Jika pautan tidak boleh diakses, cuba pasang aplikasi Flabee Care dan buat tempahan melalui aplikasi tersebut.",
+    "tags": [
+      "booking app",
+      "my"
+    ]
+  },
+  {
+    "input": "Macam mana nak batalkan booking atau appointment?",
+    "expected": "# Macam mana nak batalkan booking atau appointment?\n\nKlik “Manage Appointment” dan pilih cancel untuk batalkan appointment.",
+    "tags": [
+      "appointment cancel",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh tukar email akaun dalam apps?",
+    "expected": "# Boleh tukar email akaun dalam apps?\n\nYa, email boleh diedit di bahagian Account dalam apps.",
+    "tags": [
+      "account email",
+      "my"
+    ]
+  },
+  {
+    "input": "Di cawangan Sabah mana 5D scan tersedia?",
+    "expected": "# Di cawangan Sabah mana 5D scan tersedia?\n\nUntuk Sabah, 5D scan hanya tersedia di cawangan Wisma Merdeka. Cawangan Kingfisher tidak menyediakan 5D scan.",
+    "tags": [
+      "5D availability",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh buat ultrasound untuk thyroid/tiroid?",
+    "expected": "# Boleh buat ultrasound untuk thyroid/tiroid?\n\nBoleh, Sonobee boleh buat ultrasound untuk tiroid.",
+    "tags": [
+      "thyroid ultrasound",
+      "my"
+    ]
+  },
+  {
+    "input": "Ada cawangan Sonobee di Cheng, Melaka?",
+    "expected": "# Ada cawangan Sonobee di Cheng, Melaka?\n\nSonobee tiada cawangan di Cheng, Melaka. Cawangan Melaka yang dimaklumkan ialah Sono@Ayer Keroh HQ, Sonobee@Kota Melaka dan Sonobee@Durian Tunggal.",
+    "tags": [
+      "Melaka branches",
+      "my"
+    ]
+  },
+  {
+    "input": "How much is a gender scan and from what pregnancy week can it be done?",
+    "expected": "# How much is a gender scan and from what pregnancy week can it be done?\n\nPromo Gender Scan is available from 15 to 40 weeks. Price is RM25.80 on weekdays and RM30.80 on weekends. Saturday and Sunday are considered weekend price. Prices include booking fees and SST 8%. Promo stated until 17 June 2026.",
+    "tags": [
+      "gender scan",
+      "en"
+    ]
+  },
+  {
+    "input": "Kenapa masa janji temu dalam aplikasi tidak boleh ditekan?",
+    "expected": "# Kenapa masa janji temu dalam aplikasi tidak boleh ditekan?\n\nJika pilihan masa tidak boleh ditekan, maksudnya outlet tersebut tutup atau slot sudah penuh.",
+    "tags": [
+      "slot penuh",
+      "my"
+    ]
+  },
+  {
+    "input": "Macam mana nak pilih lokasi Sonobee dalam aplikasi?",
+    "expected": "# Macam mana nak pilih lokasi Sonobee dalam aplikasi?\n\nPilih lokasi yang ada perkataan “Sonobee” di depan nama lokasi.",
+    "tags": [
+      "pilih lokasi",
+      "my"
+    ]
+  },
+  {
+    "input": "How much does a DVT scan cost?",
+    "expected": "# How much does a DVT scan cost?\n\nA DVT scan costs RM160–RM180, plus a RM10.80 booking fee. The price is for both legs.",
+    "tags": [
+      "DVT pricing",
+      "en"
+    ]
+  },
+  {
+    "input": "Does Sonobee provide a report for a DVT scan?",
+    "expected": "# Does Sonobee provide a report for a DVT scan?\n\nSonobee can perform the DVT scan, but no report is provided. If a report is needed, customers should do the scan with a doctor at a hospital or clinic.",
+    "tags": [
+      "DVT report",
+      "en"
+    ]
+  },
+  {
+    "input": "Which outlet provides 4D scan color printing and when will softcopy photos be available?",
+    "expected": "# Which outlet provides 4D scan color printing and when will softcopy photos be available?\n\nFor 4D scan, Putrajaya has color printing available. Printing is optional; customers may print it themselves or at a shop. Softcopy photos will be sent to the Flabee Care app within 3–5 working days.",
+    "tags": [
+      "4D printing",
+      "en"
+    ]
+  },
+  {
+    "input": "Selangor ada branch atau customer service contact?",
+    "expected": "# Selangor ada branch atau customer service contact?\n\nUntuk KL/Selangor, hubungi Customer Service di [phone].",
+    "tags": [
+      "Selangor contact",
+      "my"
+    ]
+  },
+  {
+    "input": "Di mana lokasi Sonobee Ultrasound cawangan Senai?",
+    "expected": "# Di mana lokasi Sonobee Ultrasound cawangan Senai?\n\nSonobee @ Senai terletak di dalam Klinik IR, No 518GF, Jln Persiaran Scientex Utama 1, Taman Scientex Utama, 81400 Senai, Johor Darul Ta’zim. Google Maps: https://share.google/CM4x6Y9hIbxHjVDu6",
+    "tags": [
+      "Senai location",
+      "my"
+    ]
+  },
+  {
+    "input": "Kalau nak confirm gender baby, scan apa perlu pilih untuk appointment?",
+    "expected": "# Kalau nak confirm gender baby, scan apa perlu pilih untuk appointment?\n\nPilih 2D Gender Scan untuk check/confirm jantina bayi. Scan ini adalah ultrasound untuk mengenal pasti jantina bayi sahaja, lelaki atau perempuan. Sesuai dibuat mulai 15 minggu ke atas dengan ketepatan sekitar 60%; mulai 20 minggu ke atas ketepatan sekitar 90% kerana lebih jelas.",
+    "tags": [
+      "Gender scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Bila 2D Gender Scan sesuai dibuat dan berapa ketepatannya?",
+    "expected": "# Bila 2D Gender Scan sesuai dibuat dan berapa ketepatannya?\n\n2D Gender Scan sesuai dilakukan mulai 15 minggu ke atas dengan ketepatan kira-kira 60%. Mulai 20 minggu ke atas, ketepatan meningkat kepada kira-kira 90% kerana struktur genital bayi biasanya lebih jelas.",
+    "tags": [
+      "Gender accuracy",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa caj booking dan bila baki bayaran perlu dibayar?",
+    "expected": "# Berapa caj booking dan bila baki bayaran perlu dibayar?\n\nSemasa booking, caj tempahan RM10.80 + SST akan dikenakan. Baki bayaran diselesaikan selepas imbasan.",
+    "tags": [
+      "booking payment",
+      "my"
+    ]
+  },
+  {
+    "input": "Which areas does this branch support?",
+    "expected": "# Which areas does this branch support?\n\nThis branch supports Negeri Sembilan, Melaka, Johor, Pahang, Sabah, and Sarawak.",
+    "tags": [
+      "branch coverage",
+      "en"
+    ]
+  },
+  {
+    "input": "Kalau sudah tak boleh reschedule sebab exceed 3 kali, apa perlu buat?",
+    "expected": "# Kalau sudah tak boleh reschedule sebab exceed 3 kali, apa perlu buat?\n\nJika sudah tidak boleh reschedule, perlu ikut slot booking terbaru/latest yang telah dibuat sahaja.",
+    "tags": [
+      "Reschedule policy",
+      "my"
+    ]
+  },
+  {
+    "input": "How much is the Anatomy Screening + 5D scan?",
+    "expected": "# How much is the Anatomy Screening + 5D scan?\n\nAnatomy Screening + 5D is available for 18–29 weeks. Price: RM135.80 on weekdays and RM155.80 on weekends.",
+    "tags": [
+      "scan pricing",
+      "en"
+    ]
+  },
+  {
+    "input": "Adakah harga scan termasuk penerangan daripada sonographer?",
+    "expected": "# Adakah harga scan termasuk penerangan daripada sonographer?\n\nHarga scan sudah termasuk penerangan daripada sonographer.",
+    "tags": [
+      "scan pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "Lepas scan, adakah akan dapat gambar atau report?",
+    "expected": "# Lepas scan, adakah akan dapat gambar atau report?\n\nGambar/report hanya disediakan dalam softcopy dan akan dimuat naik ke aplikasi Flabee dalam masa 3-5 hari bekerja.",
+    "tags": [
+      "scan report",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapakah caj untuk print report atau gambar scan?",
+    "expected": "# Berapakah caj untuk print report atau gambar scan?\n\nPrinting report/gambar scan dikenakan caj tambahan RM2-5 setiap keping untuk black/white. Untuk pakej 4D/5D, printing berwarna perlu disahkan di klinik; anggaran caj RM5-15 setiap keping.",
+    "tags": [
+      "printing charges",
+      "my"
+    ]
+  },
+  {
+    "input": "Adakah Sonobee ada doktor untuk consultation?",
+    "expected": "# Adakah Sonobee ada doktor untuk consultation?\n\nSonobee tiada doktor. Jika perlukan consultation, boleh booking branch Sonobee yang berada di dalam klinik. Caj consult bergantung kepada klinik.",
+    "tags": [
+      "doctor consultation",
+      "my"
+    ]
+  },
+  {
+    "input": "Ada perkhidmatan check positif atau negatif GBS?",
+    "expected": "# Ada perkhidmatan check positif atau negatif GBS?\n\nTiada, perkhidmatan check positif/negatif GBS tidak disediakan.",
+    "tags": [
+      "servis GBS",
+      "my"
+    ]
+  },
+  {
+    "input": "Cawangan Sono/Sonobee Ultrasound bahagian utara ada di negeri mana?",
+    "expected": "# Cawangan Sono/Sonobee Ultrasound bahagian utara ada di negeri mana?\n\nCawangan bahagian utara meliputi Perak, Penang, Kedah, Perlis, Terengganu dan Kelantan.",
+    "tags": [
+      "branch locations",
+      "my"
+    ]
+  },
+  {
+    "input": "Hari apa dikira harga weekend untuk scan?",
+    "expected": "# Hari apa dikira harga weekend untuk scan?\n\nHarga weekend dikenakan pada hari Sabtu dan Ahad.",
+    "tags": [
+      "weekend pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh bayar yuran kursus pakai kad?",
+    "expected": "# Boleh bayar yuran kursus pakai kad?\n\nPembayaran hanya melalui online transfer. Baki bayaran perlu dijelaskan sebelum kursus bermula.",
+    "tags": [
+      "payment method",
+      "my"
+    ]
+  },
+  {
+    "input": "Kalau kandungan 37 minggu, scan apa yang sesuai untuk tengok baby?",
+    "expected": "# Kalau kandungan 37 minggu, scan apa yang sesuai untuk tengok baby?\n\nUntuk kandungan 37 minggu, boleh buat 2D Growth Scan. Scan ini memantau tumbesaran bayi dalam kandungan. Sonographer akan melihat perkembangan bayi, anggaran berat, degupan jantung, jantina, pergerakan dan kedudukan bayi untuk memastikan tumbesaran normal mengikut usia kandungan. Scan ini tidak membuat pemeriksaan kecacatan struktur bayi.",
+    "tags": [
+      "pregnancy scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Apa itu 2D Growth Scan?",
+    "expected": "# Apa itu 2D Growth Scan?\n\n2D Growth Scan ialah scan ultrasound untuk memantau tumbesaran dan perkembangan bayi dalam kandungan. Pemeriksaan termasuk anggaran berat bayi, degupan jantung, jantina, pergerakan dan kedudukan bayi. Scan ini bukan untuk menilai atau mengesan kecacatan struktur bayi.",
+    "tags": [
+      "growth scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Jika 5D tidak tersedia, bolehkah tukar kepada Anatomy Screening + 2D?",
+    "expected": "# Jika 5D tidak tersedia, bolehkah tukar kepada Anatomy Screening + 2D?\n\nYa, boleh downgrade kepada Anatomy Screening + 2D jika 5D tidak tersedia.",
+    "tags": [
+      "pilihan pakej",
+      "my"
+    ]
+  },
+  {
+    "input": "Macam mana nak dapatkan gambar, video dan laporan ultrasound dalam app?",
+    "expected": "# Macam mana nak dapatkan gambar, video dan laporan ultrasound dalam app?\n\nFoto, video dan laporan ultrasound akan dimuat naik ke aplikasi Flabee dalam tempoh 3–5 hari bekerja. Pelanggan disarankan memuat turun aplikasi Flabee Care untuk pengalaman yang lebih mudah. Jika masih belum diterima selepas 5 hari bekerja, hubungi pihak klinik melalui WhatsApp.",
+    "tags": [
+      "ultrasound softcopy",
+      "my"
+    ]
+  },
+  {
+    "input": "Bagaimana cara semak outlet tersedia dan buat tempahan janji temu?",
+    "expected": "# Bagaimana cara semak outlet tersedia dan buat tempahan janji temu?\n\nSemak outlet tersedia melalui https://appointment.flabee.com/guest/outlets. Untuk tempahan: muat turun aplikasi “FLABEE CARE” di App Store/Google Play, daftar akaun, lengkapkan maklumat pendaftaran, klik “Tempah janji temu”, pilih lokasi yang ada perkataan “Sonobee” di depan, pilih perkhidmatan, tarikh dan masa. Jika pilihan masa tidak boleh ditekan, maksudnya outlet tutup atau slot penuh. Klik “Sahkan Slot Masa”, baca borang persetujuan dan isi data, pilih kaedah pembayaran, kemudian klik “Tempah janji temu”. Untuk harga promo Sonobee, buat tempahan beserta yuran sahaja; bayaran penuh pakej dibuat di kaunter pada hari temujanji. Tempahan berjaya akan disahkan melalui notifikasi aplikasi Flabee Care dan email.",
+    "tags": [
+      "booking procedure",
+      "my"
+    ]
+  },
+  {
+    "input": "Does the ultrasound scan price include consultation?",
+    "expected": "# Does the ultrasound scan price include consultation?\n\nThe scan price includes an explanation based on the scan by the sonographer. Sonobee does not have a doctor on-site. Customers who require a doctor consultation may book at Sonobee branches located within clinics; consultation fees depend on the clinic.",
+    "tags": [
+      "consultation policy",
+      "en"
+    ]
+  },
+  {
+    "input": "How are ultrasound images and reports provided, and are printouts available?",
+    "expected": "# How are ultrasound images and reports provided, and are printouts available?\n\nImages and reports are provided in softcopy only and uploaded to the Flabee app within 3–5 working days. Printed black-and-white reports/images are available with additional charges of RM2–5 per piece. For 4D/5D packages, color printouts are available upon request at the clinic, estimated at RM5–15 per piece.",
+    "tags": [
+      "reports printouts",
+      "en"
+    ]
+  },
+  {
+    "input": "Di mana softcopy report atau gambar scan akan dimuat naik, dan berapa lama tempohnya?",
+    "expected": "# Di mana softcopy report atau gambar scan akan dimuat naik, dan berapa lama tempohnya?\n\nSoftcopy report/gambar scan akan dimuat naik ke dalam aplikasi Flabee Care dalam tempoh 3 hingga 5 hari bekerja. Untuk pertanyaan lanjut, hubungi pihak Softcopy/Report/Review melalui panggilan atau WhatsApp di [phone].",
+    "tags": [
+      "softcopy report",
+      "my"
+    ]
+  },
+  {
+    "input": "Do you offer detailed scans?",
+    "expected": "# Do you offer detailed scans?\n\nSonoBee does anatomy screening by sonographer only, not detailed scans. Customers can refer to the anatomy vs detailed scan information page: https://sono-ultrasound.com/anatomy-screening-versus-detailed-scan-your-guide-to-mid-pregnancy-ultrasounds/",
+    "tags": [
+      "detailed scan",
+      "en"
+    ]
+  },
+  {
+    "input": "Apa beza NT scan dengan anatomy scan?",
+    "expected": "# Apa beza NT scan dengan anatomy scan?\n\nNT scan digunakan untuk check risiko Down syndrome dan hanya boleh dibuat sehingga 13 minggu 6 hari. Anatomy scan termasuk growth scan, gender scan dan organ baby scan.",
+    "tags": [
+      "Scan comparison",
+      "my"
+    ]
+  },
+  {
+    "input": "Do you provide detail scan at Sonobee Kuching?",
+    "expected": "# Do you provide detail scan at Sonobee Kuching?\n\nSonobee offers Anatomy Screening, which is almost the same as a detail scan.",
+    "tags": [
+      "Anatomy screening",
+      "en"
+    ]
+  },
+  {
+    "input": "Boleh tak pesakit rakam sendiri video semasa scan menggunakan telefon?",
+    "expected": "# Boleh tak pesakit rakam sendiri video semasa scan menggunakan telefon?\n\nPesakit boleh rakam sendiri menggunakan telefon, kecuali untuk anatomy scan kerana rakaman tidak dibenarkan.",
+    "tags": [
+      "recording policy",
+      "my"
+    ]
+  },
+  {
+    "input": "Where is the Sarawak branch located?",
+    "expected": "# Where is the Sarawak branch located?\n\nThe Sarawak branch is Sonobee@Stutong, Kuching, located at 11, Jalan Setia Raja, Muara Tebas Land District, 93350 Kuching, Sarawak.",
+    "tags": [
+      "branch location",
+      "en"
+    ]
+  },
+  {
+    "input": "Berapakah harga ultrasound atau scan tiroid?",
+    "expected": "# Berapakah harga ultrasound atau scan tiroid?\n\nThyroid Scan berharga RM145.80 pada hari bekerja dan RM165.80 pada hujung minggu. Harga termasuk Booking Fee + SST 8%.",
+    "tags": [
+      "scan price",
+      "my"
+    ]
+  },
+  {
+    "input": "Cawangan Sonobee di Negeri Sembilan ada di mana?",
+    "expected": "# Cawangan Sonobee di Negeri Sembilan ada di mana?\n\nCawangan Sonobee di Negeri Sembilan: Sonobee@Nilai inside Klinik Utama Nilai; Sonobee@Seremban HQ, Kemayan Square; Sonobee@Senawang inside Klinik Utama; Sonobee@Sendayan inside Klinik Mediviron Sendayan Metropark; Sonobee@PD inside Klinik Azfa, Port Dickson.",
+    "tags": [
+      "branch locations",
+      "my"
+    ]
+  },
+  {
+    "input": "Will AFC (antral follicle count) be checked or mentioned in the TVS scan report?",
+    "expected": "# Will AFC (antral follicle count) be checked or mentioned in the TVS scan report?\n\nNo. The centre only does screening and does not check AFC/antral follicle count.",
+    "tags": [
+      "TVS AFC scan",
+      "en"
+    ]
+  },
+  {
+    "input": "Which branch regions does this Kedah/Perlis/Perak/Penang/Kelantan/Terengganu customer service cover?",
+    "expected": "# Which branch regions does this Kedah/Perlis/Perak/Penang/Kelantan/Terengganu customer service cover?\n\nThis customer service covers Sonobee Ultrasound branches in Perak, Penang, Kedah, Perlis, Terengganu, and Kelantan.",
+    "tags": [
+      "branch coverage",
+      "en"
+    ]
+  },
+  {
+    "input": "Adakah anatomy screening sama dengan anatomy scan?",
+    "expected": "# Adakah anatomy screening sama dengan anatomy scan?\n\nYa, anatomy screening dan anatomy scan adalah perkara yang sama.",
+    "tags": [
+      "Anatomy scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Pada 11 minggu, adakah jantina bayi sudah boleh nampak melalui scan?",
+    "expected": "# Pada 11 minggu, adakah jantina bayi sudah boleh nampak melalui scan?\n\nPada 11 minggu, jantina bayi belum boleh nampak dengan jelas. 2D Gender Scan sesuai dibuat mulai 15 minggu ke atas, dan lebih jelas mulai 20 minggu ke atas.",
+    "tags": [
+      "gender timing",
+      "my"
+    ]
+  },
+  {
+    "input": "Harga scan termasuk explanation tak?",
+    "expected": "# Harga scan termasuk explanation tak?\n\nHarga scan sudah termasuk explanation daripada sonographer.",
+    "tags": [
+      "scan pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "Sampai bila promo scan berjalan?",
+    "expected": "# Sampai bila promo scan berjalan?\n\nPromo scan berlangsung sehingga 17 June 2026.",
+    "tags": [
+      "promo period",
+      "my"
+    ]
+  },
+  {
+    "input": "Can I do a gender scan at 28 weeks?",
+    "expected": "# Can I do a gender scan at 28 weeks?\n\nYes. A 2D Gender Scan can be done at 28 weeks. It is used to determine the baby's gender only. It is suitable from 15 weeks onwards, with about 60% accuracy; from 20 weeks onwards, accuracy increases to about 90% because the baby's genital structures are usually clearer.",
+    "tags": [
+      "gender scan",
+      "en"
+    ]
+  },
+  {
+    "input": "Do you offer 4D ultrasound for breast or health scanning?",
+    "expected": "# Do you offer 4D ultrasound for breast or health scanning?\n\nNo. Health ultrasound scans are available in 2D only; 4D is not offered for health ultrasound.",
+    "tags": [
+      "Ultrasound services",
+      "en"
+    ]
+  },
+  {
+    "input": "Apakah langkah-langkah untuk tempah janji temu Sonobee melalui Flabee Care?",
+    "expected": "# Apakah langkah-langkah untuk tempah janji temu Sonobee melalui Flabee Care?\n\nLangkah tempahan: 1) Muat turun aplikasi “FLABEE CARE” di App Store/Google Play. 2) Daftar akaun. 3) Isi maklumat yang diperlukan. 4) Di Home, klik “Tempah janji temu”. 5) Pilih lokasi yang ada perkataan “Sonobee”, perkhidmatan, tarikh dan masa. Jika masa tidak boleh ditekan, maksudnya outlet tutup atau slot penuh. 6) Klik “Sahkan Slot Masa”. 7) Baca borang persetujuan dan isi data. 8) Pilih kaedah pembayaran dan klik “Tempah janji temu”.",
+    "tags": [
+      "booking steps",
+      "my"
+    ]
+  },
+  {
+    "input": "Apa perlu dibuat jika pembayaran booking tidak berjaya melalui Maybank2u?",
+    "expected": "# Apa perlu dibuat jika pembayaran booking tidak berjaya melalui Maybank2u?\n\nCuba gunakan kaedah pembayaran lain atau bank lain; masalah mungkin pada Maybank2u jika pembayaran lain berfungsi seperti biasa.",
+    "tags": [
+      "payment issue",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa harga NT Scan?",
+    "expected": "# Berapa harga NT Scan?\n\nUntuk kandungan 11–13 minggu, NT Scan berharga RM95.80 pada hari biasa dan RM105.80 pada hujung minggu (Sabtu/Ahad). Harga termasuk booking fee dan SST 8%. Promo dinyatakan sehingga 17 Jun 2026.",
+    "tags": [
+      "NT scan price",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa cas tempahan appointment dan bila perlu bayar baki?",
+    "expected": "# Berapa cas tempahan appointment dan bila perlu bayar baki?\n\nCas tempahan RM10.80 + SST dikenakan semasa membuat tempahan. Baki bayaran diselesaikan selepas imbasan.",
+    "tags": [
+      "booking payment",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa minggu sesuai untuk buat gender scan?",
+    "expected": "# Berapa minggu sesuai untuk buat gender scan?\n\nGender scan disarankan pada usia kandungan 18 minggu ke atas.",
+    "tags": [
+      "gender scan timing",
+      "my"
+    ]
+  },
+  {
+    "input": "How can I know if a branch is open today?",
+    "expected": "# How can I know if a branch is open today?\n\nIf appointment slots are available on the booking website, it means the branch is open.",
+    "tags": [
+      "branch opening",
+      "en"
+    ]
+  },
+  {
+    "input": "Cawangan Pasir Gudang buka hari apa?",
+    "expected": "# Cawangan Pasir Gudang buka hari apa?\n\nCawangan Pasir Gudang buka setiap hari Khamis dan Ahad sahaja.",
+    "tags": [
+      "Branch schedule",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh buat scan jantina pada usia kandungan 20 minggu?",
+    "expected": "# Boleh buat scan jantina pada usia kandungan 20 minggu?\n\nYa, 20 minggu sudah boleh buat scan jantina. 2D Gender Scan sesuai dilakukan mulai 15 minggu ke atas dengan ketepatan sekitar 60%; pada 20 minggu ke atas ketepatan sekitar 90% kerana struktur jantina bayi biasanya lebih jelas.",
+    "tags": [
+      "gender scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Sonobee Senawang terletak di mana dan buka hari apa?",
+    "expected": "# Sonobee Senawang terletak di mana dan buka hari apa?\n\nSonobee Senawang berada di dalam Klinik Utama, Taman Komersial Senawang. Cawangan Senawang buka setiap Selasa dan Khamis sahaja.",
+    "tags": [
+      "Senawang location",
+      "my"
+    ]
+  },
+  {
+    "input": "Waktu operasi Sonobee sampai malam ke?",
+    "expected": "# Waktu operasi Sonobee sampai malam ke?\n\nWaktu operasi adalah dari 9.30 pagi hingga 6.00 petang.",
+    "tags": [
+      "operating hours",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh buat 5D scan dan gender scan dalam satu appointment?",
+    "expected": "# Boleh buat 5D scan dan gender scan dalam satu appointment?\n\nYa, boleh. Pilih pakej 5D Scan kerana pakej 5D memang sudah termasuk sekali scan jantina.",
+    "tags": [
+      "5D gender",
+      "my"
+    ]
+  },
+  {
+    "input": "If payment fails and the booking slot becomes unavailable, when can I try booking the slot again?",
+    "expected": "# If payment fails and the booking slot becomes unavailable, when can I try booking the slot again?\n\nTry again after 15 minutes.",
+    "tags": [
+      "booking payment",
+      "en"
+    ]
+  },
+  {
+    "input": "Which customer service number should I contact for Sonobee services by region or service type?",
+    "expected": "# Which customer service number should I contact for Sonobee services by region or service type?\n\nFor Kedah, Perlis, Perak, Penang, Kelantan, Terengganu: [phone]. For Sarawak, Sabah, Johor, Negeri Sembilan, Melaka, Pahang: [phone]. For softcopy, report, or review: [phone]. For blood test or phototherapy: [phone].",
+    "tags": [
+      "contact numbers",
+      "en"
+    ]
+  },
+  {
+    "input": "Berapa harga ultrasound scan abdomen?",
+    "expected": "# Berapa harga ultrasound scan abdomen?\n\nHarga ultrasound abdomen: Upper Abdomen RM165.80 (weekday), RM185.80 (weekend); Lower Abdomen (men) RM145.80 (weekday), RM165.80 (weekend); Lower Abdomen (women) RM145.80 (weekday), RM165.80 (weekend); Upper + Lower Abdomen RM260.80 (weekday), RM310.80 (weekend). Semua harga termasuk booking fee + SST 8%.",
+    "tags": [
+      "Abdomen scan prices",
+      "my"
+    ]
+  },
+  {
+    "input": "Ada tak 5D baby scan di Kota Kinabalu?",
+    "expected": "# Ada tak 5D baby scan di Kota Kinabalu?\n\nYa, 5D baby scan di Kota Kinabalu tersedia di Sonobee Kota Kinabalu HQ, Wisma Merdeka sahaja.",
+    "tags": [
+      "5D scan location",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa harga scan gender, NT scan, 2D growth, 5D scan dan anatomy screening?",
+    "expected": "# Berapa harga scan gender, NT scan, 2D growth, 5D scan dan anatomy screening?\n\nPromo scan sehingga 17 June 2026. Harga weekday/weekend: Gender Scan (15–40 minggu) RM30.80/RM35.80; 2D Growth Scan (4–40 minggu) RM40.80/RM45.80; 5D Scan (12–40 minggu) RM107.80/RM117.80; NT Scan (11–13 minggu) RM107.80/RM117.80; Anatomy Screening (18–29 minggu) RM117.80/RM137.80; Anatomy Screening + 5D (18–29 minggu) RM147.80/RM167.80. Semua harga termasuk booking fees dan SST 8%.",
+    "tags": [
+      "scan pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "Apa itu anatomy screening/detail scan dan adakah termasuk jantina bayi?",
+    "expected": "# Apa itu anatomy screening/detail scan dan adakah termasuk jantina bayi?\n\nAnatomy Screening lebih kurang sama dengan detail scan. Ia ialah pemeriksaan ultrasound terperinci untuk melihat perkembangan organ dan struktur bayi seperti otak, jantung, tulang belakang, buah pinggang, tangan dan kaki. Perkembangan dan jantina bayi juga akan di-scan. Usia kandungan paling sesuai ialah 20 hingga 24 minggu; pada 25–29 minggu masih boleh dilakukan tetapi bergantung kepada kedudukan dan saiz bayi semasa scan.",
+    "tags": [
+      "anatomy screening",
+      "my"
+    ]
+  },
+  {
+    "input": "Bila branch Sonobee Pasir Gudang buka?",
+    "expected": "# Bila branch Sonobee Pasir Gudang buka?\n\nBranch Sonobee Pasir Gudang buka setiap hari Khamis dan Ahad sahaja.",
+    "tags": [
+      "branch schedule",
+      "my"
+    ]
+  },
+  {
+    "input": "How early in pregnancy can I do a scan?",
+    "expected": "# How early in pregnancy can I do a scan?\n\nA pregnancy scan can be done from 4 weeks at the earliest.",
+    "tags": [
+      "pregnancy scan",
+      "en"
+    ]
+  },
+  {
+    "input": "Where is the Sonobee Stutong outlet located?",
+    "expected": "# Where is the Sonobee Stutong outlet located?\n\nSonobee@Stutong, Kuching is located at 11, Jalan Setia Raja, Muara Tebas Land District, 93350 Kuching, Sarawak.",
+    "tags": [
+      "outlet location",
+      "en"
+    ]
+  },
+  {
+    "input": "Boleh booking scan melalui WhatsApp atau perlu guna link/app?",
+    "expected": "# Boleh booking scan melalui WhatsApp atau perlu guna link/app?\n\nBooking hanya dibuat secara online melalui link appointment atau melalui aplikasi Flabee. Untuk booking di aplikasi Flabee: pilih pakej scan, cawangan, tarikh dan masa, isi maklumat, semak tempahan, bayar booking fee untuk sahkan slot; baki bayaran servis dibuat di outlet semasa appointment.",
+    "tags": [
+      "booking method",
+      "my"
+    ]
+  },
+  {
+    "input": "Ada buat 6D scan? Kalau kandungan 27 minggu boleh buat scan apa?",
+    "expected": "# Ada buat 6D scan? Kalau kandungan 27 minggu boleh buat scan apa?\n\nSonobee tidak menyediakan 6D scan. Untuk kandungan 27 minggu, pelanggan boleh buat 5D scan.",
+    "tags": [
+      "Scan types",
+      "my"
+    ]
+  },
+  {
+    "input": "Outlet Kingfisher ada 5D scan?",
+    "expected": "# Outlet Kingfisher ada 5D scan?\n\nOutlet Kingfisher tidak menyediakan 5D scan. Untuk 5D scan, pelanggan boleh ke outlet Wisma Merdeka.",
+    "tags": [
+      "Outlet services",
+      "my"
+    ]
+  },
+  {
+    "input": "Cawangan ultrasound ini ada di negeri mana?",
+    "expected": "# Cawangan ultrasound ini ada di negeri mana?\n\nUntuk mesej ini, cawangan yang dinyatakan meliputi Perak, Penang, Kedah, Perlis, Terengganu dan Kelantan.",
+    "tags": [
+      "branch coverage",
+      "my"
+    ]
+  },
+  {
+    "input": "Di mana lokasi cawangan di Perak dan Perlis?",
+    "expected": "# Di mana lokasi cawangan di Perak dan Perlis?\n\nLokasi yang dinyatakan: Perak — Sono @ Ipoh HQ, Sono @ Kuala Kangsar, Sono @ Kamunting Perak, Sono @ Manjung, Sono @ Seri Manjung. Perlis — Sono @ Kangar.",
+    "tags": [
+      "branch locations",
+      "my"
+    ]
+  },
+  {
+    "input": "Untuk usia kandungan berapa 6D scan silhouette tersedia?",
+    "expected": "# Untuk usia kandungan berapa 6D scan silhouette tersedia?\n\n6D scan silhouette hanya untuk usia kandungan 10–15 minggu. Lebih daripada itu, tiada 6D scan lain; rujuk pakej penuh dan penerangan di katalog WhatsApp.",
+    "tags": [
+      "6D ultrasound",
+      "my"
+    ]
+  },
+  {
+    "input": "Do I need to register in the app to receive my scan softcopy?",
+    "expected": "# Do I need to register in the app to receive my scan softcopy?\n\nYes. Customers need to register in the app to receive the softcopy. The softcopy will be uploaded into the app.",
+    "tags": [
+      "App softcopy",
+      "en"
+    ]
+  },
+  {
+    "input": "How should I enter my phone number when registering in the app?",
+    "expected": "# How should I enter my phone number when registering in the app?\n\nWhen entering the phone number in the app, remove the leading 0 and enter the remaining digits.",
+    "tags": [
+      "App registration",
+      "en"
+    ]
+  },
+  {
+    "input": "What should I do if I still cannot register in the app after removing the leading 0 from my phone number?",
+    "expected": "# What should I do if I still cannot register in the app after removing the leading 0 from my phone number?\n\nTry entering the phone number without the leading 0 first. If it still does not work, inform staff and they will refer the issue to the IT team.",
+    "tags": [
+      "App troubleshooting",
+      "en"
+    ]
+  },
+  {
+    "input": "Apps apa perlu download untuk booking appointment?",
+    "expected": "# Apps apa perlu download untuk booking appointment?\n\nMuat turun aplikasi Flabee Care. Untuk booking melalui aplikasi: buka aplikasi Flabee, daftar akaun atau log masuk, pilih jenis scan/pakej, pilih cawangan, tarikh dan masa, isi maklumat, semak butiran, bayar Booking Fee untuk sahkan slot, hadir pada tarikh dan masa dipilih, dan baki bayaran servis dibuat di outlet semasa appointment.",
+    "tags": [
+      "app booking",
+      "my"
+    ]
+  },
+  {
+    "input": "Is there an extra charge for a written health screening report reviewed by a radiologist?",
+    "expected": "# Is there an extra charge for a written health screening report reviewed by a radiologist?\n\nYes. A written health screening report reviewed and signed by a Radiologist has an additional charge of RM30.",
+    "tags": [
+      "Report fees",
+      "en"
+    ]
+  },
+  {
+    "input": "Adakah anda menyediakan ultrasound Doppler?",
+    "expected": "# Adakah anda menyediakan ultrasound Doppler?\n\nTidak, ultrasound Doppler tidak disediakan.",
+    "tags": [
+      "Ultrasound Doppler",
+      "my"
+    ]
+  },
+  {
+    "input": "Apa maklumat yang perlu diberi untuk buat tempahan?",
+    "expected": "# Apa maklumat yang perlu diberi untuk buat tempahan?\n\nUntuk tempahan, pelanggan perlu beri nama, email, nombor telefon, outlet, pakej, tarikh, masa, dan model telefon.",
+    "tags": [
+      "booking details",
+      "my"
+    ]
+  },
+  {
+    "input": "What app should customers download after visiting?",
+    "expected": "# What app should customers download after visiting?\n\nDownload the Flabee Care app.",
+    "tags": [
+      "Flabee Care app",
+      "en"
+    ]
+  },
+  {
+    "input": "Boleh dapat gambar bercetak scan 5D pada hari yang sama?",
+    "expected": "# Boleh dapat gambar bercetak scan 5D pada hari yang sama?\n\nYa, gambar bercetak boleh didapati selepas scan.",
+    "tags": [
+      "gambar scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Does Course A include bladder ultrasound?",
+    "expected": "# Does Course A include bladder ultrasound?\n\nYes, Course A includes bladder ultrasound.",
+    "tags": [
+      "course content",
+      "en"
+    ]
+  },
+  {
+    "input": "Is there a discount if I take multiple ultrasound courses?",
+    "expected": "# Is there a discount if I take multiple ultrasound courses?\n\nA 10% discount is available when taking at least 3 courses.",
+    "tags": [
+      "course discount",
+      "en"
+    ]
+  },
+  {
+    "input": "Is this the Sonobee branch for Terengganu?",
+    "expected": "# Is this the Sonobee branch for Terengganu?\n\nThis contact is for Sonobee Ultrasound branches in Perak, Penang, Kedah, Perlis, Terengganu, and Kelantan.",
+    "tags": [
+      "branch coverage",
+      "my"
+    ]
+  },
+  {
+    "input": "How do I book a scan appointment online?",
+    "expected": "# How do I book a scan appointment online?\n\nTo book: 1) Open https://appointment.flabee.com/guest 2) Click “Daftar Sekarang” to create an account 3) Fill in required registration details 4) Click “Beli Sekarang” 5) Choose location, service, date, and time 6) Click “Sahkan Slot Masa” 7) Fill in appointment details 8) Click “Teruskan Pembayaran”. A RM10.80 booking charge + SST is paid during booking, and the remaining payment is settled after the scan. Booking confirmation is sent through Flabee app notification and email.",
+    "tags": [
+      "booking steps",
+      "my"
+    ]
+  },
+  {
+    "input": "Macam mana nak tahu klinik buka atau slot masih ada?",
+    "expected": "# Macam mana nak tahu klinik buka atau slot masih ada?\n\nSemak melalui sistem tempahan. Jika ada slot, bermakna klinik buka. Jika slot masa tidak boleh ditekan, bermakna slot sudah penuh.",
+    "tags": [
+      "slot availability",
+      "my"
+    ]
+  },
+  {
+    "input": "Adakah NICC tersedia dan berapa harganya?",
+    "expected": "# Adakah NICC tersedia dan berapa harganya?\n\nNICC belum tersedia buat masa ini, dan belum ada tarikh bila ia akan tersedia semula.",
+    "tags": [
+      "NICC availability",
+      "my"
+    ]
+  },
+  {
+    "input": "Apa perlu dibawa untuk appointment detail scan?",
+    "expected": "# Apa perlu dibawa untuk appointment detail scan?\n\nBawa IC sahaja. Jika ada buku pink, boleh bawa juga.",
+    "tags": [
+      "scan preparation",
+      "my"
+    ]
+  },
+  {
+    "input": "How much is a KUB scan?",
+    "expected": "# How much is a KUB scan?\n\nKUB Scan costs RM165.80 on weekdays and RM185.80 on weekends. Prices include booking fee and SST 8%.",
+    "tags": [
+      "KUB pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "How do I book a KUB scan appointment?",
+    "expected": "# How do I book a KUB scan appointment?\n\nBook the appointment through the online appointment link/website only. Select service “Health Screening” and choose “KUB Scan”. Walk-ins are not allowed.",
+    "tags": [
+      "Booking procedure",
+      "my"
+    ]
+  },
+  {
+    "input": "How long does it take to receive the scan report?",
+    "expected": "# How long does it take to receive the scan report?\n\nA normal/basic report is usually ready in 3–5 days. For a radiologist-reviewed written health screening report, there is an additional RM30 charge and it will be delivered within 7 working days.",
+    "tags": [
+      "Report timeline",
+      "my"
+    ]
+  },
+  {
+    "input": "Are there add-on report options and fees?",
+    "expected": "# Are there add-on report options and fees?\n\nFor Anatomy Screening, a basic report is generated automatically; a more detailed sonographer report costs an additional RM15 and is not a specialist doctor’s report. For Health Screening, a written report reviewed and signed by a Radiologist costs an additional RM30 and is delivered within 7 working days.",
+    "tags": [
+      "Report add-ons",
+      "my"
+    ]
+  },
+  {
+    "input": "Kalau nak scan alat IUD, perlu pilih pakej apa?",
+    "expected": "# Kalau nak scan alat IUD, perlu pilih pakej apa?\n\nUntuk scan alat IUD, boleh ambil pakej Lower Abdomen for Women. Harga Lower Abdomen for Women ialah RM145.80 pada hari bekerja dan RM165.80 pada hujung minggu. Semua harga termasuk booking fee + SST 8%.",
+    "tags": [
+      "IUD scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Do you offer a short course for detailed pregnancy scan?",
+    "expected": "# Do you offer a short course for detailed pregnancy scan?\n\nNo, there is no short course for detailed scan.",
+    "tags": [
+      "scan courses",
+      "en"
+    ]
+  },
+  {
+    "input": "Will I receive a certificate after completing the course?",
+    "expected": "# Will I receive a certificate after completing the course?\n\nYes, an e-certificate will be sent after the course.",
+    "tags": [
+      "course certificate",
+      "en"
+    ]
+  },
+  {
+    "input": "Where are the course locations available?",
+    "expected": "# Where are the course locations available?\n\nAvailable locations are Kangar HQ (Perlis), Alor Setar HQ (Kedah), Sungai Petani HQ (Kedah), Ipoh HQ (Perak), Balakong/Seri Kembangan HQ (Selangor), Johor Bahru HQ, Pasir Tumboh HQ (Kelantan), Kuala Terengganu HQ (Terengganu), Melaka HQ, Seremban HQ (Negeri Sembilan), Stutong HQ (Sarawak), and Kota Kinabalu HQ (Sabah).",
+    "tags": [
+      "course locations",
+      "en"
+    ]
+  },
+  {
+    "input": "Where is the Selangor course branch located?",
+    "expected": "# Where is the Selangor course branch located?\n\nThe Selangor branch is at Balakong, Seri Kembangan HQ.",
+    "tags": [
+      "Selangor location",
+      "en"
+    ]
+  },
+  {
+    "input": "What are Sonobee Johor ultrasound promo prices?",
+    "expected": "# What are Sonobee Johor ultrasound promo prices?\n\nPromo scan prices until 17 June 2026: Gender Scan 15-40 weeks RM30.80 weekday / RM35.80 weekend; 2D Growth Scan 4-40 weeks RM40.80 weekday / RM45.80 weekend; 5D Scan 12-40 weeks RM107.80 weekday / RM117.80 weekend; NT Scan 11-13 weeks RM107.80 weekday / RM117.80 weekend; Anatomy Screening 18-29 weeks RM117.80 weekday / RM137.80 weekend; Anatomy Screening + 5D 18-29 weeks RM147.80 weekday / RM167.80 weekend. Prices include booking fees and 8% SST. Saturday and Sunday use weekend price.",
+    "tags": [
+      "scan prices",
+      "en"
+    ]
+  },
+  {
+    "input": "What are the latest ultrasound scan rates?",
+    "expected": "# What are the latest ultrasound scan rates?\n\nPromo scan rates until 17 June 2026: Gender Scan 15–40 weeks RM30.80 weekday / RM35.80 weekend; 2D Growth Scan 4–40 weeks RM40.80 weekday / RM45.80 weekend; 5D Scan 12–40 weeks RM107.80 weekday / RM117.80 weekend; NT Scan 11–13 weeks RM107.80 weekday / RM117.80 weekend; Anatomy Screening 18–29 weeks RM117.80 weekday / RM137.80 weekend; Anatomy Screening + 5D 18–29 weeks RM147.80 weekday / RM167.80 weekend. Saturday and Sunday use weekend prices. All prices include booking fees and SST 8%.",
+    "tags": [
+      "scan prices",
+      "en"
+    ]
+  },
+  {
+    "input": "Berapakah harga scan ultrasound di Sonobee Johor, Sabah dan Sarawak?",
+    "expected": "# Berapakah harga scan ultrasound di Sonobee Johor, Sabah dan Sarawak?\n\nPromo scan sehingga 17 June 2026. Harga termasuk Booking Fees & SST 8%. Harga weekend berbeza: Gender Scan 15-40 minggu RM30.80 weekday, RM35.80 weekend; 2D Growth Scan 4-40 minggu RM40.80 weekday, RM45.80 weekend; 5D Scan 12-40 minggu RM107.80 weekday, RM117.80 weekend; NT Scan 11-13 minggu RM107.80 weekday, RM117.80 weekend; Anatomy Screening 18-29 minggu RM117.80 weekday, RM137.80 weekend; Anatomy Screening + 5D 18-29 minggu RM147.80 weekday, RM167.80 weekend.",
+    "tags": [
+      "scan prices",
+      "my"
+    ]
+  },
+  {
+    "input": "Sonobee Kuching branch dekat mana?",
+    "expected": "# Sonobee Kuching branch dekat mana?\n\nSonobee Kuching is at Sonobee@Stutong, 11, Jalan Setia Raja, Muara Tebas Land District, 93350 Kuching, Sarawak.",
+    "tags": [
+      "Kuching location",
+      "my"
+    ]
+  },
+  {
+    "input": "What are your customer service and branch operating hours, and how can I make a booking?",
+    "expected": "# What are your customer service and branch operating hours, and how can I make a booking?\n\nCustomer Service is available from 7:30 AM to 10:30 PM. KL/Selangor branches operate from 9:00 AM to 6:30 PM, with lunch break from 1:30 PM to 2:30 PM. Available slots should be checked and bookings made only through the website: https://www.sono-ultrasound.com",
+    "tags": [
+      "operating hours",
+      "en"
+    ]
+  },
+  {
+    "input": "Do scan prices include booking fees and SST?",
+    "expected": "# Do scan prices include booking fees and SST?\n\nYes. All listed prices include booking fees and 8% SST.",
+    "tags": [
+      "price inclusions",
+      "en"
+    ]
+  },
+  {
+    "input": "Boleh tak tangguh atau reschedule appointment ke tarikh lain?",
+    "expected": "# Boleh tak tangguh atau reschedule appointment ke tarikh lain?\n\nBoleh reschedule appointment melalui apps dengan klik “Manage Appointment” di bahagian yang digunakan untuk buat booking sebelum ini.",
+    "tags": [
+      "reschedule appointment",
+      "my"
+    ]
+  },
+  {
+    "input": "Branch Sonobee Kangar/Perlis masih buka ke?",
+    "expected": "# Branch Sonobee Kangar/Perlis masih buka ke?\n\nBranch Perlis masih ada/buka.",
+    "tags": [
+      "branch status",
+      "my"
+    ]
+  },
+  {
+    "input": "Cawangan Sonobee Durian Tunggal terletak di mana?",
+    "expected": "# Cawangan Sonobee Durian Tunggal terletak di mana?\n\nSonobee@Durian Tunggal terletak di dalam Klinik Dr.Champz, 15, Jalan PNG, Pusat Niaga Gangsa, 76100 Durian Tunggal, Melaka.",
+    "tags": [
+      "lokasi cawangan",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa harga pakej scan ultrasound Sonobee di Negeri 9, Melaka dan Pahang?",
+    "expected": "# Berapa harga pakej scan ultrasound Sonobee di Negeri 9, Melaka dan Pahang?\n\nHarga promo sehingga 17 Jun 2026: Gender Scan 15–40 minggu RM25.80 weekday/RM30.80 weekend; 2D Growth Scan 4–40 minggu RM35.80 weekday/RM40.80 weekend; 5D Scan 12–40 minggu RM85.80 weekday/RM95.80 weekend; NT Scan 11–13 minggu RM95.80 weekday/RM105.80 weekend; Anatomy Screening 18–29 minggu RM100.80 weekday/RM120.80 weekend; Anatomy Screening + 5D 18–29 minggu RM135.80 weekday/RM155.80 weekend. Semua harga termasuk booking fee dan SST 8%.",
+    "tags": [
+      "harga pakej",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh buat scan 8K terus?",
+    "expected": "# Boleh buat scan 8K terus?\n\nUntuk 8K, pelanggan perlu buat 5D scan dahulu. Selepas gambar 5D sudah keluar dalam app, barulah boleh upgrade ke 8K. 5D 8K AI bukan scan baharu; ia menggunakan AI untuk mempertingkatkan imej ultrasound 5D sedia ada berdasarkan gambar 5D yang dimuat naik.",
+    "tags": [
+      "8K AI scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Which customer service number should I contact for my state?",
+    "expected": "# Which customer service number should I contact for my state?\n\nFor Kedah, Perlis, Perak, Penang, Kelantan, and Terengganu, contact [phone]. For Sarawak, Sabah, Johor, Negeri Sembilan, Melaka, and Pahang, contact [phone].",
+    "tags": [
+      "state contacts",
+      "en"
+    ]
+  },
+  {
+    "input": "Who should I contact for softcopy, report, or review matters?",
+    "expected": "# Who should I contact for softcopy, report, or review matters?\n\nFor softcopy, report, or review matters, contact [phone].",
+    "tags": [
+      "report contact",
+      "en"
+    ]
+  },
+  {
+    "input": "Who should I contact for blood test or phototherapy services?",
+    "expected": "# Who should I contact for blood test or phototherapy services?\n\nFor blood test or phototherapy services, contact [phone].",
+    "tags": [
+      "service contact",
+      "en"
+    ]
+  },
+  {
+    "input": "Branch Gelugor buka hari Ahad ke?",
+    "expected": "# Branch Gelugor buka hari Ahad ke?\n\nWaktu buka Ahad bergantung kepada availability dalam app; kadang-kadang buka, kadang-kadang tutup. Jika slot keluar dalam app, maksudnya klinik buka dan masih ada kekosongan slot.",
+    "tags": [
+      "Sunday availability",
+      "my"
+    ]
+  },
+  {
+    "input": "Where is the Sonobee branch in Perlis?",
+    "expected": "# Where is the Sonobee branch in Perlis?\n\nThe Perlis branch listed is Sono @ Kangar, No.7, Jalan Kangar Jaya 13, Kangar Jaya, Jalan Tuanku Syed Putra, 01000 Kangar.",
+    "tags": [
+      "Perlis location",
+      "en"
+    ]
+  },
+  {
+    "input": "Boleh buat detail scan baby?",
+    "expected": "# Boleh buat detail scan baby?\n\nYa. Sonobee menyediakan Anatomy Screening yang lebih kurang sama dengan detail scan. Ia adalah ultrasound terperinci untuk melihat organ dan struktur bayi seperti otak, jantung, tulang belakang, buah pinggang, tangan dan kaki. Perkembangan, tumbesaran dan jantina bayi juga akan dinilai. Waktu paling sesuai ialah usia kandungan 20 hingga 24 minggu; untuk 25–29 minggu masih boleh dilakukan tetapi bergantung pada kedudukan dan saiz bayi semasa scan.",
+    "tags": [
+      "anatomy screening",
+      "my"
+    ]
+  },
+  {
+    "input": "Ada discount code untuk scan ultrasound?",
+    "expected": "# Ada discount code untuk scan ultrasound?\n\nTiada discount code buat masa ini.",
+    "tags": [
+      "Discount code",
+      "my"
+    ]
+  },
+  {
+    "input": "Klinik Sonobee cawangan Perlis terletak di Kangar Jaya ke?",
+    "expected": "# Klinik Sonobee cawangan Perlis terletak di Kangar Jaya ke?\n\nYa, cawangan Sonobee Perlis/Kangar berada di Kangar Jaya.",
+    "tags": [
+      "lokasi cawangan",
+      "my"
+    ]
+  },
+  {
+    "input": "Keputusan dan scan akan dapat dalam apps ke?",
+    "expected": "# Keputusan dan scan akan dapat dalam apps ke?\n\nSoftcopy keputusan dan scan akan diupload dalam Flabee apps dalam masa 3 hingga 5 hari bekerja.",
+    "tags": [
+      "result softcopy",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa harga scan ultrasound terkini?",
+    "expected": "# Berapa harga scan ultrasound terkini?\n\nPromo scan sehingga 17 June 2026 untuk branch Perak, Penang, Kedah, Perlis, Terengganu dan Kelantan: Gender Scan 15-40 minggu RM25.80 weekday / RM30.80 weekend; 2D Growth Scan 4-40 minggu RM35.80 weekday / RM40.80 weekend; 5D Scan 12-40 minggu RM85.80 weekday / RM95.80 weekend; NT Scan 11-13 minggu RM95.80 weekday / RM105.80 weekend; Anatomy Screening 18-29 minggu RM100.80 weekday / RM120.80 weekend; Anatomy Screening + 5D 18-29 minggu RM135.80 weekday / RM155.80 weekend. Semua harga termasuk booking fee dan SST 8%. Saturday dan Sunday dikira harga weekend.",
+    "tags": [
+      "scan prices",
+      "my"
+    ]
+  },
+  {
+    "input": "When can I come for scanning at the Bukit Indah outlet?",
+    "expected": "# When can I come for scanning at the Bukit Indah outlet?\n\nFor the Bukit Indah outlet, come on a weekday except Thursday, as the sonographer is off on Thursday.",
+    "tags": [
+      "Outlet schedule",
+      "en"
+    ]
+  },
+  {
+    "input": "Klinik buka 24 jam ke?",
+    "expected": "# Klinik buka 24 jam ke?\n\nTidak. Waktu operasi sampai 6 petang dan hanya melalui temu janji.",
+    "tags": [
+      "waktu operasi",
+      "my"
+    ]
+  },
+  {
+    "input": "Branch WhatsApp ini cover negeri mana?",
+    "expected": "# Branch WhatsApp ini cover negeri mana?\n\nBranch ini cover Perak, Penang, Kedah, Perlis, Terengganu dan Kelantan.",
+    "tags": [
+      "cawangan negeri",
+      "my"
+    ]
+  },
+  {
+    "input": "Untuk scan baby 5D, perlu buat temujanji dulu atau boleh walk-in?",
+    "expected": "# Untuk scan baby 5D, perlu buat temujanji dulu atau boleh walk-in?\n\nPerlu buat temujanji terlebih dahulu. Walk-in tidak diterima. Tempahan appointment boleh dibuat melalui pautan/aplikasi Flabee.",
+    "tags": [
+      "temujanji scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Di mana lokasi Sonobee Kingfisher?",
+    "expected": "# Di mana lokasi Sonobee Kingfisher?\n\nSonobee@Kingfisher terletak beside Atukupi, Block B, Plaza Kingfisher, 16-0-6, Lot 51, Lorong Plaza Kingfisher 4, 88450 Kota Kinabalu, Sabah.",
+    "tags": [
+      "branch location",
+      "my"
+    ]
+  },
+  {
+    "input": "Which states have Sonobee Ultrasound branches?",
+    "expected": "# Which states have Sonobee Ultrasound branches?\n\nSonobee Ultrasound has branches in Perak, Penang, Kedah, Perlis, Terengganu, and Kelantan.",
+    "tags": [
+      "branch locations",
+      "en"
+    ]
+  },
+  {
+    "input": "Adakah sonographer di cawangan Pasir Gudang perempuan atau lelaki?",
+    "expected": "# Adakah sonographer di cawangan Pasir Gudang perempuan atau lelaki?\n\nSonographer di cawangan Pasir Gudang ialah perempuan. Tiada sonographer lelaki.",
+    "tags": [
+      "sonographer gender",
+      "my"
+    ]
+  },
+  {
+    "input": "Kalau nak scan rahim, service apa yang perlu dipilih semasa booking?",
+    "expected": "# Kalau nak scan rahim, service apa yang perlu dipilih semasa booking?\n\nUntuk scan rahim, pilih service Health Screening dan pilih TVS scan atau Uterus, Ovary + Bladder scan.",
+    "tags": [
+      "scan rahim",
+      "my"
+    ]
+  },
+  {
+    "input": "Adakah 4D scan tersedia di Sabah untuk pakej anatomy screening?",
+    "expected": "# Adakah 4D scan tersedia di Sabah untuk pakej anatomy screening?\n\nDi Sabah tiada 4D scan; 4D hanya ada di Semenanjung. Jika mahu, boleh ambil pakej anatomy + 5D.",
+    "tags": [
+      "scan availability",
+      "my"
+    ]
+  },
+  {
+    "input": "When is the Sendayan branch open?",
+    "expected": "# When is the Sendayan branch open?\n\nThe Sendayan branch is only open on Friday.",
+    "tags": [
+      "branch schedule",
+      "en"
+    ]
+  },
+  {
+    "input": "Apa maksudnya kalau semua time slot menunjukkan outlet not available?",
+    "expected": "# Apa maksudnya kalau semua time slot menunjukkan outlet not available?\n\nJika semua time slot menunjukkan outlet not available untuk tarikh tersebut, maksudnya tarikh itu tidak tersedia. Pelanggan boleh semak lokasi lain atau tarikh lain yang available.",
+    "tags": [
+      "slot availability",
+      "my"
+    ]
+  },
+  {
+    "input": "Kalau lambat datang appointment, ada caj tambahan?",
+    "expected": "# Kalau lambat datang appointment, ada caj tambahan?\n\nJika lewat 15 minit, ada caj tambahan 30% mengikut polisi.",
+    "tags": [
+      "late policy",
+      "my"
+    ]
+  },
+  {
+    "input": "Which ultrasound package is suitable for around 6 weeks of pregnancy?",
+    "expected": "# Which ultrasound package is suitable for around 6 weeks of pregnancy?\n\nFor around 6 weeks of pregnancy, the suitable package is the 2D Growth Scan.",
+    "tags": [
+      "package selection",
+      "en"
+    ]
+  },
+  {
+    "input": "Bagaimana saya tahu tempahan berjaya?",
+    "expected": "# Bagaimana saya tahu tempahan berjaya?\n\nUntuk tempahan yang berjaya, pengesahan tempahan akan diterima melalui notifikasi aplikasi Flabee Care dan email.",
+    "tags": [
+      "pengesahan tempahan",
+      "my"
+    ]
+  },
+  {
+    "input": "Does phototherapy machine rental include a jaundice check meter?",
+    "expected": "# Does phototherapy machine rental include a jaundice check meter?\n\nNo, the phototherapy machine rental does not include a check meter.",
+    "tags": [
+      "check meter",
+      "en"
+    ]
+  },
+  {
+    "input": "Is health screening blood test available as a home visit service?",
+    "expected": "# Is health screening blood test available as a home visit service?\n\nHealth screening blood tests are available as a home visit service.",
+    "tags": [
+      "Blood test",
+      "en"
+    ]
+  }
+]

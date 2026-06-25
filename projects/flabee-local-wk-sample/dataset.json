@@ -1,0 +1,82 @@
+[
+  {
+    "input": "What Pantang Food package durations are available?",
+    "expected": "Q: What Pantang Food package durations are available?\nA: Pantang Food packages are available for 1, 3, 5, 10, 20, or 40 days.",
+    "tags": [
+      "1"
+    ],
+    "description": "article://1#0"
+  },
+  {
+    "input": "Berapa caj ultrasound hati di Melaka?",
+    "expected": "Q: Berapa caj ultrasound hati di Melaka?\nA: Untuk ultrasound hati, pilih pakej Upper Abdomen Scan. Harga di Negeri Sembilan, Melaka & Pahang: RM165.80 pada hari bekerja dan RM185.80 pada hujung minggu. Harga termasuk Booking Fee + SST 8%.",
+    "tags": [
+      "10"
+    ],
+    "description": "article://10#0"
+  },
+  {
+    "input": "Which branch or area is this contact for?",
+    "expected": "Q: Which branch or area is this contact for?\nA: This contact is for Sonobee KL/Selangor.",
+    "tags": [
+      "100"
+    ],
+    "description": "article://100#0"
+  },
+  {
+    "input": "Bila slot 5D scan tersedia di Wisma Merdeka?",
+    "expected": "Q: Bila slot 5D scan tersedia di Wisma Merdeka?\nA: Slot untuk 5D scan tersedia pada hari Ahad hingga Rabu.",
+    "tags": [
+      "101"
+    ],
+    "description": "article://101#0"
+  },
+  {
+    "input": "What are the current operating days for Pasir Gudang?",
+    "expected": "Q: What are the current operating days for Pasir Gudang?\nA: Currently, Pasir Gudang is covered on Tuesday and Sunday only.",
+    "tags": [
+      "102"
+    ],
+    "description": "article://102#0"
+  },
+  {
+    "input": "Doktor atau sonographer di Sonobee Kuala Besut lelaki atau perempuan?",
+    "expected": "Q: Doktor atau sonographer di Sonobee Kuala Besut lelaki atau perempuan?\nA: Sonographer di Sonobee Kuala Besut ialah perempuan.",
+    "tags": [
+      "103"
+    ],
+    "description": "article://103#0"
+  },
+  {
+    "input": "Do you have a Sonobee/Sono Ultrasound branch in Kamunting?",
+    "expected": "Q: Do you have a Sonobee/Sono Ultrasound branch in Kamunting?\nA: Yes. Sono @ Kamunting Perak is located at 41 & No 43 Jalan Kamunting, Jalan Medan Saujana, Kamunting, 34600 Perak.",
+    "tags": [
+      "104"
+    ],
+    "description": "article://104#0"
+  },
+  {
+    "input": "Kalau link booking tak boleh masuk, boleh booking melalui app?",
+    "expected": "Q: Kalau link booking tak boleh masuk, boleh booking melalui app?\nA: Ya. Jika pautan tidak boleh diakses, cuba pasang aplikasi Flabee Care dan buat tempahan melalui aplikasi tersebut.",
+    "tags": [
+      "105"
+    ],
+    "description": "article://105#0"
+  },
+  {
+    "input": "Macam mana nak batalkan booking atau appointment?",
+    "expected": "Q: Macam mana nak batalkan booking atau appointment?\nA: Klik “Manage Appointment” dan pilih cancel untuk batalkan appointment.",
+    "tags": [
+      "106"
+    ],
+    "description": "article://106#0"
+  },
+  {
+    "input": "Boleh tukar email akaun dalam apps?",
+    "expected": "Q: Boleh tukar email akaun dalam apps?\nA: Ya, email boleh diedit di bahagian Account dalam apps.",
+    "tags": [
+      "107"
+    ],
+    "description": "article://107#0"
+  }
+]

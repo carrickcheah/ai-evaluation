@@ -34,6 +34,9 @@ export default function Sidebar() {
         <NavLink to="/upload" className={linkClass}>
           ⬆ Upload
         </NavLink>
+        <NavLink to="/connections" className={linkClass}>
+          🔗 Endpoints
+        </NavLink>
         <NavLink to="/subscription" className={linkClass}>
           🔌 Subscription
         </NavLink>

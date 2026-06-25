@@ -182,6 +182,12 @@ tr.clickable:hover { background: var(--panel-2); cursor: pointer; }
 .pf-num { width: 46px; text-align: center; color: var(--muted); }
 .pf-desc { color: var(--desc-text); word-break: break-word; }
 .pf-msg { word-break: break-word; }
+.badge-cancelled { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 12px;
+  font-weight: 700; background: color-mix(in srgb, var(--warn) 20%, transparent); color: var(--warn); }
+.conn-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+.conn-table th, .conn-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.conn-table th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; word-break: break-all; color: var(--muted); }
 .pf-ideal-col { border-left: 3px solid var(--accent); background: var(--panel-2); font-size: 13px; line-height: 1.5; vertical-align: top; }
 .pf-out { }
 .pf-summary { margin-top: 8px; font-weight: 400; font-size: 13px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }

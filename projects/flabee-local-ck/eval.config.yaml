@@ -1,0 +1,31 @@
+name: Flabee Local — Continuous Knowledge (live bot)
+
+# kb_articles (243) — NOTE: 0 rows in LOCAL db, expect fails.
+# LIVE local Flabee bot (subscription CLI = $0). Needs ai_brain:8002 + MCP:4004 + TEI:8085 up.
+target:
+  url: http://localhost:8002/api/chat/sync
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    message: "{{input}}"
+    phone_number: "{{uid}}"
+    source: api
+    account_id: 14
+    session_id: "{{uid}}"
+  answerPath: output
+
+judge:
+  provider: claude-subscription
+  model: sonnet
+
+rubric: |
+  You grade the Flabee/Sonobee (account 14) customer-service bot answer against a
+  known-correct reference from its knowledge base.
+  PASS only if the answer is factually consistent with the reference and addresses
+  the question, in the same language as the reference (Malay/English/Manglish).
+  FAIL on any contradiction, a missing required fact (price, gestational week, duration,
+  step), or an invented detail not supported by the reference. Minor wording/formatting
+  differences are fine.
+
+dataset: ./dataset.json

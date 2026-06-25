@@ -6,6 +6,7 @@ import HistoryPage, { HistoryDetail } from "./pages/HistoryPage";
 import ComparePage from "./pages/ComparePage";
 import MatrixPage from "./pages/MatrixPage";
 import UploadPage from "./pages/UploadPage";
+import ConnectionsPage from "./pages/ConnectionsPage";
 import SubscriptionPage from "./pages/SubscriptionPage";
 
 type Theme = "dark" | "light";
@@ -43,6 +44,7 @@ export default function App() {
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/matrix" element={<MatrixPage />} />
             <Route path="/upload" element={<UploadPage />} />
+            <Route path="/connections" element={<ConnectionsPage />} />
             <Route path="/subscription" element={<SubscriptionPage />} />
           </Routes>
         </main>

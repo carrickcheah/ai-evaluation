@@ -23,6 +23,7 @@ db.exec(`
     failed       INTEGER NOT NULL,
     errored      INTEGER NOT NULL,
     score        INTEGER NOT NULL,
+    cancelled    INTEGER NOT NULL DEFAULT 0,
     results_json TEXT NOT NULL
   );
   CREATE INDEX IF NOT EXISTS idx_runs_started_at ON runs (started_at DESC);
@@ -32,3 +33,12 @@ db.exec(`
     value TEXT NOT NULL
   );
 `);
+
+// Migrate older DBs that predate the `cancelled` column (ADD COLUMN throws if it
+// already exists, so only run it when the column is missing).
+const hasCancelled = (db.query(`PRAGMA table_info(runs)`).all() as { name: string }[]).some(
+  (col) => col.name === "cancelled",
+);
+if (!hasCancelled) {
+  db.exec(`ALTER TABLE runs ADD COLUMN cancelled INTEGER NOT NULL DEFAULT 0;`);
+}

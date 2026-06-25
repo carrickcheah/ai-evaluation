@@ -5,6 +5,7 @@ export interface EvalTab {
   mode?: "bot" | "prompt";
   systemPrompt?: string;
   answerModel?: string;
+  connectionId?: string;
 }
 
 export default function TabBar({

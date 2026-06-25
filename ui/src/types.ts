@@ -27,6 +27,7 @@ export interface RunResult {
   failed: number;
   errored: number;
   score: number;
+  cancelled?: boolean;
   results: CaseResult[];
 }
 export type RunSummary = Omit<RunResult, "results">;

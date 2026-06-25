@@ -56,6 +56,24 @@ export const importCases = (name: string, content: string, format?: "csv" | "pro
     `/api/projects/${encodeURIComponent(name)}/import`,
     { content, format },
   );
+export interface Connection {
+  id: string;
+  name: string;
+  url: string;
+  method?: string;
+  headers?: Record<string, string>;
+  body?: unknown;
+  answerPath: string;
+}
+export const getConnections = () =>
+  jget<{ connections: Connection[] }>("/api/connections").then((r) => r.connections);
+export const saveConnection = (conn: Partial<Connection>) =>
+  jpost<Connection>("/api/connections", conn);
+export const deleteConnection = async (id: string) => {
+  const r = await fetch(`/api/connections/${encodeURIComponent(id)}`, { method: "DELETE" });
+  if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || `delete → ${r.status}`);
+};
+
 export const createDataset = (
   name: string,
   content: string,
@@ -88,6 +106,7 @@ export async function runEvalStream(
     mode?: "bot" | "prompt";
     systemPrompt?: string;
     answerModel?: string;
+    connectionId?: string;
   },
   h: RunHandlers,
   signal?: AbortSignal,

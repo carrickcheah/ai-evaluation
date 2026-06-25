@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { getProjects, getProjectDataset, importCases, runEvalStream } from "../api";
+import { getProjects, getProjectDataset, importCases, runEvalStream, getConnections, type Connection } from "../api";
 import type { ProjectInfo, RunResult, CaseResult } from "../types";
 import ResultView from "../components/ResultView";
 
@@ -9,6 +9,7 @@ interface TabPatch {
   mode?: Mode;
   systemPrompt?: string;
   answerModel?: string;
+  connectionId?: string;
 }
 
 /** Build a partial RunResult from the live (filling-in) rows, so ResultView can
@@ -58,6 +59,8 @@ export default function RunPage({
   const [mode, setMode] = useState<Mode>(initial?.mode ?? "bot");
   const [systemPrompt, setSystemPrompt] = useState(initial?.systemPrompt ?? "");
   const [answerModel, setAnswerModel] = useState(initial?.answerModel ?? "haiku");
+  const [connections, setConnections] = useState<Connection[]>([]);
+  const [connectionId, setConnectionId] = useState(initial?.connectionId ?? "");
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState<{ done: number; total: number } | null>(null);
   const [live, setLive] = useState<CaseResult[] | null>(null);
@@ -85,7 +88,16 @@ export default function RunPage({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    getConnections().then(setConnections).catch(() => {});
+  }, []);
+
   useEffect(() => () => abortRef.current?.abort(), []);
+
+  function pickConnection(id: string) {
+    setConnectionId(id);
+    onChange?.({ connectionId: id });
+  }
 
   const project = projects.find((p) => p.name === selected);
   const judge = project?.judge ?? "sonnet";
@@ -149,7 +161,7 @@ export default function RunPage({
     const body =
       mode === "prompt"
         ? { project: selected, mode: "prompt" as const, systemPrompt, answerModel }
-        : { project: selected };
+        : { project: selected, ...(connectionId ? { connectionId } : {}) };
     await runEvalStream(
       body,
       {
@@ -244,6 +256,22 @@ export default function RunPage({
             onChange={onImportFile}
           />
         </div>
+        {mode === "bot" && (
+          <div className="row">
+            <label>Bot</label>
+            <select value={connectionId} onChange={(e) => pickConnection(e.target.value)} disabled={running}>
+              <option value="">Default (from project)</option>
+              {connections.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+            <a href="/connections" className="muted" style={{ marginLeft: 8, fontSize: 13 }}>
+              manage endpoints →
+            </a>
+          </div>
+        )}
         {notice && (
           <div className="row">
             <label></label>
