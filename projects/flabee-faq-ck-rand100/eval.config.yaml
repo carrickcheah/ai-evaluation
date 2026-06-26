@@ -1,0 +1,31 @@
+name: Flabee FAQ + CK — random 100 (Contabo)
+
+# Random 100-case sample of the FAQ Base (309) + Continuous Knowledge (243) = 552 set.
+# Default target = Contabo production bot. Pick a different bot via the Run page "Bot" dropdown.
+target:
+  url: https://api.nexgpt.nexerp.io/api/chat/sync
+  method: POST
+  headers:
+    X-API-Key: "${BOT_KEY}"
+  body:
+    message: "{{input}}"
+    phone_number: "{{uid}}"
+    source: api
+    account_id: 14
+    session_id: "{{uid}}"
+  answerPath: output
+
+judge:
+  provider: claude-subscription
+  model: sonnet
+
+rubric: |
+  You grade the Flabee/Sonobee (account 14) customer-service bot answer against a
+  known-correct reference from its knowledge base.
+  PASS only if the answer is factually consistent with the reference and addresses
+  the question, in the same language as the reference (Malay/English/Manglish).
+  FAIL on any contradiction, a missing required fact (price, gestational week, duration,
+  step), or an invented detail not supported by the reference. Minor wording/formatting
+  differences are fine.
+
+dataset: ./dataset.json

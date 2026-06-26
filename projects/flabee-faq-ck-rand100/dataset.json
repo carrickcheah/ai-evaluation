@@ -1,0 +1,802 @@
+[
+  {
+    "input": "Saya sudah padam akaun Flabee saya.. bagaimana cara nak dapatkan softcopy semula?",
+    "expected": "Jangan risau puan/encik, kami masih boleh bantu.\n \n Sila berikan maklumat berikut untuk rujukan kami:\n 📌 Nama penuh:\n 📌 Email semasa tempahan:\n 📌 Nombor telefon:\n 📌 Cawangan (Branch):\n 📌 Tarikh scan:\n 📌 Pakej/jenis imbasan:\n \n Kami akan semak dalam sistem dan bantu puan/encik. 🌸",
+    "tags": [
+      "faq",
+      "Account; Softcopy; Ultrasound"
+    ]
+  },
+  {
+    "input": "Branch Sonobee Kangar/Perlis masih buka ke?",
+    "expected": "# Branch Sonobee Kangar/Perlis masih buka ke?\n\nBranch Perlis masih ada/buka.",
+    "tags": [
+      "branch status",
+      "my"
+    ]
+  },
+  {
+    "input": "saya dapat report dan gambar orang lain..",
+    "expected": "Mohon kongsikan nama, nombor telefon, e-mel, tarikh temujanji, dan cawangan untuk memudahkan semakan kami.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Boleh tak pesakit rakam sendiri video semasa scan menggunakan telefon?",
+    "expected": "# Boleh tak pesakit rakam sendiri video semasa scan menggunakan telefon?\n\nPesakit boleh rakam sendiri menggunakan telefon, kecuali untuk anatomy scan kerana rakaman tidak dibenarkan.",
+    "tags": [
+      "recording policy",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh walk in untuk pakej 5D atau kena buat appointment?",
+    "expected": "# Boleh walk in untuk pakej 5D atau kena buat appointment?\n\nUntuk pakej 5D, walk-in tidak dibenarkan. Pelanggan perlu membuat booking/appointment terlebih dahulu.",
+    "tags": [
+      "5D booking",
+      "my"
+    ]
+  },
+  {
+    "input": "Jika ambil pakej 2D growth \nboleh tahu berat baby dan \njantina baby?",
+    "expected": "Ya boleh puan.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Bila tarikh akhir sertai posting review?",
+    "expected": "Terima kasih kerana berminat untuk sertai posting review. Tiada tarikh akhir untuk peraduan ini.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "KUB untuk scan apa ?",
+    "expected": "Imbasan KUB merujuk kepada Ultrasound Abdomen yang melibatkan buah pinggang (Kidneys), pundi kencing (Urinary bladder), dan pelvis. Ada apa-apa lagi yang saya boleh bantu?",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Di mana lokasi cawangan di Perak dan Perlis?",
+    "expected": "# Di mana lokasi cawangan di Perak dan Perlis?\n\nLokasi yang dinyatakan: Perak — Sono @ Ipoh HQ, Sono @ Kuala Kangsar, Sono @ Kamunting Perak, Sono @ Manjung, Sono @ Seri Manjung. Perlis — Sono @ Kangar.",
+    "tags": [
+      "branch locations",
+      "my"
+    ]
+  },
+  {
+    "input": "Apakah langkah-langkah untuk tempah janji temu Sonobee melalui Flabee Care?",
+    "expected": "# Apakah langkah-langkah untuk tempah janji temu Sonobee melalui Flabee Care?\n\nLangkah tempahan: 1) Muat turun aplikasi “FLABEE CARE” di App Store/Google Play. 2) Daftar akaun. 3) Isi maklumat yang diperlukan. 4) Di Home, klik “Tempah janji temu”. 5) Pilih lokasi yang ada perkataan “Sonobee”, perkhidmatan, tarikh dan masa. Jika masa tidak boleh ditekan, maksudnya outlet tutup atau slot penuh. 6) Klik “Sahkan Slot Masa”. 7) Baca borang persetujuan dan isi data. 8) Pilih kaedah pembayaran dan klik “Tempah janji temu”.",
+    "tags": [
+      "booking steps",
+      "my"
+    ]
+  },
+  {
+    "input": "Bila saya boleh dapatkan softcopy gambar imbasan saya?",
+    "expected": "Softcopy akan dimuat naik ke dalam aplikasi Flabee Care dalam tempoh 3 hingga 5 hari bekerja. Jika masih belum diterima selepas 5 hari bekerja, puan boleh hubungi atau WhatsApp person in charge di 014-9137226. Terima kasih.",
+    "tags": [
+      "faq",
+      "Ultrasound Image, Video"
+    ]
+  },
+  {
+    "input": "Sonographer di Sonobee lelaki atau perempuan?",
+    "expected": "Semua sonographer di Sonobee adalah perempuan.",
+    "tags": [
+      "faq",
+      "Sonographer"
+    ]
+  },
+  {
+    "input": "What does it mean if I cannot select a time slot in the booking system?",
+    "expected": "# What does it mean if I cannot select a time slot in the booking system?\n\nIf a time slot cannot be selected, it means the outlet is either closed or fully booked. All available slots are shown on the website/app only.",
+    "tags": [
+      "booking slots",
+      "en"
+    ]
+  },
+  {
+    "input": "Bagaimana nak book untuk anatomy scan ?",
+    "expected": "Untuk tempahan anatomy Scan, sila buka apps Flabee Care, pilih Services, tekan anatomy Scan, pilih tarikh & cawangan, kemudian sahkan tempahan dan buat pembayaran deposit.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Saya membuat scan 2d scan tapi saya hanya dapat gambar sahaja, mengapa tidak ada video? sebelum ini saya mendapat video .",
+    "expected": "Minta maaf puan , pakej 2d scan tidak dapat video, hanya pakej 5d sahaja akan dapat video. sekiranya sebelum ni puan pernah mendapat video, ia adalah kerana bergantung kepada sonographer.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Jika masa appointment tidak boleh dipilih, apa maksudnya?",
+    "expected": "# Jika masa appointment tidak boleh dipilih, apa maksudnya?\n\nJika pilihan masa tidak boleh ditekan semasa membuat tempahan, maksudnya outlet tersebut tutup atau slot sudah penuh.",
+    "tags": [
+      "slot appointment",
+      "my"
+    ]
+  },
+  {
+    "input": "Which branch or area is this contact for?",
+    "expected": "# Which branch or area is this contact for?\n\nThis contact is for Sonobee KL/Selangor.",
+    "tags": [
+      "service area",
+      "en"
+    ]
+  },
+  {
+    "input": "Bagaimanakah saya tahu jika bayi saya memerlukan rawatan fototerapi?",
+    "expected": "Fototerapi disyorkan apabila tahap bilirubin melebihi ambang selamat berdasarkan umur, berat badan dan keadaan bayi anda, seperti yang ditentukan oleh doktor melalui ujian darah. Tanda-tanda biasa termasuk kekuningan pada kulit dan mata. Bayi dengan tahap bilirubin yang meningkat dengan cepat atau tinggi memerlukan rawatan untuk mencegah komplikasi.",
+    "tags": [
+      "faq",
+      "Phototherapy"
+    ]
+  },
+  {
+    "input": "Apa kebaikan Baby Spa untuk baby?",
+    "expected": "Baiklah Puan, mari saya terangkan💕 Baby Spa ni memang banyak manfaat untuk si manja, antaranya:\n✨ Kebaikan Baby Spa:\n🌊 Hydrotherapy (mandi kolam) → bantu kuatkan otot, tulang & perkembangan motor baby\n😴 Tidur lebih lena → baby lebih relaks & mudah tidur\n🤰 Kurangkan kembung / colic → gerakan air membantu buang angin\n🧠 Rangsangan deria → air + mainan bantu stimulasi deria baby\n💛 Bonding time → mommy & daddy boleh lebih dekat dengan baby semasa sesi\nWalaupun konsepnya self-service, team Flabee tetap guide sebelum mula supaya mommy/daddy yakin & selesa 🌸                                                                                                                                                                                                               Jika ada pertanyaan lanjut, saya sedia menjawab pertanyaan Puan/Encik pada bila-bila masa sahaja ya!",
+    "tags": [
+      "faq",
+      "Baby Spa"
+    ]
+  },
+  {
+    "input": "Jika 5D tidak tersedia, bolehkah tukar kepada Anatomy Screening + 2D?",
+    "expected": "# Jika 5D tidak tersedia, bolehkah tukar kepada Anatomy Screening + 2D?\n\nYa, boleh downgrade kepada Anatomy Screening + 2D jika 5D tidak tersedia.",
+    "tags": [
+      "pilihan pakej",
+      "my"
+    ]
+  },
+  {
+    "input": "How does payment work for an appointment booking?",
+    "expected": "# How does payment work for an appointment booking?\n\nA booking fee is required when making the appointment. The full package price is paid at the counter.",
+    "tags": [
+      "payment policy",
+      "en"
+    ]
+  },
+  {
+    "input": "Do you offer detailed scans?",
+    "expected": "# Do you offer detailed scans?\n\nSonoBee does anatomy screening by sonographer only, not detailed scans. Customers can refer to the anatomy vs detailed scan information page: https://sono-ultrasound.com/anatomy-screening-versus-detailed-scan-your-guide-to-mid-pregnancy-ultrasounds/",
+    "tags": [
+      "detailed scan",
+      "en"
+    ]
+  },
+  {
+    "input": "saya tak boleh login no telefon telah wujud",
+    "expected": "Masalah ini biasanya berlaku jika nombor telefon telah didaftarkan sebelum ini.\n \n Sila cuba langkah berikut ya:\n \n 1️⃣ Buka aplikasi Flabee Care\n 2️⃣ Tekan “Lupa Kata Laluan / Forgot Password” di skrin log masuk\n 3️⃣ Masukkan email yang didaftarkan\n 4️⃣ Masukkan kod OTP yang diterima melalui email / whatsapp\n 5️⃣ Tetapkan kata laluan baru dan cuba login semula\n \n Jika masih tidak berjaya login, mohon berikan maklumat berikut untuk bantuan lanjut:\n \n 📌 Nama penuh:\n 📌 Email:\n 📌 Nombor telefon:\n 📌 Cawangan & tarikh scan (jika ada):\n \n Kami sedia bantu puan/encik secepat mungkin! 🌸",
+    "tags": [
+      "faq",
+      "Account; Login; Phone"
+    ]
+  },
+  {
+    "input": "RM10 itu untuk refund booking atau bayaran extra?",
+    "expected": "# RM10 itu untuk refund booking atau bayaran extra?\n\nRM10 itu adalah untuk refund booking, bukan bayaran extra.",
+    "tags": [
+      "booking refund",
+      "my"
+    ]
+  },
+  {
+    "input": "Which customer service number should I contact for my state?",
+    "expected": "# Which customer service number should I contact for my state?\n\nFor Kedah, Perlis, Perak, Penang, Kelantan, and Terengganu, contact [phone]. For Sarawak, Sabah, Johor, Negeri Sembilan, Melaka, and Pahang, contact [phone].",
+    "tags": [
+      "state contacts",
+      "en"
+    ]
+  },
+  {
+    "input": "Bagaimana saya nak download video ultrasound",
+    "expected": "Cara Download Gambar Ultrasound di Flabee Care\n\n1. Buka aplikasi Flabee Care di telefon anda.\n\n2. Log masuk menggunakan e-mel atau nombor telefon yang didaftarkan semasa buat temujanji.\n\n3. Pada menu utama, pilih Report/Result atau Laporan.\n\n4. Cari tarikh temujanji yang berkaitan.\n\n5. Tekan Download pada fail gambar ultrasound. Gambar akan disimpan terus ke Gallery/Photos telefon anda.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Do you provide a medical certificate (MC) after a scan?",
+    "expected": "# Do you provide a medical certificate (MC) after a scan?\n\nNo, they do not provide medical certificates (MC) after scans.",
+    "tags": [
+      "medical certificate",
+      "en"
+    ]
+  },
+  {
+    "input": "Klinik buka 24 jam ke?",
+    "expected": "# Klinik buka 24 jam ke?\n\nTidak. Waktu operasi sampai 6 petang dan hanya melalui temu janji.",
+    "tags": [
+      "waktu operasi",
+      "my"
+    ]
+  },
+  {
+    "input": "Adakah Sonobee menyediakan ultrasound scan untuk tendon Achilles?",
+    "expected": "Ya, kami ada menyediakan ultrasound scan untuk Achilles tendon bagi melihat keadaan tendon. Namun, untuk scan ini tiada laporan (report) disediakan ya. Boleh hubungi customer service untuk semakan slot dan cawangan 😊",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "1. May I know what's the difference of targeted scan + 5D with 5D scan?",
+    "expected": "Target scan only for patient that scan with our sonobee before who want to follow up that particular area of organ .",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Kalau nak scan testis, nak ambil pakej yg mana?",
+    "expected": "Boleh ambil pakej Scrotum Scan.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Berapa harga 5D scan di Johor?",
+    "expected": "# Berapa harga 5D scan di Johor?\n\nUntuk cawangan Johor, promo 5D Scan bagi 12–40 minggu ialah RM107.80 pada hari biasa dan RM117.80 pada hujung minggu. Harga termasuk booking fee dan SST 8%. Sabtu dan Ahad dikira harga hujung minggu. Promo dinyatakan sehingga 17 Jun 2026.",
+    "tags": [
+      "5D pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "setiap imbasan boleh nampak warna kulit baby ?",
+    "expected": "Dalam imbasan seperti Anatomy Scan + 5D, imej 5D memberikan gambaran yang lebih jelas dan terperinci termasuk tekstur dan warna kulit bayi yang lebih nyata berbanding imbasan standard.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Bagaimana nak semak outlet atau slot yang tersedia?",
+    "expected": "# Bagaimana nak semak outlet atau slot yang tersedia?\n\nOutlet atau slot yang tersedia boleh disemak melalui pautan: https://appointment.flabee.com/guest/outlets. Jika pilihan masa tidak boleh ditekan, maksudnya outlet tutup atau slot sudah penuh.",
+    "tags": [
+      "slot availability",
+      "my"
+    ]
+  },
+  {
+    "input": "Berapa harga scan ultrasound terkini?",
+    "expected": "# Berapa harga scan ultrasound terkini?\n\nPromo scan sehingga 17 June 2026 untuk branch Perak, Penang, Kedah, Perlis, Terengganu dan Kelantan: Gender Scan 15-40 minggu RM25.80 weekday / RM30.80 weekend; 2D Growth Scan 4-40 minggu RM35.80 weekday / RM40.80 weekend; 5D Scan 12-40 minggu RM85.80 weekday / RM95.80 weekend; NT Scan 11-13 minggu RM95.80 weekday / RM105.80 weekend; Anatomy Screening 18-29 minggu RM100.80 weekday / RM120.80 weekend; Anatomy Screening + 5D 18-29 minggu RM135.80 weekday / RM155.80 weekend. Semua harga termasuk booking fee dan SST 8%. Saturday dan Sunday dikira harga weekend.",
+    "tags": [
+      "scan prices",
+      "my"
+    ]
+  },
+  {
+    "input": "Bolehkah saya tahu sama ada kandungan saya dalam keadaan baik semasa imbasan?",
+    "expected": "Ya, sonographer akan memaklumkan kepada puan semasa imbasan. Jika tiada sebarang masalah dimaklumkan, ini biasanya bermaksud keadaan kandungan adalah baik.",
+    "tags": [
+      "faq",
+      "General"
+    ]
+  },
+  {
+    "input": "Jika tersalah scan jantina, \nada apa-apa jaminan tak?",
+    "expected": "Maaf tiada jaminan untuk gender scan, ianya \nbergantung pada kerjasama dan posisi baby",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Do I need to register in the app to receive my scan softcopy?",
+    "expected": "# Do I need to register in the app to receive my scan softcopy?\n\nYes. Customers need to register in the app to receive the softcopy. The softcopy will be uploaded into the app.",
+    "tags": [
+      "App softcopy",
+      "en"
+    ]
+  },
+  {
+    "input": "Do you provide detail scan at Sonobee Kuching?",
+    "expected": "# Do you provide detail scan at Sonobee Kuching?\n\nSonobee offers Anatomy Screening, which is almost the same as a detail scan.",
+    "tags": [
+      "Anatomy screening",
+      "en"
+    ]
+  },
+  {
+    "input": "Why does my baby develop jaundice?",
+    "expected": "Jaundice occurs because a newborn’s liver is still developing and may not process bilirubin efficiently. This condition is common in the first few days after birth and usually improves as the baby matures.",
+    "tags": [
+      "faq",
+      "Phototherapy"
+    ]
+  },
+  {
+    "input": "Apakah persediaan yang perlu dibuat sebelum menjalani ultrasound? Perlu minum air atau tidak?",
+    "expected": "Persediaan bergantung kepada jenis imbasan. Untuk sesetengah imbasan, terutamanya pada peringkat awal kehamilan, anda mungkin disarankan untuk minum air dan menahan kencing selama kira-kira 1 jam supaya pundi kencing penuh. Ini membantu menghasilkan imej yang lebih jelas. Bagi imbasan lain, full bladder mungkin tidak diperlukan.",
+    "tags": [
+      "faq",
+      "General Ultrasound Queries"
+    ]
+  },
+  {
+    "input": "Untuk HBS scan, perlu \npuasa ke?",
+    "expected": "Ya perlu puasa, 6jam sebelum scan kecuali \nboleh minum air dan pastikan pundi kencing \npenuh sebelum scan.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Ada cas tambahan ke? Dan \nberapa cas jika sekali \ndengan consultation?",
+    "expected": "Tiada cas tambahan dikenakan, Di sonobee \ntiada doctor untuk consultation, hanya \npenerangan dari sonographer sahaja semasa \nscan.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Suami dan anak boleh masuk bilik scan Sonobee?",
+    "expected": "# Suami dan anak boleh masuk bilik scan Sonobee?\n\nYa, suami dan anak-anak boleh masuk ke bilik scan.",
+    "tags": [
+      "scan room",
+      "my"
+    ]
+  },
+  {
+    "input": "boleh dapatkan nombor customer service",
+    "expected": "1️⃣ 014-3577226 - Kangar \\Penang\\Kedah\\Kelantan\\Perak\\Terengganu\n\n2️⃣ 018-9092933 - KL\\Selangor \n\n3️⃣ 014-9317226 - Negeri Sembilan\\Johor\\Sabah/\n\\Sarawak\\Melaka\\Pahang",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Berapa harga scan gender, NT scan, 2D growth, 5D scan dan anatomy screening?",
+    "expected": "# Berapa harga scan gender, NT scan, 2D growth, 5D scan dan anatomy screening?\n\nPromo scan sehingga 17 June 2026. Harga weekday/weekend: Gender Scan (15–40 minggu) RM30.80/RM35.80; 2D Growth Scan (4–40 minggu) RM40.80/RM45.80; 5D Scan (12–40 minggu) RM107.80/RM117.80; NT Scan (11–13 minggu) RM107.80/RM117.80; Anatomy Screening (18–29 minggu) RM117.80/RM137.80; Anatomy Screening + 5D (18–29 minggu) RM147.80/RM167.80. Semua harga termasuk booking fees dan SST 8%.",
+    "tags": [
+      "scan pricing",
+      "my"
+    ]
+  },
+  {
+    "input": "Do you offer a short course for detailed pregnancy scan?",
+    "expected": "# Do you offer a short course for detailed pregnancy scan?\n\nNo, there is no short course for detailed scan.",
+    "tags": [
+      "scan courses",
+      "en"
+    ]
+  },
+  {
+    "input": "Saya nak buat booking tapi payment tak lepas. Boleh bantu?”",
+    "expected": "Maaf atas kesulitan yang puan/encik hadapi. Jangan risau, kami sedia bantu! 🌸\n \n Sila cuba langkah berikut terlebih dahulu:\n \n 1️⃣ Pastikan sambungan internet stabil semasa pembayaran\n 2️⃣ Guna kad debit/kredit yang aktif atau akaun e-wallet/FPX yang mencukupi baki\n 3️⃣ Cuba semula selepas beberapa minit, atau guna peranti berbeza\n \n Jika masih gagal, mohon berikan maklumat berikut untuk semakan lanjut:\n \n 📌 Nama penuh\n 📌 Nombor telefon\n 📌 Emel\n 📌 Cawangan & jenis pakej\n \n \n Atau hubungi Customer Service Ultrasound kami melalui WhatsApp:\n \n 1️⃣ 014-3577226 – Kangar, Penang, Kedah, Kelantan, Perak, Terengganu\n 2️⃣ 018-9092933 – Kuala Lumpur, Selangor\n 3️⃣ 014-9317226 – Negeri Sembilan, Johor, Sabah, Sarawak, Melaka, Pahang\n \n Kami akan bantu semak dan selesaikan untuk puan/encik secepat mungkin!",
+    "tags": [
+      "faq",
+      "Appointment; Payment"
+    ]
+  },
+  {
+    "input": "Adakah 5D Scan termasuk detail scan/anatomy screening?",
+    "expected": "# Adakah 5D Scan termasuk detail scan/anatomy screening?\n\nTidak. 5D Scan tidak termasuk detail scan. Untuk detail scan bersama 5D, pilih pakej Anatomy Screening + 5D bagi kandungan 18–29 minggu: RM135.80 pada hari biasa dan RM155.80 pada hujung minggu.",
+    "tags": [
+      "5D anatomy",
+      "my"
+    ]
+  },
+  {
+    "input": "What is the maximum duration during a phototherapy session?",
+    "expected": "Phototherapy is often carried out continuously with short breaks for feeding and care. Continuous exposure improves effectiveness in reducing bilirubin levels.",
+    "tags": [
+      "faq",
+      "Phototherapy"
+    ]
+  },
+  {
+    "input": "Kalau nak tempah macam mana?",
+    "expected": "Boleh Puan/Encik ✨ saya sertakan link tempahan mengikut pakej supaya lebih mudah terus pilih:\n•        🍲 1 Hari 👉 https://appointment.flabee.com/bm/guest/services/1-day-pantang-food-package-\n•        🍲 3 Hari 👉 https://appointment.flabee.com/bm/guest/services/3-days-pantang-food-package-\n•        🍲 5 Hari 👉 https://appointment.flabee.com/guest/services/5-days-pantang-food-package-\n•        🍲 10 Hari 👉 https://appointment.flabee.com/bm/guest/services/10-days-pantang-food-package-\n•        🍲 20 Hari 👉 https://appointment.flabee.com/bm/guest/services/20-days-pantang-food-package-\n•        🍲 40 Hari 👉 https://appointment.flabee.com/bm/guest/services/40-days-pantang-food-package-\nJika ada pertanyaan lanjut, saya sedia menjawab pertanyaan Puan/Encik pada bila-bila masa sahaja ya!",
+    "tags": [
+      "faq",
+      "Pantang Food"
+    ]
+  },
+  {
+    "input": "Berapa lama jarak yang sesuai antara imbasan ultrasound?",
+    "expected": "Jarak antara imbasan ultrasound bergantung kepada keadaan individu dan nasihat perubatan. Bagi kehamilan normal, imbasan biasanya dijadualkan pada peringkat tertentu dan bukan berdasarkan jarak masa tetap.\n\nImbasan tambahan mungkin disarankan jika terdapat keperluan pemantauan lanjut atau keadaan tertentu.",
+    "tags": [
+      "faq",
+      "General Ultrasound Queries"
+    ]
+  },
+  {
+    "input": "cara nak view softcopy di flabee app?",
+    "expected": "Langkah‑langkah Menonton Gambar & Video Ultrasound\n \n 1. Buka aplikasi Flabee Care pada telefon anda. \n \n \n 2. Pergi ke menu “Ultrasound Scan” — di sinilah semua rekod ultrasound anda disimpan. \n \n \n 3. Skrol dan pilih rekod tersebut, kemudian tekan ‘View’. \n \n \n 4. Tap pada imej untuk paparan skrin penuh;\n Tap ikon ▶️ untuk mainkan video. \n \n \n 5. Anda boleh skrol melalui semua gambar dan video yang tersedia.",
+    "tags": [
+      "faq",
+      "Account; Softcopy; Ultrasound"
+    ]
+  },
+  {
+    "input": "What services are available besides ultrasound appointments?",
+    "expected": "# What services are available besides ultrasound appointments?\n\nAvailable service categories include softcopy/report/review, NIPT-NICC, blood test, phototherapy, gender reveal balloon cake, massage, maternity and newborn photography, pantang food, and baby spa.",
+    "tags": [
+      "Service categories",
+      "en"
+    ]
+  },
+  {
+    "input": "Do you have a Sonobee/Sono Ultrasound branch in Kamunting?",
+    "expected": "# Do you have a Sonobee/Sono Ultrasound branch in Kamunting?\n\nYes. Sono @ Kamunting Perak is located at 41 & No 43 Jalan Kamunting, Jalan Medan Saujana, Kamunting, 34600 Perak.",
+    "tags": [
+      "branch location",
+      "my"
+    ]
+  },
+  {
+    "input": "Bolehkah Sonobee di bawah mana-mana panel insurans?",
+    "expected": "Tidak, perkhidmatan Sonobee tidak boleh dituntut di bawah mana-mana panel insurans.",
+    "tags": [
+      "faq",
+      "Insurance | Claim"
+    ]
+  },
+  {
+    "input": "What improvements can I observe after phototherapy?",
+    "expected": "You may notice reduced yellowing of the skin and eyes, improved feeding, and increased alertness. Bilirubin levels are typically monitored to confirm progress, and levels often decrease within hours to days of treatment.",
+    "tags": [
+      "faq",
+      "Phototherapy"
+    ]
+  },
+  {
+    "input": "Sonobee Kuching branch dekat mana?",
+    "expected": "# Sonobee Kuching branch dekat mana?\n\nSonobee Kuching is at Sonobee@Stutong, 11, Jalan Setia Raja, Muara Tebas Land District, 93350 Kuching, Sarawak.",
+    "tags": [
+      "Kuching location",
+      "my"
+    ]
+  },
+  {
+    "input": "Saya sudah beli baucar dari laman web DoctoronCall, jadi kenapa perlu buat bayaran sekali lagi?",
+    "expected": "Adakah anda ada promo code? Sejak kita tukar kepada sistem baru, semua diskaun gena pakai promo code. Kalau tak ada promo code, puan boleh screenshot bagi kita tengok",
+    "tags": [
+      "faq",
+      "Payment"
+    ]
+  },
+  {
+    "input": "Berapa caj booking dan bila baki bayaran perlu dibayar?",
+    "expected": "# Berapa caj booking dan bila baki bayaran perlu dibayar?\n\nSemasa booking, caj tempahan RM10.80 + SST akan dikenakan. Baki bayaran diselesaikan selepas imbasan.",
+    "tags": [
+      "booking payment",
+      "my"
+    ]
+  },
+  {
+    "input": "Tolong share contoh jenis makanan yang sesuai ikut umur ni?",
+    "expected": "💬 Okay mommy 🍼 Antara contoh makanan sesuai untuk umur 7–8 bulan ialah:\n🥦 Sayur lembut (brokoli, bayam, lobak merah)\n🍌 Buah (pisang, epal, pir – dimasak & dilenyek)\n🥔 Starch (ubi kentang, ubi keledek)\n🥩 Protein lembut (ayam, ikan isi putih – pastikan tanpa tulang)\n👉 Semua ni boleh didapati dalam bentuk puree siap sedia di Flabee Mart.",
+    "tags": [
+      "faq",
+      "Baby Food"
+    ]
+  },
+  {
+    "input": "Macam mana nak ambil softcopy yang telah discan?",
+    "expected": "# Macam mana nak ambil softcopy yang telah discan?\n\nSoftcopy akan diupload dalam Flabee apps dalam masa 3 hingga 5 hari bekerja. Untuk pertanyaan lanjut, pelanggan boleh hubungi atau WhatsApp person in charge.",
+    "tags": [
+      "softcopy scan",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh saya tahu info tentang baby spa?",
+    "expected": "Boleh sangat, Puan/Encik 💕\nDi Flabee, kami ada servis Baby Spa khas untuk bayi seawal 3 bulan sehingga 18 bulan dengan berat minimum 4.5kg. Ia merangkumi sesi berenang kecil (hydrotherapy) & urutan lembut untuk sokong perkembangan bayi ✨\n👉 Mommy boleh tengok info penuh di sini:\nhttps://flabee.com/flabee-splash-baby-spa-2/                                                                                                                                                                                   Puan boleh tanya apa-apa sahaja ya, saya sedia menjawabnya!",
+    "tags": [
+      "faq",
+      "Baby Spa"
+    ]
+  },
+  {
+    "input": ".Untuk pakej Anatomy + 5D \napa yang akan saya dapat?",
+    "expected": "Puan akan dapat softcopy gambar, softcopy \nvideo dan softcopy simple report.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "bagaimana cara nak tukar cawangan?",
+    "expected": "Untuk menukar lokasi temujanji (lokasi cawangan) dalam aplikasi Flabee Care, sila ikut langkah berikut:\n \n 1️⃣ Buka aplikasi Flabee Care\n 2️⃣ Pergi ke menu “Temujanji Saya (My Appointment)”\n 3️⃣ Tekan “Urus Temujanji (Manage Appointment)”\n 4️⃣ Pilih “Tukar Lokasi (Change Location)”\n 5️⃣ Pilih lokasi/cawangan baru yang diinginkan\n 6️⃣ Klik “Sahkan (Confirm)” untuk simpan pertukaran\n \n Jika pilihan \"Tukar Lokasi\" tidak tersedia, puan/encik perlu batalkan temujanji lama dan buat tempahan baru di lokasi yang diinginkan.\n \n Jika ada masalah, sila hubungi Khidmat Pelanggan Ultrasound kami:\n \n 1️⃣ 014-3577226 – Kangar, Pulau Pinang, Kedah, Kelantan, Perak, Terengganu\n 2️⃣ 018-9092933 – Kuala Lumpur, Selangor\n 3️⃣ 014-9317226 – Negeri Sembilan, Johor, Sabah, Sarawak, Melaka, Pahang\n \n Kami sentiasa sedia membantu! 🌸",
+    "tags": [
+      "faq",
+      "Appointment; Change Outlet"
+    ]
+  },
+  {
+    "input": "anatomy dan detail scan sama ke ?",
+    "expected": "Anatomy scan biasanya dilakukan oleh sonographer, manakala detail scan pula dilakukan oleh doktor. Kedua-duanya adalah pemeriksaan ultrasound menyeluruh (biasanya 18–24 minggu kehamilan) untuk melihat organ, struktur, dan perkembangan bayi.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Which areas does this Sonobee Ultrasound branch cover?",
+    "expected": "# Which areas does this Sonobee Ultrasound branch cover?\n\nThis Sonobee Ultrasound branch covers Perak, Penang, Kedah, Perlis, Terengganu, and Kelantan.",
+    "tags": [
+      "branch coverage",
+      "en"
+    ]
+  },
+  {
+    "input": "Sonographer sonobee yg buat anatomy scan ni di iktiraf ke? Semua expert scan ke?",
+    "expected": "Senior level scan ada mfm iktiraf exam",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "tak dapat otp",
+    "expected": "sila bagi detail dan screen recording. For otp luar negara, semua akan hantar kepada whatsapp",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Saya pernah buat embolisation untuk angiomyolipoma (lebih kurang 9cm) 3 bulan lepas dan sekarang perlu buat follow-up ultrasound. Lesion berada berdekatan buah pinggang kiri. Scan apa yang sesuai untuk saya ambil?",
+    "expected": "Untuk kes ini, anda boleh memilih KUB Scan (Kidney, Ureter, Bladder) kerana lokasi lesion adalah berdekatan buah pinggang kiri. Scan ini sesuai untuk menilai keadaan buah pinggang serta melihat perubahan saiz lesion selepas prosedur embolisation. Ultrasound akan membantu doktor memantau perkembangan dan memastikan rawatan berjalan dengan baik.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Apakah faedah perkhidmatan penyewaan fototerapi di rumah?",
+    "expected": "Fototerapi di rumah membolehkan bayi anda menerima rawatan dalam persekitaran yang biasa, mengurangkan tekanan dan mengelakkan kemasukan ke hospital. Ibu bapa boleh memantau dengan teliti semasa menggunakan peralatan gred hospital dengan panduan yang betul, memastikan keselesaan dan keberkesanannya.",
+    "tags": [
+      "faq",
+      "Phototherapy"
+    ]
+  },
+  {
+    "input": "Apa yang termasuk dalam Baby Spa Self Service tu?",
+    "expected": "Bagus soalan tu Puan/Encik 💕 walaupun konsepnya self-service, mommy jangan risau sebab:\n✨ Dalam 1 sesi Baby Spa (20 minit), termasuk:\n🛁 Kolam kecil khas (swimming tub) untuk baby\n🧸 Mainan & floating toys untuk hiburan baby\n📖 Step-by-step guide daripada team Flabee sebelum mula\n💦 Air bersih & selamat untuk kegunaan bayi\n💺 Ruang selesa untuk mommy/daddy temani baby sepanjang sesi\n💛 Jadi mommy boleh DIY spa untuk si manja, sambil ada support dari team kami untuk pastikan pengalaman lebih mudah & selamat.                                                                                                                                                                                                                 Saya sedia membantu, kalau Puan ada apa-apa yang nak ditanya ya!",
+    "tags": [
+      "faq",
+      "Baby Spa"
+    ]
+  },
+  {
+    "input": "hai saya nak buat aduan",
+    "expected": "Sekiranya anda mempunyai sebarang maklum balas atau aduan, kami amat menghargai jika anda dapat kongsikannya melalui pautan berikut:\n\nContoh: \n\nhttps://sono-ultrasound.com/rating-form/?tele=+60123456789\n\n\nhttps://sono-ultrasound.com/rating-form/?tele=+6\n\natau whatsapp 0182567226\nSetiap pandangan anda sangat bernilai dalam usaha kami untuk menambah baik mutu perkhidmatan.\nTerima kasih atas sokongan dan kepercayaan anda!\n❤️",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Sonobee ada buat ultrasound scan untuk soft tissue injury di kawasan lower hip / buttock tak?",
+    "expected": "Ya, ada. Untuk kawasan tersebut, boleh pilih pakej small part ultrasound scan.",
+    "tags": [
+      "faq",
+      "General Ultrasound Queries"
+    ]
+  },
+  {
+    "input": "Nak tanya klu scan growth untuk 2d tu.. rm30 tu sekali dengan gambar scan ka?",
+    "expected": "Ya hrga tu dah termasuk dengan softcopy gambr dan softcopy simple report. Jika puan nak print gambar, ada extra cas RM2-RM5/pcs",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Selamat ke massage masa mengandung ni?",
+    "expected": "💬 Ya mommy, jangan risau 🤰 Semua therapist kami:\n  ✅ Berpengalaman dengan ibu hamil\n ✅ Guna teknik lembut & selamat untuk setiap trimester\n ✅ Fokus pada bahagian yang mommy rasa sakit atau tegang\n ✅ Mempunyai sijil daripada Kementerian Kesihatan Malaysia (KKM)\n Biasanya Puan akan rasa lega lepas 1 sesi. Puan nak saya share feedback customers yang dah cuba sebelum ni?",
+    "tags": [
+      "faq",
+      "Prenatal; Massage"
+    ]
+  },
+  {
+    "input": "How do I book a scan appointment online?",
+    "expected": "# How do I book a scan appointment online?\n\nTo book: 1) Open https://appointment.flabee.com/guest 2) Click “Daftar Sekarang” to create an account 3) Fill in required registration details 4) Click “Beli Sekarang” 5) Choose location, service, date, and time 6) Click “Sahkan Slot Masa” 7) Fill in appointment details 8) Click “Teruskan Pembayaran”. A RM10.80 booking charge + SST is paid during booking, and the remaining payment is settled after the scan. Booking confirmation is sent through Flabee app notification and email.",
+    "tags": [
+      "booking steps",
+      "my"
+    ]
+  },
+  {
+    "input": "Nak tanya nk ultrasound testis untuk tahu variccole & radang boleh ke dekat sini?",
+    "expected": "boleh",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Suami dan anak boleh \nmasuk semasa scan?",
+    "expected": "Ya, suami dan anak-anak boleh masuk dalam \nbilik semasa scan.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "How much do ultrasound scan packages cost at Sonobee Sabah/Kota Kinabalu?",
+    "expected": "# How much do ultrasound scan packages cost at Sonobee Sabah/Kota Kinabalu?\n\nPromo prices until 17 June 2026: Gender Scan (15–40 weeks) RM30.80 weekday / RM35.80 weekend; 2D Growth Scan (4–40 weeks) RM40.80 weekday / RM45.80 weekend; 5D Scan (12–40 weeks) RM107.80 weekday / RM117.80 weekend; NT Scan (11–13 weeks) RM107.80 weekday / RM117.80 weekend; Anatomy Screening (18–29 weeks) RM117.80 weekday / RM137.80 weekend; Anatomy Screening + 5D (18–29 weeks) RM147.80 weekday / RM167.80 weekend. Prices include booking fee and SST 8%. No walk-ins.",
+    "tags": [
+      "scan prices",
+      "en"
+    ]
+  },
+  {
+    "input": "Di mana lokasi cawangan Sonobee/Sono di Melaka?",
+    "expected": "# Di mana lokasi cawangan Sonobee/Sono di Melaka?\n\nCawangan Melaka: 1) Sono@Ayer Keroh HQ, sebelah Terapi Matematik, Jalan KNMP 1, Kompleks Niaga Melaka Perdana, 75450 Ayer Keroh, Melaka. 2) Sonobee@Kota Melaka, inside Klinik Salam, No 202-A & 202-B, Seksyen 2, Jalan Kampung Lapan, Taman Kenanga, 75200 Melaka. 3) Sonobee@Durian Tunggal, inside Klinik Dr.Champz, 15, Jalan PNG, Pusat Niaga Gangsa, 76100 Durian Tunggal, Melaka.",
+    "tags": [
+      "lokasi melaka",
+      "my"
+    ]
+  },
+  {
+    "input": "Hi nak tanya, macam mana nak upgrade/downgrade pakej untuk pt ya? Maaf tak pernah cuba lagi, selalu pt yang buat sendiri, kali ni pt tak boleh buat.",
+    "expected": "Inform customer slot vip dan package biasa memang tak sama,  itu sebab saya tak benarkan CS downgrade",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Boleh buat 5D scan dan gender scan dalam satu appointment?",
+    "expected": "# Boleh buat 5D scan dan gender scan dalam satu appointment?\n\nYa, boleh. Pilih pakej 5D Scan kerana pakej 5D memang sudah termasuk sekali scan jantina.",
+    "tags": [
+      "5D gender",
+      "my"
+    ]
+  },
+  {
+    "input": "Do you offer 4D ultrasound for breast or health scanning?",
+    "expected": "# Do you offer 4D ultrasound for breast or health scanning?\n\nNo. Health ultrasound scans are available in 2D only; 4D is not offered for health ultrasound.",
+    "tags": [
+      "Ultrasound services",
+      "en"
+    ]
+  },
+  {
+    "input": "Ya, berapa harga kalau nak sewa? harga ikut kawasan ke?",
+    "expected": "Baik mommy 😍 Ini kadar harga untuk sewaan phototherapy light:\n  📍 KL & Selangor → RM400 (minimum 2 hari ) \n 📍 Kalau luar KL & Selangor (Kuantan, Melaka, Alor Setar, Sungai Petani, Perlis, JB & Ipoh) → RM440 (minimum 2 hari)\n  👉 Mommy nak saya check availability slot ikut kawasan puan?”",
+    "tags": [
+      "faq",
+      "Phototherapy"
+    ]
+  },
+  {
+    "input": "Ada lokasi Sonobee di mana?",
+    "expected": "# Ada lokasi Sonobee di mana?\n\nSonobee mempunyai lokasi di Melaka: 1) Sono@Ayer Keroh HQ, sebelah Terapi Matematik, Jalan KNMP 1, Kompleks Niaga Melaka Perdana, 75450 Ayer Keroh, Melaka. 2) Sonobee@Kota Melaka, inside Klinik Salam, No 202-A & 202-B, Seksyen 2, Jalan Kampung Lapan, Taman Kenanga, 75200 Melaka. 3) Sonobee@Durian Tunggal, inside Klinik Dr.Champz, 15, Jalan PNG, Pusat Niaga Gangsa, 76100 Durian Tunggal, Melaka.",
+    "tags": [
+      "lokasi cawangan",
+      "my"
+    ]
+  },
+  {
+    "input": "Boleh ke saya buat TVS scan \nuntuk detect early \npregnancy?",
+    "expected": "Maaf puan, tidak digalakan untuk buat TVS \nscan pada awal kehamilan.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Adakah setiap bayi yang menghidap jaundis memerlukan fototerapi?",
+    "expected": "Tidak. Kebanyakan jaundis bayi baru lahir adalah ringan dan hilang secara semula jadi. Fototerapi hanya diperlukan apabila tahap bilirubin melebihi ambang perubatan berdasarkan garis panduan dan penilaian klinikal.",
+    "tags": [
+      "faq",
+      "Phototherapy"
+    ]
+  },
+  {
+    "input": "Does Sonobee provide a report for a DVT scan?",
+    "expected": "# Does Sonobee provide a report for a DVT scan?\n\nSonobee can perform the DVT scan, but no report is provided. If a report is needed, customers should do the scan with a doctor at a hospital or clinic.",
+    "tags": [
+      "DVT report",
+      "en"
+    ]
+  },
+  {
+    "input": "nk tanya pt dh book appt, kalau balance tu blh ke pt bayar pakai flabee wallet tu ?",
+    "expected": "boleh, suruh inform sono..sono sudah ada sop sendiri",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Adakah Sonobee menyediakan shoulder scan di cawangan Puncak Alam?",
+    "expected": "Untuk maklumat lanjut mengenai shoulder scan dan cawangan yang tersedia, sila hubungi customer service ultrasound 😊\n\n📞 Customer Service Ultrasound\n\n1️⃣ 014-3577226\n(Kangar, Penang, Kedah, Kelantan, Perak, Terengganu)\n\n2️⃣ 018-9092933\n(Kuala Lumpur, Selangor)\n\n3️⃣ 014-9317226\n(Negeri Sembilan, Johor, Sabah, Sarawak, Melaka, Pahang)",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Disini ada pakej untuk scan \nperut?",
+    "expected": "Anda boleh ambil pakej Upper Abdomen",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "Lepas scan, adakah akan dapat gambar atau report?",
+    "expected": "# Lepas scan, adakah akan dapat gambar atau report?\n\nGambar/report hanya disediakan dalam softcopy dan akan dimuat naik ke aplikasi Flabee dalam masa 3-5 hari bekerja.",
+    "tags": [
+      "scan report",
+      "my"
+    ]
+  },
+  {
+    "input": "Jika ambil pakej 2d growth scan, boleh tahu berat baby dan jantina baby?",
+    "expected": "Ya boleh Puan.",
+    "tags": [
+      "faq",
+      "general"
+    ]
+  },
+  {
+    "input": "What are your customer service and branch operating hours, and how can I make a booking?",
+    "expected": "# What are your customer service and branch operating hours, and how can I make a booking?\n\nCustomer Service is available from 7:30 AM to 10:30 PM. KL/Selangor branches operate from 9:00 AM to 6:30 PM, with lunch break from 1:30 PM to 2:30 PM. Available slots should be checked and bookings made only through the website: https://www.sono-ultrasound.com",
+    "tags": [
+      "operating hours",
+      "en"
+    ]
+  },
+  {
+    "input": "saya tak boleh login di flabee app",
+    "expected": "Sila cuba langkah berikut ya:\n \n 1️⃣ Buka aplikasi Flabee Care\n 2️⃣ Tekan “Lupa Kata Laluan / Forgot Password” di skrin log masuk\n 3️⃣ Masukkan email yang didaftarkan\n 4️⃣ Masukkan kod OTP yang diterima melalui email / whatsapp\n 5️⃣ Tetapkan kata laluan baru dan cuba login semula\n \n Jika masih tidak berjaya login, mohon berikan maklumat berikut untuk bantuan lanjut:\n \n 📌 Nama penuh:\n 📌 Email:\n 📌 Nombor telefon:\n 📌 Cawangan & tarikh scan (jika ada):\n \n Kami sedia bantu puan/encik secepat mungkin! 🌸",
+    "tags": [
+      "faq",
+      "Account; Login; Flabee Care"
+    ]
+  },
+  {
+    "input": "Branch Gelugor buka hari Ahad ke?",
+    "expected": "# Branch Gelugor buka hari Ahad ke?\n\nWaktu buka Ahad bergantung kepada availability dalam app; kadang-kadang buka, kadang-kadang tutup. Jika slot keluar dalam app, maksudnya klinik buka dan masih ada kekosongan slot.",
+    "tags": [
+      "Sunday availability",
+      "my"
+    ]
+  },
+  {
+    "input": "Bolehkah jaundis dicegah?",
+    "expected": "Jaundis fisiologi tidak dapat dicegah sepenuhnya kerana ia adalah sebahagian daripada penyesuaian semula jadi bayi baru lahir. Walau bagaimanapun, penyusuan awal dan kerap boleh membantu mengurangkan tahap bilirubin dengan menyokong perkumuhan melalui air kencing dan najis.",
+    "tags": [
+      "faq",
+      "Phototherapy"
+    ]
+  },
+  {
+    "input": "Untuk bayaran Medilife, perlu bayar kepada Medilife atau kepada customer?",
+    "expected": "# Untuk bayaran Medilife, perlu bayar kepada Medilife atau kepada customer?\n\nBayaran perlu dibuat terus kepada Medilife.",
+    "tags": [
+      "payment procedure",
+      "my"
+    ]
+  },
+  {
+    "input": "saya tak boleh tengok video di aplikasi",
+    "expected": "Maaf atas kesulitan puan/encik. Kami sedia bantu! 🌸\n \n Sila ikut langkah berikut:\n \n 1. Jika video masih dalam proses, mohon tunggu dalam tempoh 24 jam.\n \n \n 2. Jika selepas 24 jam masih tidak boleh view/play, mohon PM semula dan sertakan butiran berikut untuk semakan:\n \n \n \n 📌 Nama penuh:\n 📌 Email semasa tempahan:\n 📌 Nombor telefon:\n 📌 Tarikh & cawangan scan:\n 📌 Model telefon:",
+    "tags": [
+      "faq",
+      "Account; Softcopy; Ultrasound"
+    ]
+  }
+]
